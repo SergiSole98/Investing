@@ -2,6 +2,19 @@
 
 Sistema jerárquico de agentes para investigación y análisis de temas de inversión.
 
+## El Equipo
+
+| Nombre | Puesto | Especialidad | Cómo hablarle |
+|--------|--------|--------------|---------------|
+| **Marco** | Director / Orquestador | Coordina todo el análisis | "Marco, analiza X" |
+| **Nora** | Analista de Noticias | Información reciente, señales | "Nora, ¿qué hay de nuevo en X?" |
+| **Fran** | Analista Fundamental | Valoración, moat, métricas | "Fran, ¿está cara esta empresa?" |
+| **Rita** | Analista de Riesgo | Amenazas, escenarios adversos | "Rita, ¿qué puede salir mal?" |
+| **Teo** | Analista Técnico | Timing, niveles, momentum | "Teo, ¿es buen momento para entrar?" |
+| **Leo** | Redactor Ejecutivo | Simplificar, comunicar | "Leo, hazme un resumen ejecutivo" |
+
+> **Tip**: Puedes hablar directamente con cualquier empleado por su nombre, o pedirle a Marco que coordine un análisis completo.
+
 ## Arquitectura
 
 ```
