@@ -1,6 +1,21 @@
 # Sistema de Análisis de Inversión
 
-Sistema jerárquico de agentes para investigación y análisis de temas de inversión.
+Sistema de chat con agentes especializados para análisis de inversión. No es código, es conversación.
+
+## Cómo Funciona
+
+Simplemente **habla con el equipo**. Cursor ya sabe quién es cada uno gracias a las reglas en `.cursor/rules/`.
+
+```
+Tú: "Analiza NVIDIA"
+Marco: Coordino el análisis, lanzo a Nora y Alex...
+
+Tú: "Nora, ¿qué hay de nuevo en semiconductores?"
+Nora: Busco las últimas noticias...
+
+Tú: "Alex, ¿está cara Apple?"
+Alex: Analizo la valoración...
+```
 
 ## El Equipo
 
