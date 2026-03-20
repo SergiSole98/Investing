@@ -1,114 +1,78 @@
 # Sistema de Análisis de Inversión
 
-Sistema de chat con agentes especializados para análisis de inversión. No es código, es conversación.
+Sistema de chat con subagentes reales para análisis de inversión de corto plazo (max 7 días).
 
 ## Cómo Funciona
 
-Simplemente **habla con el equipo**. Cursor ya sabe quién es cada uno gracias a las reglas en `.cursor/rules/`.
+Habla con el equipo. Cursor lanza subagentes reales que trabajan en paralelo.
 
 ```
 Tú: "Analiza NVIDIA"
-Marco: Coordino el análisis, lanzo a Nora y Alex...
 
-Tú: "Nora, ¿qué hay de nuevo en semiconductores?"
-Nora: Busco las últimas noticias...
-
-Tú: "Alex, ¿está cara Apple?"
-Alex: Analizo la valoración...
+Marco (orquestador) lanza:
+  ├── Nora (subagente) → busca noticias      ─┐ EN PARALELO
+  └── Alex (subagente) → playbook 11 pasos   ─┘
+                                │
+                    Leo (subagente) → simplifica
+                                │
+                    Documento final con GO / NO GO / WAIT
 ```
 
 ## El Equipo
 
-| Nombre | Puesto | Especialidad | Cómo hablarle |
-|--------|--------|--------------|---------------|
-| **Marco** | Orquestador | Coordina todo el flujo | "Marco, analiza X" |
-| **Nora** | Analista de Noticias | Información reciente, señales | "Nora, ¿qué hay de nuevo en X?" |
-| **Alex** | Director de Análisis | Análisis completo (fundamental + riesgo + técnico) | "Alex, analiza X a fondo" |
-| **Leo** | Redactor Ejecutivo | Simplificar, comunicar | "Leo, hazme un resumen ejecutivo" |
+| Nombre | Puesto | Tipo | Cómo hablarle |
+|--------|--------|------|---------------|
+| **Marco** | Orquestador | Agente principal | "Marco, analiza X" / "Analiza X" |
+| **Nora** | Analista de Noticias | Subagente | "Nora, ¿qué hay de nuevo en X?" |
+| **Alex** | Director de Análisis | Subagente | "Alex, analiza X" / "Alex, ¿entro en X?" |
+| **Leo** | Redactor Ejecutivo | Subagente | "Leo, resúmeme X" / "Leo, simplifícame esto" |
 
-> **Tip**: Puedes hablar directamente con cualquier empleado por su nombre, o pedirle a Marco que coordine un análisis completo.
+## Diferencia vs Antes
 
-## Arquitectura
+| Antes | Ahora |
+|-------|-------|
+| Yo hacía todo secuencialmente | Nora y Alex trabajan en paralelo (subagentes reales) |
+| Un solo contexto para todo | Cada subagente tiene su propio contexto limpio |
+| Leo era una "personalidad" | Leo es un subagente real que recibe inputs consolidados |
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                       MARCO                                 │
-│                   (Orquestador)                             │
-└─────────────────────┬───────────────────────────────────────┘
-                      │
-        ┌─────────────┴─────────────┐
-        │                           │
-        ▼                           ▼
-   ┌─────────┐                ┌─────────┐
-   │  NORA   │                │  ALEX   │
-   │(Noticias)│                │(Análisis)│
-   └─────────┘                └─────────┘
-        │                           │
-        └─────────────┬─────────────┘
-                      │
-                      ▼
-              ┌───────────────┐
-              │     LEO       │
-              │  (Redactor)   │
-              └───────────────┘
-```
+## Modos de Uso
 
-## Flujo de Ejecución
-
-1. **Entrada**: Usuario proporciona un tema (ej: "semiconductores", "energía solar")
-2. **Marco** crea carpeta del tema si no existe
-3. **Ejecución paralela**:
-   - **Nora**: busca noticias e información reciente
-   - **Alex**: hace análisis completo (fundamental + riesgo + técnico)
-4. **Consolidación**: Marco integra resultados
-5. **Redacción**: Leo transforma todo en documento ejecutivo
-6. **Persistencia**: Guarda resultados en estructura `.md`
+| Dices | Qué pasa |
+|-------|----------|
+| "Analiza X" | Marco lanza Nora + Alex en paralelo, luego Leo |
+| "Nora, busca noticias de X" | Solo Nora trabaja |
+| "Alex, ¿entro en X?" | Solo Alex ejecuta playbook |
+| "Leo, resúmeme el último análisis" | Solo Leo simplifica |
 
 ## Estructura de Carpetas
 
 ```
 Investing/
-├── README.md                    # Este archivo
+├── .cursor/rules/
+│   └── investing-system.mdc    # Regla que define a Marco como orquestador
 ├── 00_meta/
-│   ├── agente_general.md        # Marco (orquestador)
-│   ├── agente_noticias.md       # Nora (noticias)
-│   ├── agente_analisis.md       # Alex (análisis completo)
-│   ├── agente_redactor.md       # Leo (redactor)
-│   └── criterios_analisis.md    # Criterios de evaluación
+│   ├── agente_noticias.md      # Prompt de Nora (se pasa al subagente)
+│   ├── agente_analisis.md      # Prompt de Alex (incluye playbook + principios)
+│   ├── agente_redactor.md      # Prompt de Leo
+│   ├── agente_general.md       # Definición de Marco
+│   ├── principios_inversion.md # Los 15 principios
+│   ├── playbook_analisis.md    # Los 11 pasos detallados
+│   └── pipeline.md             # Flujo de trabajo
 ├── 01_temas/
-│   └── {nombre_tema}/
-│       ├── 00_overview.md       # Resumen del tema
-│       ├── 01_noticias/         # Reportes de noticias (Nora)
-│       ├── 02_analisis/         # Análisis completo (Alex)
-│       ├── 03_sintesis/         # Síntesis consolidada
-│       └── 04_fuentes/          # Referencias y fuentes
+│   └── {activo}/
+│       ├── 01_noticias/        # Output de Nora
+│       ├── 02_analisis/        # Output de Alex
+│       └── 03_sintesis/        # Output de Leo
 └── 99_templates/
-    ├── plantilla_noticias.md    # Template de Nora
-    ├── plantilla_analisis.md    # Template de Alex
-    ├── plantilla_sintesis.md    # Template de síntesis
-    └── plantilla_final.md       # Template de Leo
+    ├── plantilla_noticias.md
+    ├── plantilla_onepager.md
+    ├── plantilla_sintesis.md
+    ├── plantilla_final.md
+    └── plantilla_overview.md
 ```
 
-## Uso
+## Output Obligatorio
 
-Para analizar un nuevo tema:
+Todo análisis termina en: **GO / NO GO / WAIT**
 
-```
-Analiza el tema: [NOMBRE_TEMA]
-```
-
-El sistema automáticamente:
-1. Creará la estructura de carpetas
-2. Nora buscará noticias, Alex hará el análisis (en paralelo)
-3. Marco consolidará los resultados
-4. Leo generará el documento final
-
-## Reglas de Ejecución
-
-| Situación | Quién trabaja | Modo |
-|-----------|---------------|------|
-| Tema nuevo | Nora + Alex | Paralelo |
-| Solo noticias | Nora | Individual |
-| Análisis profundo | Alex | Individual |
-| Resumen ejecutivo | Leo | Individual |
-| Análisis completo | Todos | Marco coordina |
+No "depende". No ambigüedades.
