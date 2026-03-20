@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Archivos temporales
+*.tmp
+*.bak
+*~
+
+# Notas personales (si quieres excluirlas)
+# 01_temas/**/notas_privadas.md
