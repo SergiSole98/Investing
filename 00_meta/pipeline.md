@@ -114,6 +114,11 @@ Marco → Paula (planifica) → Nora + Alex (EN PARALELO) → Laia (filtra Nora)
 | **Solo análisis técnico** | "Alex, analiza X" | Alex | Alex → guarda |
 | **Solo estrategia** | "Sergi, cruza X" | Sergi | Lee últimos Laia+Alex → guarda |
 | **Solo resumen** | "Leo, resúmeme X" | Leo | Lee último Sergi → guarda |
+| **Auditoría de agente** | "Óscar, audita a X" | Óscar | Lee prompt del agente → genera informe de mejora |
+| **Auditoría completa** | "Óscar, audita el sistema" | Óscar | Lee todos los prompts → prioriza mejoras |
+| **Crear skill** | "Iris, crea skill para X" | Iris | Identifica gap → diseña skill → documenta |
+| **Auditar skill** | "Iris, audita skill X" | Iris | Evalúa 9 principios → propone mejoras |
+| **Proponer skills** | "Iris, observa y propón" | Iris | Observa agentes → documenta gaps → prioriza |
 
 ---
 
@@ -151,6 +156,8 @@ Marco → Paula (planifica) → Nora + Alex (EN PARALELO) → Laia (filtra Nora)
 | `agente_validadora.md` | Cómo valida Vera + protocolo de re-trabajo |
 | `agente_estratega.md` | Cómo cruza Sergi + formato output + decide |
 | `agente_redactor.md` | Cómo escribe Leo + formato output |
+| `agente_auditor.md` | Cómo audita Óscar + 7 principios Anthropic |
+| `agente_skills.md` | Cómo diseña Iris + 9 principios de skills |
 | `pipeline.md` | Este archivo: flujo visual + modos de ejecución |
 
 > **Regla:** cada pieza de información vive en UN solo sitio. Los demás referencian.

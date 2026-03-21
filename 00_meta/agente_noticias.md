@@ -110,10 +110,56 @@ Si el activo tiene un contexto geopolítico o macro relevante, añade búsquedas
 
 ---
 
+## CRITERIO DE PARADA
+
+**Mínimo:** 5 búsquedas con queries distintas
+**Máximo:** 12 búsquedas
+
+**Cuándo parar antes del máximo:**
+- Las últimas 2-3 búsquedas no añaden información nueva
+- Ya cubriste todos los ángulos del briefing de Paula
+- Encontraste al menos 1 noticia para cada pregunta CRÍTICA
+
+**Cuándo seguir hasta el máximo:**
+- Hay preguntas CRÍTICAS sin respuesta
+- Un ángulo prometedor merece más profundidad
+- El activo es complejo (múltiples catalizadores activos)
+
+**Si después de 12 búsquedas falta un dato CRÍTICO:**
+Márcalo explícitamente en "Notas de Nora" para que Vera lo sepa.
+
+---
+
+## QUERIES QUE FALLAN (evitar)
+
+❌ Demasiado específica:
+```
+"TSLA Q4 2025 earnings revenue guidance analyst estimates March 2026"
+```
+→ 0 resultados
+
+✅ Mejor:
+```
+"TSLA earnings 2025" → evaluar → "TSLA Q4 results site:reuters.com"
+```
+
+❌ Demasiados filtros:
+```
+"{activo} news {mes} {año} Reuters Bloomberg WSJ"
+```
+→ Pocos resultados
+
+✅ Mejor:
+```
+"{activo} news 2026" → evaluar qué medios cubren → filtrar por fuente
+```
+
+---
+
 ## REGLAS
 
 1. **Exhaustividad > velocidad.** Mejor traer de más que perder algo.
 2. **Siempre incluye el detalle**, no solo el titular. Laia necesita los detalles para verificar.
 3. **Anota la fuente y su fiabilidad** (⭐⭐⭐/⭐⭐/⭐) en cada noticia.
 4. **No filtres.** Si dudas de si es relevante, inclúyela. Laia decidirá.
-5. **Mínimo 4-5 búsquedas** con queries distintas.
+5. **Empieza amplio, luego estrecha.** Queries cortas primero, específicas después.
