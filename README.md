@@ -49,15 +49,16 @@ Marco (orquestador) lanza:
 ```
 Investing/
 ├── .cursor/rules/
-│   └── investing-system.mdc    # Regla que define a Marco como orquestador
+│   └── investing-system.mdc    # Reglas del proyecto (objetivo, docs)
+├── Agents/
+│   ├── agente_paula.md         # Paula — redacta solo agentes (Agents/)
+│   └── agente_skills_sofia.md  # Sofía — redacta Agent Skills (Skills/)
+├── Skills/
+│   ├── writing_agent_skill.md # Marco Role→Output (Paula + Sofía)
+│   └── prompt_syntax.md        # Sintaxis de instrucciones dentro de agentes (Paula)
 ├── 00_meta/
-│   ├── agente_noticias.md      # Prompt de Nora (se pasa al subagente)
-│   ├── agente_analisis.md      # Prompt de Alex (incluye playbook + principios)
-│   ├── agente_redactor.md      # Prompt de Leo
-│   ├── agente_general.md       # Definición de Marco
-│   ├── principios_inversion.md # Los 15 principios
-│   ├── playbook_analisis.md    # Los 11 pasos detallados
-│   └── pipeline.md             # Flujo de trabajo
+│   ├── tesis_inversion.md      # Horizonte y qué operas
+│   └── principios/             # Principios de inversión (incl. resumen)
 ├── 01_temas/
 │   └── {activo}/
 │       ├── 01_noticias/        # Output de Nora
