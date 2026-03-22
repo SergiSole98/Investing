@@ -1,14 +1,14 @@
-# Sintaxis de prompts
+# Prompt syntax
 
 ## Context
-Convenciones de formato para instrucciones a los LLMs.
+Formatting conventions for writing LLM instructions.
 
 ## Rules
-1. Separar bloques con XML tags: `<role>`, `<context>`, `<rules>`, `<output>`. Nunca mezclar identidad con restricciones.
-2. Una instrucción por línea. Numerar pasos. Nunca dos instrucciones en un párrafo.
-3. **Negrita** y MAYÚSCULAS solo para 2-3 reglas críticas.
-4. Primero instrucciones, luego restricciones. El objetivo antes que los límites.
-5. Silencio explícito: `Do NOT...` / `NEVER...` / `Respond ONLY with...` para lo que no quieres en el output.
-6. Máxima concisión. Si cabe en 5 palabras, no usar 15.
-7. Usa prosa clara en lugar de notación simbólica: los símbolos son ambiguos y el modelo los interpreta en lugar de ejecutarlos.
-8. Usa palabras de significado inequívoco; descarta las que admitan más de una interpretación.
+1. Use markdown headers (`##`) to separate sections. Never mix content between sections.
+2. One instruction per line. Number steps. Never two instructions on the same line.
+3. **Bold** only for 2-3 critical rules. Avoid CAPS.
+4. Instructions first, then constraints. Objective before limits.
+5. Use `Do NOT` / `NEVER` / `Respond ONLY with` for explicit exclusions.
+6. Maximum conciseness: if it fits in 5 words, do not use 15.
+7. Use clear prose instead of symbolic notation: symbols are ambiguous and the model interprets them rather than executing them.
+8. Use words with unambiguous meaning; discard those that admit more than one interpretation.

@@ -1,45 +1,44 @@
-# Writing agent skill
-
 ## Context
 
-Estructura fija para documentos de agente. Un archivo = un agente. Cada sección tiene un propósito; no mezclar contenidos entre secciones.
+Fixed structure for agent documents. One file = one agent. Each section has a specific purpose; do not mix content across sections.
 
 ## Rules
 
-### Role — qué es y qué no
+### Role — what it is and what it is not
 
-1. **Definición:** Quién es el agente, qué produce y qué queda **fuera** de su mandato (en una frase o párrafo corto).
-2. **Incluye:** Nombre del agente, verbo de responsabilidad (**redactas**, **analizas**, **filtras**…), alcance de archivos/carpetas si aplica.
-3. **Prohibido en Role:** listas de pasos (eso es Task), políticas largas (Rules), plantillas de salida (Output), rutas a skills salvo que definan identidad en una línea.
-4. **Test:** Si suena a “cómo hacerlo paso a paso” o “nunca hagas X”, no es Role.
+1. **Definition:** Who the agent is, what it produces, and what is **outside** its mandate (in one sentence or a short paragraph).
+2. **Include:** Agent name, responsibility verb (**you draft**, **you analyze**, **you filter**...), and file/folder scope if needed.
+3. **Forbidden in Role:** step lists (that is Task), long policies (Rules), output templates (Output), and skill paths unless they define identity in one line.
+4. **Test:** If it sounds like "how to do it step by step" or "never do X," it is not Role.
 
-### Task — qué es y qué no
+### Task — what it is and what it is not
 
-5. **Definición:** Secuencia **1 → 2 → 3** de lo que el agente hace en un encargo típico. Solo **verbos** y orden claro.
-6. **Incluye:** Máximo **3–7** pasos. Cada paso = una acción ejecutable.
-7. **Prohibido en Task:** condicionales largos (“si… entonces…” extensos), “no hagas / siempre” repetidos, reglas de estilo — eso va en **Rules**.
-8. **Test:** “¿Es un paso que siempre ocurre en el flujo?” Sí → Task. “¿Es una excepción o límite?” → Rules.
+5. **Definition:** Sequence **1 -> 2 -> 3** of what the agent does in a typical request. Only **verbs** and clear order.
+6. **Include:** Maximum **3-7** steps. Each step = one executable action.
+7. **Forbidden in Task:** long conditionals ("if... then..." in extended form), repeated "do not / always," style rules - those belong in **Rules**.
+8. **Test:** "Is this a step that always happens in the flow?" Yes -> Task. "Is it an exception or limit?" -> Rules.
 
-### Context — qué es y qué no
+### Context — what it is and what it is not
 
-9. **Definición:** **Dónde** opera el agente (meta vs dominio), **qué** asume el usuario ya sabe, **qué** no va a hacer aunque se pida en la misma conversación si es otro entregable.
-10. **Incluye:** Bullets o párrafos cortos: meta-agente vs agente de dominio, “un archivo = un X”, cómo tratar requests mixtas.
-11. **Prohibido en Context:** órdenes imperativas que deban cumplirse siempre como política (muévelas a **Rules**). Si el texto dice “haz / no hagas” como norma, no es Context.
-12. **Test:** “¿Esto describe el terreno de juego?” Sí → Context. “¿Esto castiga o exige conducta?” → Rules.
+9. **Definition:** **Where** the agent operates (meta vs domain), **what** the user is assumed to already know, and **what** it will not do even if requested in the same conversation when it is a different deliverable.
+10. **Include:** Bullets or short paragraphs: meta-agent vs domain agent, "one file = one X," and how to handle mixed requests.
+11. **Forbidden in Context:** imperative commands that must always be followed as policy (move those to **Rules**). If the text says "do / do not do" as a norm, it is not Context.
+12. **Test:** "Does this describe the playing field?" Yes -> Context. "Does this enforce or punish behavior?" -> Rules.
 
-### Rules — qué es y qué no
+### Rules — what it is and what it is not
 
-13. **Definición:** Límites, bloqueos, políticas, condicionales, citas a otras guías (“aplica X”).
-14. **Formato:** **Numerar** cada regla (`1.`, `2.`, `3.`…). **Una instrucción por línea** (o una idea por ítem); no párrafos con varias órdenes mezcladas.
-15. **Incluye:** “sin datos no entregas Output”, alcance estricto, fuente de verdad, cuándo preguntar vs actuar.
-16. **Prohibido en Rules:** repetir palabra por palabra lo ya dicho en Reference; basta “aplica [ruta o nombre]”.
-17. **Test:** Cada regla debe evitar **un** fallo concreto; si no, elimínala.
-18. **Supuestos:** solo válidos para detalles menores de formato/estilo que no alteran comportamiento. Si afecta lógica o alcance → preguntar, no asumir. No incluir sección "Supuestos" en Output.
-19. **Fuente de verdad:** solo la request original y las aclaraciones del usuario en la conversación.
+13. **Definition:** Limits, blocking conditions, policies, conditionals, and references to other guides ("apply X").
+14. **Format:** **Number** each rule (`1.`, `2.`, `3.`...). **One instruction per line** (or one idea per item); no paragraphs with mixed commands.
+15. **Include:** "without data, do not deliver Output," strict scope, source of truth, and when to ask vs act.
+16. **Forbidden in Rules:** repeating word-for-word what is already in Reference; "apply [path or name]" is enough.
+17. **Test:** Each rule must prevent **one** concrete failure; otherwise delete it.
+18. **Assumptions:** valid only for minor format/style details that do not alter behavior. If it affects logic or scope -> ask, do not assume.
+19. **Source of truth:** only the original request and the user's clarifications in the conversation.
 
-### Resto de secciones
+### Remaining sections
 
-20. **Reference:** Rutas a documentación o guías que el agente debe leer. Solo las que el usuario pida explícitamente o que sean imprescindibles para el rol.
-21. **Output:** Formato exacto de la entrega. Plantillas, headers obligatorios, restricciones de verbosidad.
-22. **Orden de redacción:** Primero objetivo (Role, Task, Context) → luego límites (Rules) → luego dependencias (Reference) → luego formato (Output).
-23. **Sin cruces entre agentes:** Un agente no menciona a otro agente (nombres, personalidades ni rutas a otros ficheros en `Agents/`). El alcance se define solo con su propio rol y límites.
+20. **Reference:** Paths to documentation or guides the agent must read. Include only what the user explicitly requests or what is essential for the role.
+21. **Output:** Exact delivery format. Templates, required headers, verbosity constraints. Do not include an "Assumptions" section in Output.
+22. **Drafting order:** First objective (Role, Task, Context) -> then limits (Rules) -> then dependencies (Reference) -> then format (Output).
+23. Do not reference other agents inside Role, Task, Context, or Rules. 
+    Cross-agent references belong only in **Reference**.
