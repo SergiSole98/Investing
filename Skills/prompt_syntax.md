@@ -12,3 +12,4 @@ Formatting conventions for writing LLM instructions.
 6. Maximum conciseness: if it fits in 5 words, do not use 15.
 7. Use clear prose instead of symbolic notation: symbols are ambiguous and the model interprets them rather than executing them.
 8. Use words with unambiguous meaning; discard those that admit more than one interpretation.
+7. The documents generated must be in English.

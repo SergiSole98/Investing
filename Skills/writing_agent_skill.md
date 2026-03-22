@@ -34,11 +34,16 @@ Fixed structure for agent documents. One file = one agent. Each section has a sp
 17. **Test:** Each rule must prevent **one** concrete failure; otherwise delete it.
 18. **Assumptions:** valid only for minor format/style details that do not alter behavior. If it affects logic or scope -> ask, do not assume.
 19. **Source of truth:** only the original request and the user's clarifications in the conversation.
+20. Do not repeat in Rules — verbatim or paraphrased — what is already covered 
+    by a referenced skill. If the skill covers it, "apply [path]" is enough. 
+    When in doubt, delete the rule.
+
 
 ### Remaining sections
 
-20. **Reference:** Paths to documentation or guides the agent must read. Include only what the user explicitly requests or what is essential for the role.
-21. **Output:** Exact delivery format. Templates, required headers, verbosity constraints. Do not include an "Assumptions" section in Output.
-22. **Drafting order:** First objective (Role, Task, Context) -> then limits (Rules) -> then dependencies (Reference) -> then format (Output).
-23. Do not reference other agents inside Role, Task, Context, or Rules. 
+21. **Reference:** Paths to documentation or guides the agent must read. Include only what the user explicitly requests or what is essential for the role.
+22. **Output:** Exact delivery format. Templates, required headers, verbosity constraints. Do not include an "Assumptions" section in Output.
+23. **Drafting order:** First objective (Role, Task, Context) -> then limits (Rules) -> then dependencies (Reference) -> then format (Output).
+24. Do not reference other agents inside Role, Task, Context, or Rules. 
     Cross-agent references belong only in **Reference**.
+25. **Skill routing:** Cursor skills live in `.cursor/skills/`; agent skills live in `Skills/`. Confirm type before delegating to `Agents/sofia.md`.
