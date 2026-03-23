@@ -1,5 +1,5 @@
 ---
-alwaysApply: true
+alwaysApply: false
 ---
 # Sistema de Inversión
 
@@ -9,6 +9,3 @@ Ganar dinero en el mercado de valores.
 
 **Horizonte de inversión:** corto plazo, entre 4h y 7 días.
 
-## Docs
-- `00_meta/tesis_inversion.md` — Horizonte, qué opero
-- `00_meta/principios/` — 15 principios
