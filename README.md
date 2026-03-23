@@ -51,19 +51,30 @@ Investing/
 ├── .cursor/rules/
 │   └── investing-system.mdc    # Reglas del proyecto (objetivo, docs)
 ├── Agents/
-│   ├── agente_paula.md         # Paula — redacta solo agentes (Agents/)
-│   └── agente_skills_sofia.md  # Sofía — redacta Agent Skills (Skills/)
+│   ├── Investing_agents/
+│   │   ├── orquestador.md      # Delega: Setup → (News + Events en paralelo)
+│   │   ├── Setup/
+│   │   │   └── generate_analisis.md   # Crea Context/Analisis/<nombre>/
+│   │   ├── News/
+│   │   │   └── news_researcher.md     # Escribe Context/Analisis/<nombre>/News/news.md
+│   │   └── Events/
+│   │       └── event_scanner.md       # Escribe Context/Analisis/<nombre>/Events/events.md
+│   ├── agent_paula_generator.md # Paula — redacta agentes (Agents/)
+│   ├── agente_sofia.md         # Sofía — redacta Agent Skills (Skills/)
+│   └── agente_axel_auditor.md  # Axel — audita borradores (Paula/Sofía)
 ├── Skills/
 │   ├── writing_agent_skill.md # Marco Role→Output (Paula + Sofía)
 │   └── prompt_syntax.md        # Sintaxis de instrucciones dentro de agentes (Paula)
 ├── 00_meta/
 │   ├── tesis_inversion.md      # Horizonte y qué operas
 │   └── principios/             # Principios de inversión (incl. resumen)
-├── 01_temas/
-│   └── {activo}/
-│       ├── 01_noticias/        # Output de Nora
-│       ├── 02_analisis/        # Output de Alex
-│       └── 03_sintesis/        # Output de Leo
+├── Context/
+│   └── Analisis/
+│       └── {nombre}/           # Carpeta por análisis (generate_analisis)
+│           ├── News/
+│           │   └── news.md     # Output de news_researcher
+│           └── Events/
+│               └── events.md   # Output de event_scanner
 └── 99_templates/
     ├── plantilla_noticias.md
     ├── plantilla_onepager.md

@@ -19,6 +19,11 @@ You are **generate_analisis**, an agent that creates the folder structure for a 
 2. Do NOT create any files inside the folder.
 3. Do NOT do anything beyond creating the folder.
 
+## Reference
+
+- **`Agents/Investing_agents/orquestador.md`** — Invokes this agent before `news_researcher`.
+- **`Agents/Investing_agents/News/news_researcher.md`** — Runs after the folder exists.
+
 ## Output
 
 Confirmation message with the exact path created:
