@@ -41,7 +41,7 @@ You are **impact_analyzer**, an agent that crosses the current market context co
 - **`Agents/Investing_agents/Narrative/context_conclusion.md`** — Produces the context conclusion this agent reads.
 - **`Agents/Investing_agents/SmartMoney/interests_identifier.md`** — Produces `interests.md`.
 - **`Agents/Investing_agents/SmartMoney/positions_identifier.md`** — Produces `positions.md`.
-- **`Agents/Investing_agents/orquestador.md`** — Invokes this agent after Agent 8 completes.
+- **`Agents/Investing_agents/orquestador.md`** — Invokes this agent as Agent 9, after Agent 8 completes.
 - **`Agents/Investing_agents/Decision/entry_decision.md`** — Consumes this agent's output.
 
 ## Output

@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Brent] Investment One-Pager</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 16px;
+    }
+
+    h1.page-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #e6edf3;
+      margin-bottom: 4px;
+    }
+    .page-meta {
+      color: #8b949e;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 769px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .full-width {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e6edf3;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 8px;
+    }
+
+    /* VERDICT BADGE */
+    .verdict-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #00c853;
+      color: #000;
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      border-radius: 8px;
+      padding: 16px 32px;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+
+    /* TABLES */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    th {
+      background: #0d1117;
+      color: #8b949e;
+      font-weight: 600;
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid #30363d;
+    }
+    td {
+      padding: 7px 10px;
+      border-bottom: 1px solid #21262d;
+      vertical-align: top;
+    }
+    tbody tr:nth-child(even) td {
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* PRECIO ACTUAL row */
+    .precio-actual td {
+      font-weight: 700;
+      color: #58a6ff;
+      font-size: 1rem;
+    }
+
+    /* ALTO catalyst rows */
+    .cataliz-alto td {
+      background: rgba(255,214,0,0.12) !important;
+      font-weight: 700;
+    }
+
+    /* TESIS callout boxes */
+    .tesis-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .tesis-item {
+      background: rgba(0,200,83,0.07);
+      border-left: 4px solid #00c853;
+      border-radius: 4px;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      color: #e6edf3;
+    }
+
+    /* RIESGOS warning cards */
+    .riesgo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .riesgo-item {
+      background: rgba(213,0,0,0.08);
+      border-left: 4px solid #d50000;
+      border-radius: 4px;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      color: #e6edf3;
+    }
+
+    /* EJECUCIÓN trade box */
+    .trade-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 500px) {
+      .trade-box { grid-template-columns: 1fr; }
+    }
+    .trade-field {
+      border-radius: 6px;
+      padding: 10px 14px;
+      background: #0d1117;
+      border: 1px solid #30363d;
+    }
+    .trade-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #8b949e;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+    .trade-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .trade-value.entry { color: #58a6ff; }
+    .trade-value.stop  { color: #d50000; }
+    .trade-value.tp    { color: #00c853; }
+    .trade-value.neutral { color: #e6edf3; }
+    .trade-full {
+      grid-column: 1 / -1;
+    }
+
+    /* TRIGGER checks */
+    .check-si td.result-cell { color: #00c853; font-weight: 700; }
+    .check-no td.result-cell { color: #d50000; font-weight: 700; }
+
+    .decision-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    .decision-go  { background: #00c853; color: #000; }
+    .decision-wait { background: #ffd600; color: #000; }
+    .decision-nogo { background: #d50000; color: #fff; }
+
+    /* HECHOS BASE */
+    .hechos-verified {
+      border-left: 4px solid #00c853;
+      background: rgba(0,200,83,0.05);
+      border-radius: 4px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+    .hechos-unverified {
+      border-left: 4px solid #ffd600;
+      background: rgba(255,214,0,0.05);
+      border-radius: 4px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+    .hechos-sub-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .hechos-sub-title.verified { color: #00c853; }
+    .hechos-sub-title.unverified { color: #ffd600; }
+    .hechos-item {
+      font-size: 0.82rem;
+      color: #e6edf3;
+      margin-bottom: 6px;
+      padding-left: 4px;
+    }
+
+    /* ESCENARIO blockquote */
+    .escenario-quote {
+      border-left: 4px solid #58a6ff;
+      background: rgba(88,166,255,0.07);
+      border-radius: 4px;
+      padding: 12px 14px;
+      font-size: 0.87rem;
+      color: #e6edf3;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    /* POSICIONAMIENTO */
+    .direccion-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-top: 10px;
+    }
+    .dir-largo  { background: #00c853; color: #000; }
+    .dir-corto  { background: #d50000; color: #fff; }
+    .dir-neutral { background: #8b949e; color: #000; }
+
+    /* DETAILS rationale */
+    details {
+      margin-top: 12px;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      padding: 8px 12px;
+      background: #0d1117;
+      color: #58a6ff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      user-select: none;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::marker { display: none; }
+    .rationale-body {
+      padding: 12px;
+      background: #161b22;
+    }
+    .rationale-item {
+      font-size: 0.83rem;
+      color: #e6edf3;
+      padding: 5px 0 5px 12px;
+      border-left: 2px solid #30363d;
+      margin-bottom: 6px;
+    }
+
+    /* IMPACT ANALYSIS section */
+    .impact-section {
+      margin-top: 24px;
+    }
+    .impact-section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #e6edf3;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #30363d;
+    }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 769px) {
+      .impact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .impact-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .impact-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .impact-entity-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #e6edf3;
+    }
+    .impact-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .impact-favored  { background: #00c853; color: #000; }
+    .impact-neutral  { background: #8b949e; color: #000; }
+    .impact-opposed  { background: #d50000; color: #fff; }
+    .impact-assessment {
+      font-size: 0.82rem;
+      color: #c9d1d9;
+      line-height: 1.5;
+    }
+    .smart-money-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-left: 4px solid #58a6ff;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    .smart-money-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #58a6ff;
+      margin-bottom: 8px;
+    }
+    .smart-money-text {
+      font-size: 0.85rem;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    /* muted text */
+    .muted { color: #8b949e; }
+
+    .tipo-trigger {
+      font-size: 0.85rem;
+      color: #8b949e;
+      margin-top: 8px;
+    }
+    .tipo-trigger strong { color: #e6edf3; }
+  </style>
+</head>
+<body>
+
+  <h1 class="page-title">INVESTMENT ONE-PAGER</h1>
+  <p class="page-meta"><strong>ACTIVO:</strong> BRN (ICE Brent Crude) &nbsp;|&nbsp; <strong>MERCADO:</strong> COMMODITIES (ICE/NYMEX) &nbsp;|&nbsp; <strong>FECHA:</strong> 2026-03-26</p>
+
+  <div class="grid">
+
+    <!-- ===== RECOMENDACIÓN ===== -->
+    <div class="card full-width">
+      <h2>🎯 RECOMENDACIÓN</h2>
+      <div class="verdict-badge">BUY</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Rating</th>
+            <th>Precio Actual</th>
+            <th>Target</th>
+            <th>Potencial</th>
+            <th>Horizonte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>BUY</strong></td>
+            <td>$105.85</td>
+            <td>$115.00</td>
+            <td>+8.6%</td>
+            <td>48–72h</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <details>
+        <summary>Ver razonamiento completo ▸</summary>
+        <div class="rationale-body">
+          <div class="rationale-item">Dominant bullish bias is clearly supported by aggregate smart money: swap dealers hold an extremely skewed net long (net +53,663 contracts as of March 10), and producer-aligned entities (OPEC+, Aramco, PIF) are all rated Favored, collectively amplifying the bullish context.</div>
+          <div class="rationale-item">Six of nine entities are rated Favored (OPEC+, Saudi Aramco, Goldman Sachs, Trafigura, Swap Dealers, PIF), with only J.P. Morgan Opposed and two entities Neutral — a majority alignment with the current bullish bias.</div>
+          <div class="rationale-item">The primary risk — a March 28 ceasefire triggering a $10–15/bbl unwind — is a binary tail event rather than the central case; even the most exposed Favored entities (Aramco, PIF) retain fiscal headroom near breakeven on a partial unwind.</div>
+          <div class="rationale-item">Goldman Sachs' active amplification of the supply-shock narrative and $110/bbl near-term target provides directional reinforcement; its upside scenario ($135/bbl on escalation) skews the risk/reward asymmetry further in favor of the bullish context within the valid window.</div>
+          <div class="rationale-item">J.P. Morgan's opposing bearish thesis would only be validated by the exact ceasefire/reopening scenario that defines the known risk event, meaning the structural counterweight is conditional rather than present — it does not currently undermine the dominant bias.</div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ===== TESIS ===== -->
+    <div class="card">
+      <h2>💡 TESIS</h2>
+      <div class="tesis-list">
+        <div class="tesis-item">El shock de oferta derivado del cierre virtual del Estrecho de Hormuz (~20 mb/d interrumpidos), la fuerza mayor iraquí y los ataques a refinerías kuwaitíes ha creado el mayor déficit físico en años, con una prima geopolítica de $15–20/bbl firmemente integrada en el precio actual.</div>
+        <div class="tesis-item">El posicionamiento institucional es abrumadoramente alcista: swap dealers con net long de +53.663 contratos (~53,7 mb) y managed money con net long de ~+285.594 contratos (~285,6 mb) en ICE Brent, con Goldman Sachs amplificando activamente la narrativa de disruption hacia un objetivo de $110–$115/bbl a corto plazo.</div>
+        <div class="tesis-item">El plazo límite del 28 de marzo (ultimátum Trump–Irán) es el catalizador binario clave: el consenso no espera un acuerdo formal, lo que mantiene la prima de riesgo vigente durante la ventana válida de 48–72h; el escenario de ruptura diplomática añadiría una nueva capa de prima sobre la perturbación existente.</div>
+      </div>
+    </div>
+
+    <!-- ===== RIESGOS ===== -->
+    <div class="card">
+      <h2>⚠️ RIESGOS</h2>
+      <div class="riesgo-list">
+        <div class="riesgo-item">Un acuerdo de ceasefire o framework creíble de reapertura del Estrecho antes o durante el 28 de marzo podría desencadenar un unwind de $10–15/bbl de prima geopolítica en pocas horas, invalidando la tesis alcista dentro de la ventana válida (referencia: -11% intradiario el 23 de marzo).</div>
+        <div class="riesgo-item">La acumulación de cinco builds consecutivos de inventarios EIA (+6.926 mb la última semana) más el récord de Cushing sugieren que la destrucción de demanda y el suministro alternativo están comenzando a compensar el déficit de Hormuz, lo que limita el techo de precio sostenible a $110–$115/bbl.</div>
+        <div class="riesgo-item">Una segunda liberación de reservas del IEA o la renovación de la exención de sanciones del Tesoro de EE.UU. (vence el 19 de abril) podría añadir ~140 mb de oferta adicional al mercado, comprimiendo la prima de escasez antes de que se cierre el horizonte de 48–72h.</div>
+      </div>
+    </div>
+
+    <!-- ===== CATALIZADORES ===== -->
+    <div class="card">
+      <h2>📅 CATALIZADORES PRÓXIMOS</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Evento</th>
+            <th>Impacto esperado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cataliz-alto">
+            <td>28/03</td>
+            <td>Trump–Irán ultimátum hard deadline (fin del pausa de 5 días)</td>
+            <td>ALTO</td>
+          </tr>
+          <tr>
+            <td>27/03</td>
+            <td>PCE core febrero 2026 (consenso ~3.0–3.1% YoY)</td>
+            <td>MEDIO</td>
+          </tr>
+          <tr>
+            <td>31/03</td>
+            <td>Expiración front-month ICE Brent May 2026</td>
+            <td>MEDIO</td>
+          </tr>
+          <tr>
+            <td>01/04</td>
+            <td>ISM Manufacturing PMI marzo 2026 (prior 49.8)</td>
+            <td>MEDIO</td>
+          </tr>
+          <tr class="cataliz-alto">
+            <td>05/04</td>
+            <td>Reunión ministerial OPEC+ (decisión sobre aumento +206 kb/d)</td>
+            <td>ALTO</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== EJECUCIÓN ===== -->
+    <div class="card">
+      <h2>✅ EJECUCIÓN</h2>
+      <div class="trade-box">
+        <div class="trade-field trade-full">
+          <div class="trade-label">Acción</div>
+          <div class="trade-value neutral">COMPRAR</div>
+        </div>
+        <div class="trade-field trade-full">
+          <div class="trade-label">Ticker (Broker)</div>
+          <div class="trade-value neutral" style="font-size:0.95rem;">BRN (ICE) / CL (NYMEX proxy) / ETF: USO / OILB</div>
+        </div>
+        <div class="trade-field">
+          <div class="trade-label">Entry</div>
+          <div class="trade-value entry">$105.85</div>
+        </div>
+        <div class="trade-field">
+          <div class="trade-label">Stop Loss</div>
+          <div class="trade-value stop">$99.50 <span style="font-size:0.8rem;font-weight:400;">(-6.0%)</span></div>
+        </div>
+        <div class="trade-field trade-full">
+          <div class="trade-label">Take Profit</div>
+          <div class="trade-value tp">$115.00 <span style="font-size:0.8rem;font-weight:400;">(+8.6%)</span></div>
+        </div>
+        <div class="trade-field trade-full">
+          <div class="trade-label">Sizing</div>
+          <div class="trade-value neutral">N/D</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== NIVELES CLAVE ===== -->
+    <div class="card">
+      <h2>📊 NIVELES CLAVE</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Nivel</th>
+            <th>Toques</th>
+            <th>Distancia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Resistencia 2</td>
+            <td>$115.00</td>
+            <td>N/D</td>
+            <td>+8.6%</td>
+          </tr>
+          <tr>
+            <td>Resistencia 1</td>
+            <td>$112.19</td>
+            <td>N/D</td>
+            <td>+6.0%</td>
+          </tr>
+          <tr class="precio-actual">
+            <td><strong>PRECIO ACTUAL</strong></td>
+            <td><strong>$105.85</strong></td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Soporte 1</td>
+            <td>$99.94</td>
+            <td>N/D</td>
+            <td>-5.6%</td>
+          </tr>
+          <tr>
+            <td>Soporte 2</td>
+            <td>$85.00</td>
+            <td>N/D</td>
+            <td>-19.7%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== INDICADORES ===== -->
+    <div class="card">
+      <h2>📈 INDICADORES</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Indicador</th>
+            <th>Valor</th>
+            <th>Señal</th>
+            <th>Fiabilidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sentimiento (F&amp;G)</td>
+            <td>N/D</td>
+            <td>N/D</td>
+            <td>⭐⭐</td>
+          </tr>
+          <tr>
+            <td>Curva futuros</td>
+            <td>Backwardation</td>
+            <td>Alcista (escasez de físico)</td>
+            <td>⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td>Put/Call Ratio</td>
+            <td>N/D</td>
+            <td>N/D</td>
+            <td>⭐⭐</td>
+          </tr>
+          <tr>
+            <td>VIX</td>
+            <td>N/D</td>
+            <td>N/D</td>
+            <td>⭐⭐</td>
+          </tr>
+          <tr>
+            <td>Pre-market</td>
+            <td>+$6.10 vs. cierre anterior</td>
+            <td>Confirma</td>
+            <td>⭐</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== ACTORES E INCENTIVOS ===== -->
+    <div class="card full-width">
+      <h2>🎭 ACTORES E INCENTIVOS</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Actor</th>
+            <th>Qué gana</th>
+            <th>Qué pierde</th>
+            <th>Límite temporal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OPEC+ (Arabia Saudí / Rusia)</td>
+            <td>Ingresos fiscales por encima del breakeven ($85–95/bbl); poder de negociación reforzado antes de la reunión de abril</td>
+            <td>Cuota de mercado si precios altos destruyen demanda</td>
+            <td>5 de abril 2026 (reunión ministerial)</td>
+          </tr>
+          <tr>
+            <td>Goldman Sachs (Mesa commodities)</td>
+            <td>P&amp;L en posición net long inferida; reputación de forecast si Brent alcanza $110–$115</td>
+            <td>Pérdidas en caso de ceasefire que derrumbe $10–15/bbl el precio</td>
+            <td>Continuo (horizonte Q1–Q2 2026)</td>
+          </tr>
+          <tr>
+            <td>Swap Dealers (ICE/NYMEX)</td>
+            <td>Mark-to-market de net long +53.663 contratos si el precio sube o se mantiene</td>
+            <td>Pérdidas significativas en caso de unwind brusco ($10–15/bbl desplome)</td>
+            <td>Próximo reporte CFTC COT (datos 17 y 24 de marzo pendientes)</td>
+          </tr>
+          <tr>
+            <td>PIF (Arabia Saudí)</td>
+            <td>Dividendos de Aramco sostenidos; capacidad de inversión Vision 2030</td>
+            <td>Comprimir dividend outlook si precio cae bajo el breakeven fiscal</td>
+            <td>Anuncio dividendo Aramco Q1 2026 (mayo 2026)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== POSICIONAMIENTO ===== -->
+    <div class="card">
+      <h2>💰 POSICIONAMIENTO DEL DINERO</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Indicador</th>
+            <th>Lectura</th>
+            <th>Interpretación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Flujos institucionales</td>
+            <td>Swap dealers net long +53.663 contratos; managed money net long ~+285.594 contratos (ICE)</td>
+            <td>Entrando (posición masiva acumulada, aunque managed money redujo longs ~9.938 contratos en la semana del 3–10 de marzo)</td>
+          </tr>
+          <tr>
+            <td>Curva de futuros</td>
+            <td>Backwardation (prompt May &gt; deferred)</td>
+            <td>Backwardation — señal de escasez física en el mercado spot</td>
+          </tr>
+          <tr>
+            <td>Put/Call</td>
+            <td>N/D</td>
+            <td>N/D</td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <span class="direccion-badge dir-largo">LARGO</span>
+      </div>
+    </div>
+
+    <!-- ===== ACTIVOS CORRELACIONADOS ===== -->
+    <div class="card">
+      <h2>🔗 ACTIVOS CORRELACIONADOS</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Activo</th>
+            <th>Relación</th>
+            <th>Dirección</th>
+            <th>Señal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OPEC+ producción física</td>
+            <td>Alimenta</td>
+            <td>↑ (recortes voluntarios ~5,86 mb/d)</td>
+            <td>Confirma</td>
+          </tr>
+          <tr>
+            <td>Inventarios EIA (Cushing / US crude)</td>
+            <td>Alimenta</td>
+            <td>↓ (5 builds consecutivos +6,9 mb)</td>
+            <td>Diverge (bearish offset)</td>
+          </tr>
+          <tr>
+            <td>Goldman Sachs price target</td>
+            <td>Depende</td>
+            <td>↑ ($110–$115 base case, $135 tail)</td>
+            <td>Confirma</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== ESCENARIO DESCONTADO ===== -->
+    <div class="card full-width">
+      <h2>🧠 ESCENARIO DESCONTADO</h2>
+      <blockquote class="escenario-quote">
+        El precio actual (~$105.85/bbl) descuenta una prima geopolítica de $15–20/bbl sobre niveles pre-crisis, reflejando la interrupción casi total del tráfico de petroleros por el Estrecho de Hormuz (~20 mb/d), la fuerza mayor iraquí y los ataques en Kuwait, sin una resolución diplomática inminente. El mercado no descuenta una reapertura del Estrecho antes del 28 de marzo, pero sí tiene incorporado el riesgo de un acuerdo parcial dado el -11% intradiario observado el 23 de marzo con la noticia del aplazamiento de ataques.
+      </blockquote>
+      <p class="muted" style="margin-bottom:10px;font-size:0.85rem;font-weight:600;">Escenarios alternativos:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Escenario</th>
+            <th>Probabilidad</th>
+            <th>Impacto en precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ruptura diplomática el 28 de marzo / reanudación de ataques a infraestructura iraní</td>
+            <td>~40% (consenso espera ausencia de acuerdo)</td>
+            <td>+$10% a +$20% (hacia $116–$127/bbl; tail $135/bbl Goldman)</td>
+          </tr>
+          <tr>
+            <td>Ceasefire parcial o framework de reapertura del Estrecho</td>
+            <td>~30%</td>
+            <td>-10% a -15% (hacia $90–$95/bbl; frenado por floor OPEC+ $85–95)</td>
+          </tr>
+          <tr>
+            <td>Status quo: negociaciones continúan sin resolución</td>
+            <td>~30%</td>
+            <td>Rango $100–$110/bbl dentro de la ventana 48–72h</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== TRIGGER DE ENTRADA ===== -->
+    <div class="card">
+      <h2>🎯 TRIGGER DE ENTRADA</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Check</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="check-si">
+            <td>¿Sentimiento claro?</td>
+            <td class="result-cell">SÍ (mayoría alcista: Goldman, OPEC+, swap dealers, managed money; solo JPMorgan opuesto)</td>
+          </tr>
+          <tr class="check-si">
+            <td>¿Precio confirma dirección?</td>
+            <td class="result-cell">SÍ (backwardation + rebote a $105.85 tras rechazo iraní del plan de paz el 24 de marzo)</td>
+          </tr>
+          <tr class="check-si">
+            <td>¿Failure to respond?</td>
+            <td class="result-cell">SÍ (precio rebotó desde $99.94 al rechazo iraní, recuperando la prima de riesgo rápidamente)</td>
+          </tr>
+          <tr class="check-si">
+            <td>¿Pre-market confirma?</td>
+            <td class="result-cell">SÍ (+$6.10 vs. cierre anterior, 26 de marzo)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="tipo-trigger"><strong>Tipo de trigger:</strong> CLÁSICO / FAILURE TO RESPOND</p>
+      <div>
+        <span class="decision-badge decision-go">GO</span>
+      </div>
+    </div>
+
+    <!-- ===== HECHOS BASE ===== -->
+    <div class="card">
+      <h2>📝 HECHOS BASE</h2>
+      <p class="hechos-sub-title verified">Verificados (fuentes ⭐⭐⭐)</p>
+      <div class="hechos-verified">
+        <div class="hechos-item">1. Iraq declaró fuerza mayor en todos los campos extranjeros el 20 de marzo; producción Basra recortada de 3,3 mb/d a ~900.000 bpd; refinerías de Kuwait (~730.000 bpd) forzadas a cerrar. — <em>Reuters / CNBC / Al Arabiya, 2026-03-20</em></div>
+        <div class="hechos-item">2. Swap dealers con posición net long de +53.663 contratos (~53,7 mb) en Brent Last Day futures (NYMEX), con 54.594 largos y 931 cortos. — <em>CFTC Disaggregated COT Report, 2026-03-10</em></div>
+        <div class="hechos-item">3. EIA: build de +6.926 mb en inventarios crudos EE.UU. (semana hasta el 20 de marzo), quinto build consecutivo; Cushing +3.421 mb (mayor desde enero 2023). — <em>US EIA, 2026-03-25</em></div>
+        <div class="hechos-item">4. Goldman Sachs elevó forecast 2026 Brent a $85/bbl promedio, con objetivo cercano de $110/bbl para Q1–Q2 2026 y escenario tail de $135/bbl. — <em>Goldman Sachs Commodities Research / Bloomberg, 2026-03-23</em></div>
+      </div>
+      <p class="hechos-sub-title unverified" style="margin-top:12px;">No verificados (contexto/narrativa)</p>
+      <div class="hechos-unverified">
+        <div class="hechos-item">1. Goldman Sachs describe la crisis como el "mayor shock de oferta histórico" y tiene al desk posicionado net long en Brent. — <em>Inferido de research note Bloomberg/Kitco 2026-03-23</em> — <span class="muted">Incentivo: Goldman amplifica narrativa que defiende y refuerza su posición propietaria larga</span></div>
+        <div class="hechos-item">2. Irán rechazó el plan de paz de 15 puntos de EE.UU. y presentó cinco contracondiciones, incluyendo reconocimiento de soberanía iraní sobre el Estrecho de Hormuz. — <em>CNBC / Al Jazeera, 2026-03-24</em> — <span class="muted">Incentivo: Irán maximiza presión negociadora; postura pública puede diferir de canal real vía intermediarios paquistaníes</span></div>
+        <div class="hechos-item">3. Trafigura aseguró una línea de crédito de $3.000 millones en marzo 2026 como "buffer de liquidez" para operar en el entorno volátil. — <em>Reuters / OE Digital, referenciado en positions.md</em> — <span class="muted">Incentivo: Trafigura como trader físico con posición larga en crudos venezolanos re-enrutados tiene interés en comunicar solidez financiera para mantener acceso a crédito</span></div>
+      </div>
+    </div>
+
+  </div><!-- end .grid -->
+
+  <!-- ===== IMPACTO POR ACTOR ===== -->
+  <div class="impact-section">
+    <p class="impact-section-title">Impacto por Actor</p>
+    <div class="impact-grid">
+
+      <div class="impact-card">
+        <div class="impact-header">
+          <span class="impact-entity-name">OPEC+ (Saudi Arabia / Russia core)</span>
+          <span class="impact-badge impact-favored">Favored</span>
+        </div>
+        <p class="impact-assessment">OPEC+'s structural bullish bias and supply-withholding posture align directly with the dominant bullish context. The Hormuz crisis has tightened the supply picture well beyond their own production decisions, amplifying the effectiveness of their existing voluntary cuts. The 48–72h valid window falls ahead of the April 5 ministerial meeting, meaning the current elevated price environment reinforces OPEC+'s negotiating position rather than pressuring it.</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-header">
+          <span class="impact-entity-name">Saudi Aramco / Saudi Ministry of Energy</span>
+          <span class="impact-badge impact-favored">Favored</span>
+        </div>
+        <p class="impact-assessment">The current bullish bias and elevated spot price (~$105.85/bbl) place Brent materially above Saudi Arabia's fiscal breakeven of $85–95/bbl, directly relieving the revenue and dividend pressure that defines Aramco's structural interest. The immediate risk is a ceasefire triggering a $10–15/bbl unwind, but even a partial unwind would leave prices near or above fiscal breakeven within the valid window. The ongoing Hormuz crisis directly supports Aramco's interest in sustained export revenue.</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-header">
+          <span class="impact-entity-name">Goldman Sachs (Commodities Division)</span>
+          <span class="impact-badge impact-favored">Favored</span>
+        </div>
+        <p class="impact-assessment">The bullish dominant bias aligns precisely with Goldman's publicly stated near-term forecast of $110/bbl for Q1–Q2 2026 and its inferred net long desk positioning. The $15–20/bbl geopolitical risk premium embedded in current prices is consistent with the supply-shock narrative Goldman has been actively amplifying. The March 28 binary event is the key risk, but Goldman's upside scenario ($135/bbl on escalation) means even a negative diplomatic outcome from their perspective represents a tail risk rather than the central case within the valid window.</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-header">
+          <span class="impact-entity-name">Vitol Group</span>
+          <span class="impact-badge impact-neutral">Neutral</span>
+        </div>
+        <p class="impact-assessment">Vitol's structural interest lies in volatility and spread widening rather than pure directional price movement, and the current environment continues to deliver both. However, Vitol's physical net long position built in early February was being reduced by late February, meaning the firm's open exposure to further upside is more muted than its structural bias implies. The bullish context supports the spread and rerouting arbitrage opportunities that benefit Vitol, but the absence of a confirmed large open long limits the degree to which the current bias is directly favorable.</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-header">
+          <span class="impact-entity-name">Trafigura</span>
+          <span class="impact-badge impact-favored">Favored</span>
+        </div>
+        <p class="impact-assessment">The bullish context and supply dislocation directly benefit Trafigura's active strategy of rerouting Venezuelan and non-Hormuz barrels to supply-starved Asian refiners at a premium. The narrowing of the Venezuelan crude discount (from $30 to $15/bbl vs. Brent) reflects a market in which Trafigura's physical long is gaining mark-to-market value. The $3 billion credit facility secured in March 2026 signals the firm is positioned to maintain and expand this posture within the current valid window.</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-header">
+          <span class="impact-entity-name">Swap Dealers (aggregated, ICE/NYMEX)</span>
+          <span class="impact-badge impact-favored">Favored</span>
+        </div>
+        <p class="impact-assessment">With an extremely skewed net long position (54,594 long vs. 931 short, net +53,663 contracts as of March 10), swap dealers' existing positioning is directly supported by the bullish dominant bias. Any continuation of the geopolitical risk premium within the 48–72h window preserves the mark-to-market value of this outsized net long. The immediate risk of a March 28 ceasefire represents the most direct threat to this position, as a $10–15/bbl unwind would generate significant mark-to-market pressure on the gross long book.</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-header">
+          <span class="impact-entity-name">Managed Money (aggregated hedge funds / CTAs)</span>
+          <span class="impact-badge impact-neutral">Neutral</span>
+        </div>
+        <p class="impact-assessment">Managed money holds a substantial net long across ICE and NYMEX Brent, which is structurally aligned with the bullish bias. However, the reduction in long positions from March 3 to March 10 (longs fell by ~9,938 contracts) indicates that at least a portion of this cohort was de-risking into the price spike rather than adding exposure. The Hormuz binary event is the key CTA model signal, and the neutral rating reflects the mixed internal behavior within this category — some funds remain aligned with the bullish bias while others have been reducing exposure ahead of the March 28 deadline.</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-header">
+          <span class="impact-entity-name">Citadel LLC (Commodities Pod)</span>
+          <span class="impact-badge impact-neutral">Neutral</span>
+        </div>
+        <p class="impact-assessment">With no publicly disclosed directional position in Brent and a stated neutral bias with low confidence, Citadel cannot be assessed as materially favored or opposed by the current context. The reported ~2% Wellington strategy loss and estimated $1 billion in macro/fixed-income losses from the Iran shock suggest the fund was caught offside by the price spike, but without confirmed Brent futures exposure, the directional impact of the current bullish bias on their open position remains indeterminate.</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-header">
+          <span class="impact-entity-name">J.P. Morgan (Commodities Research &amp; Trading)</span>
+          <span class="impact-badge impact-opposed">Opposed</span>
+        </div>
+        <p class="impact-assessment">J.P. Morgan's structural bearish thesis ($68/bbl average for full-year 2026, anchored on H2 supply surplus and soft demand) is directly contradicted by the dominant bullish bias and the $15–20/bbl risk premium currently embedded in prices. While JPM acknowledges the near-term upside tail risk from Hormuz disruption ($100–120/bbl upside scenario), its research stance remains bearish and would be validated only by the exact risk scenario — a ceasefire or Hormuz reopening — that would invalidate the current dominant bias. The March 28 deadline represents JPM's best near-term opportunity for the context to shift in their favor.</p>
+      </div>
+
+      <div class="impact-card">
+        <div class="impact-header">
+          <span class="impact-entity-name">Saudi Arabia Public Investment Fund (PIF)</span>
+          <span class="impact-badge impact-favored">Favored</span>
+        </div>
+        <p class="impact-assessment">The bullish price context directly benefits PIF's primary oil exposure via its ~16% Aramco equity stake, as elevated Brent prices underpin Aramco's dividend capacity — PIF's critical cash flow source given reserves at a post-2020 low. The 48–72h valid window precedes any Aramco earnings or dividend announcement, but sustained elevated prices within this window reinforce the conditions necessary for PIF to restore investment capacity. The immediate ceasefire risk is the key threat, as a rapid price unwind would compress the Aramco dividend outlook that PIF's spending commitments depend on.</p>
+      </div>
+
+    </div><!-- end .impact-grid -->
+
+    <div class="smart-money-card">
+      <p class="smart-money-title">Aggregate Smart Money Stance</p>
+      <p class="smart-money-text">The aggregate smart money positioning — dominated by heavily net long swap dealers, a substantial net long managed money cohort, producer-aligned bullish entities (OPEC+, Aramco, PIF), and Goldman's directional amplification — collectively amplifies the dominant bullish bias, with only J.P. Morgan's structurally bearish stance and Citadel's uncertain repositioning providing any meaningful counterweight.</p>
+    </div>
+
+  </div><!-- end .impact-section -->
+
+</body>
+</html>

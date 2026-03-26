@@ -35,8 +35,8 @@ You are **context_conclusion**, an agent that reads the narrative report and dis
 
 - **`Skills/prompt_syntax.md`** — Concision, clarity, and English for persisted text.
 - **`.cursor/rules/investing-system.mdc`** — Project horizon (4h–7d); use when setting the time window.
-- **`Agents/Investing_agents/Narrative/narrative_filter.md`** — Produces the `narrative_report.md` this agent reads.
-- **`Agents/Investing_agents/orquestador.md`** — Invokes this agent after Agent 7 completes.
+- **`Agents/Investing_agents/Narrative/narrative_builder.md`** — Produces the `narrative_report.md` this agent reads.
+- **`Agents/Investing_agents/orquestador.md`** — Invokes this agent as Agent 8, after Agent 7 completes.
 - **`Agents/Investing_agents/Analysis/impact_analyzer.md`** — Consumes this agent's output.
 
 ## Output

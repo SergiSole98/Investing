@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flujo Orquestador — Investing Agents</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+  }
+  .subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 40px;
+  }
+  .diagram-container {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    overflow-x: auto;
+  }
+  .legend {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .legend-item {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.82rem;
+  }
+  .legend-item .agent-name {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .legend-item .agent-desc {
+    color: #888;
+    line-height: 1.4;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .badge-seq { background: #1a3a5c; color: #5aabff; }
+  .badge-par { background: #1a3d1a; color: #4caf50; }
+  .badge-sub { background: #3d2a1a; color: #ff9800; }
+
+  .mermaid svg { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+
+<h1>Flujo del Orquestador — Investing Agents</h1>
+<p class="subtitle">Secuencia completa desde la petición del usuario hasta el HTML report final</p>
+
+<div class="diagram-container">
+<div class="mermaid">
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1e2a3a', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#4a90d9', 'lineColor': '#4a90d9', 'secondaryColor': '#1a3a1a', 'tertiaryColor': '#2a1a1a', 'background': '#111', 'mainBkg': '#1e2a3a', 'nodeBorder': '#4a90d9', 'clusterBkg': '#1a1a2e', 'titleColor': '#ffffff', 'edgeLabelBackground': '#1a1a1a', 'fontSize': '14px'}}}%%
+flowchart TD
+    USER([👤 Usuario\npide análisis]) -->|nombre del activo| ORCH[🎯 ORQUESTADOR\norquestador.md]
+
+    ORCH --> SETUP[📁 Setup\ngenerate_analisis.md\nCrea carpeta Context/Analisis/name]
+
+    SETUP -->|carpeta confirmada| SM0[🔍 SmartMoney Identifier\nAgent 1\nIdentifica actores institucionales]
+
+    SM0 -->|confirmado| PAR_START{ }
+
+    subgraph PARALLEL ["⚡ BLOQUE PARALELO — Agents 2, 3 y 4"]
+        direction LR
+        SM1[💼 Interests Identifier\nAgent 2\nIntereses estructurales]
+        SM2[📊 Positions Identifier\nAgent 3\nPosiciones abiertas]
+        CTX[🗂️ Context Orchestrator\nAgent 4]
+    end
+
+    PAR_START --> SM1
+    PAR_START --> SM2
+    PAR_START --> CTX
+
+    subgraph SUB ["🔀 Sub-workflow dentro de Agent 4"]
+        direction TB
+        subgraph SUB_PAR ["⚡ Paralelo: Agents 5 y 6"]
+            direction LR
+            NEWS[📰 News Researcher\nAgent 5\nNoticias recientes]
+            EVENTS[📅 Event Scanner\nAgent 6\nCatalizadores programados]
+        end
+        NEWS & EVENTS -->|ambos confirmados| SCORER[🎯 News Scorer\nScoring + credibilidad\n+ intencionalidad]
+    end
+
+    CTX --> SUB
+
+    SM1 -->|confirmado| NAR1
+    SM2 -->|confirmado| NAR1
+    SCORER -->|news_scored.md| NAR1
+
+    NAR1[📝 Narrative Builder\nAgent 7\nConstruye narrativa de inversión]
+    NAR1 --> NAR2[🧠 Context Conclusion\nAgent 8\nConclusión de contexto]
+    NAR2 --> IMP[📈 Impact Analyzer\nAgent 9\nImpacto en intereses smart money]
+    IMP --> DEC[⚖️ Entry Decision\nAgent 10\nVeredicto GO / NO GO / WAIT]
+    DEC --> ONE[📄 Onepager Generator\nAgent 11\nonepager.md]
+    ONE --> HTML[🌐 HTML Report Generator\nAgent 12\nonepager.html]
+
+    HTML --> OUTPUT([✅ Output al usuario\nVeredicto + rutas de archivos])
+
+    style PARALLEL fill:#0d1f0d,stroke:#2d5a2d
+    style SUB fill:#1f1000,stroke:#5a3a00
+    style SUB_PAR fill:#1f1500,stroke:#5a4a00
+    style ORCH fill:#1a2a3a,stroke:#4a90d9
+    style SCORER fill:#1a1a3a,stroke:#7a5ad9
+    style OUTPUT fill:#0d1a0d,stroke:#2d5a2d
+    style USER fill:#1a1a2a,stroke:#5a5aaa
+</div>
+</div>
+
+<div class="legend">
+  <div class="legend-item">
+    <span class="badge badge-seq">SECUENCIAL</span>
+    <div class="agent-name">Setup → Agent 1</div>
+    <div class="agent-desc">La carpeta debe existir antes de cualquier análisis. Agent 1 debe confirmar antes del bloque paralelo.</div>
+  </div>
+  <div class="legend-item">
+    <span class="badge badge-par">PARALELO</span>
+    <div class="agent-name">Agents 2, 3 y 4</div>
+    <div class="agent-desc">Se lanzan simultáneamente. El workflow no avanza hasta que los tres confirman.</div>
+  </div>
+  <div class="legend-item">
+    <span class="badge badge-sub">SUB-WORKFLOW</span>
+    <div class="agent-name">Agents 5, 6 + News Scorer (dentro de Agent 4)</div>
+    <div class="agent-desc">El Context Orchestrator lanza News (5) y Events (6) en paralelo, luego llama a News Scorer (7) para evaluar credibilidad e intencionalidad.</div>
+  </div>
+  <div class="legend-item">
+    <span class="badge badge-seq">SECUENCIAL</span>
+    <div class="agent-name">Agents 7 → 8 → 9 → 10 → 11 → 12</div>
+    <div class="agent-desc">Cada uno depende del output del anterior. Narrative Builder (7) recibe inputs de Agents 2, 3 y el scored news de Agent 4. Sin atajos posibles.</div>
+  </div>
+  <div class="legend-item">
+    <span class="badge badge-par">OUTPUT</span>
+    <div class="agent-name">Archivos generados</div>
+    <div class="agent-desc">decision.md · onepager.md · onepager.html en Context/Analisis/&lt;name&gt;/Decision/</div>
+  </div>
+  <div class="legend-item">
+    <span class="badge" style="background:#2a1a2a;color:#cc88ff;">REGLA CLAVE</span>
+    <div class="agent-name">Error en cualquier paso</div>
+    <div class="agent-desc">El orquestador detiene todo el workflow y reporta el paso fallido. No produce output parcial.</div>
+  </div>
+</div>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+</script>
+</body>
+</html>
