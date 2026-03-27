@@ -1,12 +1,14 @@
 ## Decision: Brent Crude Oil
-Generated: 2026-03-26
-Valid window: 48–72h
+Generated: 2026-03-27
+Valid window: 24-72h
 
-### Verdict: GO
+### Verdict: WAIT
 
 Rationale:
-- Dominant bullish bias is clearly supported by aggregate smart money: swap dealers hold an extremely skewed net long (net +53,663 contracts as of March 10), and producer-aligned entities (OPEC+, Aramco, PIF) are all rated Favored, collectively amplifying the bullish context.
-- Six of nine entities are rated Favored (OPEC+, Saudi Aramco, Goldman Sachs, Trafigura, Swap Dealers, PIF), with only J.P. Morgan Opposed and two entities Neutral — a majority alignment with the current bullish bias.
-- The primary risk — a March 28 ceasefire triggering a $10–15/bbl unwind — is a binary tail event rather than the central case; even the most exposed Favored entities (Aramco, PIF) retain fiscal headroom near breakeven on a partial unwind.
-- Goldman Sachs' active amplification of the supply-shock narrative and $110/bbl near-term target provides directional reinforcement; its upside scenario ($135/bbl on escalation) skews the risk/reward asymmetry further in favor of the bullish context within the valid window.
-- J.P. Morgan's opposing bearish thesis would only be validated by the exact ceasefire/reopening scenario that defines the known risk event, meaning the structural counterweight is conditional rather than present — it does not currently undermine the dominant bias.
+- Dominant bias is clearly bullish, supported by aggregate smart money stance: record speculative net longs, OPEC+ supply restraint, Saudi pricing confidence, and Chinese stockpile absorption all reinforce the upward context.
+- Four high-influence entities are favored (Saudi Arabia, OPEC+, China, Managed Money) versus two opposed (U.S. DOE/SPR, IEA coordinated release), confirming majority alignment with the bullish bias.
+- The March 28 diplomatic deadline is a binary event occurring within the valid window that could abruptly collapse the geopolitical premium, triggering forced liquidation of the record-crowded speculative long (320,952 lots ICE Brent).
+- Goldman Sachs vs J.P. Morgan divergence explicitly hinges on this same deadline, confirming the event as the single catalyst that determines directional outcome.
+- Entering before resolution of the March 28 deadline exposes capital to asymmetric reversal risk disproportionate to the remaining upside within the valid window.
+
+Condition to upgrade/downgrade: March 28 diplomatic deadline passes without a Hormuz resolution agreement — upgrade to GO; a credible de-escalation deal is announced — downgrade to NO GO.

@@ -1,73 +1,52 @@
 ## Interests Map: Brent Crude Oil
 Scope: structural incentives of identified smart money actors
-As of: 2026-03-26
 
----
-
-### OPEC+ (Saudi Arabia / Russia core)
+### Saudi Arabia (via Saudi Aramco / Ministry of Energy)
 Bias: bullish | Confidence: high
-Reason: Controlling ~40% of global crude supply, OPEC+ has a structural interest in prices above members' fiscal breakeven levels; the March 1 decision to add 206,000 b/d in April was calibrated to balance market share recovery with price support, and the Hormuz crisis has dramatically tightened the supply picture beyond their own production decisions.
-Near-term deadline: April 5, 2026 — next OPEC+ ministerial meeting and output decision
+Reason: Saudi fiscal breakeven requires Brent above approximately $85-95/bbl; as swing producer leading OPEC+ output decisions, the kingdom's structural mandate is to defend and raise prices to fund Vision 2030 spending commitments, PIF capital needs, and Aramco dividend obligations.
+Near-term deadline: OPEC+ ministerial meeting and production quota review, April-June 2026; Aramco Q1 2026 earnings expected May 2026
 
----
+### OPEC+ coalition (Russia, Iraq, UAE, Kuwait, Kazakhstan, Algeria, Oman)
+Bias: bullish | Confidence: medium
+Reason: The coalition paused output increases through Q1 2026 and approved only a modest 206,000 bpd increase for April 2026, signaling intent to keep supply tight; however, internal compliance disputes and the UAE push for a higher baseline quota create divergent interests within the bloc.
+Near-term deadline: April 2026 production increase implementation; next OPEC+ ministerial meeting expected early April 2026
 
-### Saudi Aramco / Saudi Ministry of Energy
-Bias: bullish | Confidence: high
-Reason: Saudi Arabia's fiscal breakeven is estimated at $85–95/bbl for 2026, well above pre-crisis price levels; Aramco's dividend obligations and PIF's capital requirements create a structural ceiling below which sustained prices would force further spending cuts and fiscal stress on the kingdom.
-Near-term deadline: Aramco Q1 2026 earnings release (expected May 2026); ongoing Hormuz crisis resolution directly affects export volumes and revenue
+### U.S. Department of Energy (Strategic Petroleum Reserve)
+Bias: bearish | Confidence: high
+Reason: The DOE launched an 86 million barrel emergency exchange and participates in a coordinated IEA 400 million barrel release specifically to suppress price spikes caused by the Strait of Hormuz disruption; its structural role during supply crises is to inject barrels and cap upside.
+Near-term deadline: Active exchange program and IEA coordinated release timeline through mid-2026
 
----
-
-### Goldman Sachs (Commodities Division)
-Bias: bullish | Confidence: high
-Reason: Goldman raised its 2026 Brent average forecast to $85/bbl (from $77) on March 22, 2026, citing the Hormuz supply shock and strategic stockpiling; near-term March/April forecast is $110/bbl, with a tail risk scenario of $135/bbl — the desk is positioned to profit from and actively amplifying the bullish narrative around supply disruption.
-Near-term deadline: April 5, 2026 — next OPEC+ meeting; ongoing Hormuz diplomatic deadline set by Trump (late March/early April)
-
----
+### China (CNPC / Sinopec / CNOOC — strategic petroleum reserve)
+Bias: bullish | Confidence: medium
+Reason: China is expected to expand stockpiles by approximately 1 million bpd in 2026, making it the largest incremental demand source for waterborne crude; its strategic reserve buildup structurally absorbs supply from the physical market, supporting prices.
+Near-term deadline: Chinese refinery maintenance season typically ends April-May, after which import demand increases seasonally
 
 ### Vitol Group
-Bias: bullish | Confidence: medium
-Reason: As the world's largest independent oil trader (~7.2 mb/d), Vitol profits structurally from price volatility and wide spreads; the Hormuz crisis has generated extreme volatility and rerouting arbitrage opportunities (e.g., North Sea crude to Asia) that benefit physical traders with global logistics reach. Vitol secured new credit lines in March 2026 specifically to capitalize on volatility.
+Bias: neutral | Confidence: medium
+Reason: As the largest independent oil trader (7.2 million bpd), Vitol profits from volatility and physical arbitrage rather than sustained directional bets; the Hormuz crisis has generated rerouting arbitrage opportunities that benefit its logistics reach, but its mandate is to capture spreads, not hold persistent directional exposure.
 Near-term deadline: none identified
-
----
 
 ### Trafigura
-Bias: bullish | Confidence: medium
-Reason: Like Vitol, Trafigura (~6.8 mb/d traded) benefits from supply dislocation and spread widening; the firm secured a $3 billion credit facility in early March 2026 as a "liquidity buffer" for the volatile environment, and is actively rerouting non-Hormuz barrels (Venezuelan, North Sea) to supply-starved Asian refiners at a premium.
+Bias: neutral | Confidence: medium
+Reason: Second-largest physical crude trader with one of the largest swap dealer hedging books in ICE Brent; its structural incentive is to capture logistics and basis differentials rather than maintain a sustained directional view; secured Venezuelan crude licenses and expanded credit lines to exploit supply dislocation spreads.
 Near-term deadline: none identified
 
----
-
-### Swap Dealers (aggregated, ICE/NYMEX)
-Bias: bullish | Confidence: high
-Reason: The March 10 COT report shows swap dealers heavily net long (54,594 long vs. 931 short), an extremely skewed ratio that reflects institutional demand for long exposure and hedging activity from producers and corporates locking in elevated prices; this structural positioning reinforces upward price momentum.
-Near-term deadline: Next CFTC COT reporting date (March 17 and March 24 data pending release)
-
----
-
-### Managed Money (aggregated hedge funds / CTAs)
-Bias: bullish | Confidence: medium
-Reason: March 10 COT data shows managed money net long (15,344 long vs. 1,150 short, plus 9,418 spreading contracts); however, positions were being reduced from March 3 to March 10 (longs fell by ~9,938 contracts on ICE WTI), suggesting some funds were taking profits or de-risking into the price spike rather than adding to longs at elevated levels.
-Near-term deadline: Hormuz resolution or further escalation is the key binary event driving CTA model signals
-
----
-
-### Citadel LLC (Commodities Pod)
+### Glencore
 Bias: neutral | Confidence: low
-Reason: Citadel's flagship Wellington strategy lost approximately 2% in early-to-mid March 2026, with its macro and fixed-income books suffering estimated $1 billion in losses from the Iran shock volatility; this suggests the fund was not positioned for the sharp price spike and may be defensively repositioning rather than expressing a directional crude view.
+Reason: Integrated producer-trader whose upstream oil assets benefit from higher prices, but whose trading arm profits from arbitrage and volatility; the net directional effect is ambiguous because production revenue gains are often hedged through the trading book.
 Near-term deadline: none identified
 
----
-
-### J.P. Morgan (Commodities Research & Trading)
-Bias: bearish | Confidence: medium
-Reason: J.P. Morgan maintained a $58/bbl Brent base case for 2026 prior to the Hormuz crisis, anchored on expectations of sizable supply surpluses and soft demand growth; while the conflict has introduced a material near-term upside shock, JPM's structural thesis — oversupply and inventory build in H2 2026 — remains intact and positions them as a counterweight to the current risk premium.
-Near-term deadline: Hormuz reopening or ceasefire would validate JPM's bearish structural thesis and trigger a potential re-rating back toward their base case
-
----
-
-### Saudi Arabia Public Investment Fund (PIF)
+### Managed Money / Hedge Funds (aggregate)
 Bias: bullish | Confidence: high
-Reason: PIF holds ~16% of Aramco and relies on Aramco dividends as a primary cash flow source; with PIF's cash reserves at ~$15 billion (a post-2020 low) and a mandated 20% spending cut already implemented, higher sustained oil prices are a fiscal necessity to restore PIF's investment capacity and underpin Vision 2030 spending commitments.
-Near-term deadline: Aramco dividend announcement tied to Q1 2026 results; PIF's 2026 strategic reallocation underway
+Reason: Net-long Brent positions reached 320,952 lots in late February 2026, the highest level in nearly two years; momentum-driven CTAs and macro funds are structurally positioned for further upside, though some profit-taking was observed in early March as prices spiked, creating vulnerability to rapid liquidation on negative catalysts.
+Near-term deadline: CFTC COT reporting cycle (weekly); quarter-end portfolio rebalancing, 31 March 2026
+
+### Goldman Sachs / J.P. Morgan (Commodities Desks)
+Bias: divergent | Confidence: medium
+Reason: Goldman raised its 2026 Brent forecast to $85/bbl (near-term $110/bbl) citing the Hormuz supply shock, actively amplifying the bullish narrative; J.P. Morgan maintained a $58/bbl base case anchored on expectations of H2 2026 oversupply, serving as a structural counterweight. Their combined swap dealer and market-making flows shape institutional positioning in both directions.
+Near-term deadline: Q2 2026 forecast updates; index rebalancing around quarter-end, 31 March 2026; Hormuz resolution as binary catalyst for convergence
+
+### International Energy Agency member states (coordinated release)
+Bias: bearish | Confidence: high
+Reason: The coordinated 400 million barrel release commitment is an explicit price-suppression intervention designed to offset supply disruption from the Strait of Hormuz closure; IEA member states deploy strategic reserves specifically to prevent price spikes, making their structural role unambiguously bearish during this event.
+Near-term deadline: Active coordinated release program through mid-2026; IEA review of release adequacy expected quarterly

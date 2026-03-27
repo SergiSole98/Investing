@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Oro] Investment One-Pager</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  padding: 24px 16px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #30363d;
+}
+.header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 4px; }
+.header .meta { color: #8b949e; font-size: 0.95rem; }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+}
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 20px;
+  overflow: hidden;
+}
+.card-full { grid-column: 1 / -1; }
+.card-header {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #30363d;
+}
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+th, td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid #21262d;
+}
+th {
+  color: #8b949e;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+tr.zebra { background: rgba(255,255,255,0.02); }
+/* Verdict badge */
+.verdict-badge {
+  display: inline-block;
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  padding: 8px 40px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.verdict-sell {
+  color: #fff;
+  background: #d50000;
+}
+.verdict-center { text-align: center; width: 100%; }
+/* Tesis callout */
+.tesis-bullet {
+  background: rgba(213,0,0,0.06);
+  border-left: 4px solid #d50000;
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.93rem;
+}
+/* Riesgos warning */
+.riesgo-bullet {
+  background: rgba(213,0,0,0.08);
+  border-left: 4px solid #d50000;
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.93rem;
+}
+/* Catalizadores ALTO highlight */
+tr.cat-alto { background: rgba(255,214,0,0.12); }
+tr.cat-alto td.impact-cell { font-weight: 700; }
+/* Ejecucion trade box */
+.trade-box table { font-size: 1.1rem; }
+.trade-box .val-entry { color: #58a6ff; font-weight: 700; font-size: 1.2rem; }
+.trade-box .val-sl { color: #d50000; font-weight: 700; font-size: 1.2rem; }
+.trade-box .val-tp { color: #00c853; font-weight: 700; font-size: 1.2rem; }
+/* Niveles clave - precio actual */
+tr.precio-actual td { color: #58a6ff; font-weight: 700; font-size: 1.05rem; }
+/* Money direction badge */
+.money-badge {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 12px;
+}
+.money-corto { background: #d50000; color: #fff; }
+/* Trigger check cells */
+.check-si { color: #00c853; font-weight: 700; }
+.check-no { color: #d50000; font-weight: 700; }
+.trigger-decision-badge {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 10px;
+  background: #d50000;
+  color: #fff;
+}
+/* Hechos base sub-sections */
+.hechos-sub { margin-bottom: 16px; }
+.hechos-sub h4 { font-size: 0.95rem; margin-bottom: 8px; color: #58a6ff; }
+.hechos-sub.no-verificados h4 { color: #ffd600; }
+.hechos-item {
+  padding: 6px 0;
+  border-bottom: 1px solid #21262d;
+  font-size: 0.88rem;
+}
+/* Escenario blockquote */
+.escenario-quote {
+  border-left: 4px solid #58a6ff;
+  padding: 12px 16px;
+  background: rgba(88,166,255,0.06);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 0.93rem;
+}
+/* Details / collapsible */
+details {
+  margin-top: 16px;
+  border-top: 1px solid #30363d;
+  padding-top: 12px;
+}
+summary {
+  cursor: pointer;
+  color: #58a6ff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+summary:hover { text-decoration: underline; }
+details .rationale-bullet {
+  padding: 8px 0;
+  border-bottom: 1px solid #21262d;
+  font-size: 0.88rem;
+}
+.callout-amber {
+  border-left: 4px solid #ffd600;
+  background: rgba(255,214,0,0.08);
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-top: 12px;
+  font-size: 0.88rem;
+}
+/* Impact section */
+.impact-section { margin-top: 32px; }
+.impact-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #30363d;
+}
+.entity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+}
+.entity-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 16px;
+}
+.entity-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.badge-favored { background: #00c853; }
+.badge-neutral { background: #8b949e; }
+.badge-opposed { background: #d50000; }
+.entity-text { font-size: 0.88rem; color: #e6edf3; line-height: 1.55; }
+.aggregate-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-left: 4px solid #58a6ff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 0.93rem;
+}
+.aggregate-card h3 { margin-bottom: 10px; color: #58a6ff; }
+.footer {
+  text-align: center;
+  color: #8b949e;
+  font-size: 0.8rem;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid #30363d;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>INVESTMENT ONE-PAGER</h1>
+  <div class="meta"><strong>ACTIVO:</strong> XAU/USD &nbsp;|&nbsp; <strong>MERCADO:</strong> COMEX / Spot &nbsp;|&nbsp; <strong>FECHA:</strong> 2026-03-27</div>
+</div>
+
+<div class="grid">
+
+<!-- RECOMENDACIÓN -->
+<div class="card card-full">
+  <div class="card-header">🎯 RECOMENDACIÓN</div>
+  <div class="verdict-center">
+    <span class="verdict-badge verdict-sell">SELL</span>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Rating</th><th>Precio Actual</th><th>Target</th><th>Potencial</th><th>Horizonte</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>SELL</strong></td><td>$4,400</td><td>$4,100</td><td>-6.8%</td><td>3-5 días</td></tr>
+    </tbody>
+  </table>
+  <details>
+    <summary>Ver razonamiento completo ▸</summary>
+    <div class="rationale-bullet">Dominant bearish bias is clear and directly supported by the aggregate smart money stance: active, price-sensitive capital (CTAs, GLD authorized participants) is already positioned short or deleveraging, amplifying downside momentum.</div>
+    <div class="rationale-bullet">GLD has seen over $6 billion in outflows across three consecutive weeks; the redemption trend reinforces the bearish context within the valid window.</div>
+    <div class="rationale-bullet">CTAs have shifted from extended long to neutral-to-short, with systematic models aligned to USD strength and rising yields; further short entries are possible below $4,100.</div>
+    <div class="rationale-bullet">Structural opposition from central banks (PBoC, NBP) and Dalio is price-insensitive, non-leveraged, and operates on multi-year mandates with no timeline pressure, meaning it will not counteract short-term bearish flows within the 3-5 day horizon.</div>
+    <div class="rationale-bullet">CBRT net selling of roughly 60 tonnes adds sovereign supply-side pressure that compounds the bearish environment rather than absorbing it.</div>
+  </details>
+</div>
+
+<!-- TESIS -->
+<div class="card card-full">
+  <div class="card-header">💡 TESIS (3 bullets máximo)</div>
+  <div class="tesis-bullet">Inflación persistente (Core PCE 3.1%) ha eliminado expectativas de recorte de tipos hasta mediados de 2026; los rendimientos reales son el principal viento en contra para el oro sin rendimiento.</div>
+  <div class="tesis-bullet">El capital activo y sensible al precio (CTAs, GLD) está posicionado corto o desapalancándose, amplificando el impulso bajista: GLD acumula más de $6,000M en salidas en tres semanas consecutivas.</div>
+  <div class="tesis-bullet">La fractura del consenso comprador de bancos centrales (CBRT vendiendo ~60 toneladas, Rusia en mínimos de 4 años) debilita el suelo estructural que respaldaba al oro.</div>
+</div>
+
+<!-- EJECUCIÓN -->
+<div class="card trade-box">
+  <div class="card-header">✅ EJECUCIÓN</div>
+  <table>
+    <tbody>
+      <tr><td><strong>Acción</strong></td><td><strong>VENDER</strong></td></tr>
+      <tr class="zebra"><td><strong>Ticker (Broker)</strong></td><td>XAU/USD (spot) / GLD (ETF)</td></tr>
+      <tr><td><strong>Entry</strong></td><td><span class="val-entry">$4,400</span></td></tr>
+      <tr class="zebra"><td><strong>Stop Loss</strong></td><td><span class="val-sl">$4,570 (+3.9%)</span></td></tr>
+      <tr><td><strong>Take Profit</strong></td><td><span class="val-tp">$4,100 (-6.8%)</span></td></tr>
+      <tr class="zebra"><td><strong>Sizing</strong></td><td>Según gestión de riesgo individual</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- NIVELES CLAVE -->
+<div class="card">
+  <div class="card-header">📊 NIVELES CLAVE</div>
+  <table>
+    <thead>
+      <tr><th>Tipo</th><th>Nivel</th><th>Toques</th><th>Distancia</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Resistencia 2</td><td>$5,400</td><td>1</td><td>+22.7%</td></tr>
+      <tr class="zebra"><td>Resistencia 1</td><td>$4,560</td><td>2</td><td>+3.6%</td></tr>
+      <tr class="precio-actual"><td><strong>PRECIO ACTUAL</strong></td><td><strong>$4,400</strong></td><td>-</td><td>-</td></tr>
+      <tr class="zebra"><td>Soporte 1</td><td>$4,100</td><td>1</td><td>-6.8%</td></tr>
+      <tr><td>Soporte 2</td><td>$4,099</td><td>1</td><td>-6.8%</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- INDICADORES -->
+<div class="card card-full">
+  <div class="card-header">📈 INDICADORES</div>
+  <table>
+    <thead>
+      <tr><th>Indicador</th><th>Valor</th><th>Señal</th><th>Fiabilidad</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>GLD Flows</td><td>-$6,000M (3 semanas)</td><td>Bajista</td><td>Alta</td></tr>
+      <tr class="zebra"><td>Curva futuros</td><td>Backwardation implícita (T-bills 4.9% vs oro 0%)</td><td>Bajista</td><td>Alta</td></tr>
+      <tr><td>CTA Net Long</td><td>102,236 contratos (reducido desde extremos)</td><td>Bajista</td><td>Media</td></tr>
+      <tr class="zebra"><td>Core PCE</td><td>3.1% YoY</td><td>Bajista (tipos altos)</td><td>Alta</td></tr>
+      <tr><td>Brent</td><td>&gt;$107/bbl</td><td>Bajista (vía inflación y tipos)</td><td>Alta</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ACTORES E INCENTIVOS -->
+<div class="card card-full">
+  <div class="card-header">🎭 ACTORES E INCENTIVOS</div>
+  <table>
+    <thead>
+      <tr><th>Actor</th><th>Qué gana</th><th>Qué pierde</th><th>Límite temporal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CTAs (agregado)</td><td>Beneficio en posiciones cortas/neutrales si oro cae bajo $4,100</td><td>Squeeze si alto el fuego colapsa petróleo</td><td>Reactivo a precio; sin plazo fijo</td></tr>
+      <tr class="zebra"><td>GLD / Participantes autorizados</td><td>Liquidez en T-bills al 4.9% vs oro sin rendimiento</td><td>Exposición alcista si tipos bajan</td><td>Continuo; flujo diario</td></tr>
+      <tr><td>CBRT</td><td>Divisas para defensa de la lira; menor coste de oportunidad vendiendo en mercado bajista</td><td>Reservas de oro reducidas (~641t restantes)</td><td>Mientras persista presión sobre la lira</td></tr>
+      <tr class="zebra"><td>PBoC</td><td>Diversificación estructural; valor de 2,309 toneladas existentes si sube</td><td>Mark-to-market negativo a corto plazo</td><td>Mandato multianual; sin presión temporal</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- POSICIONAMIENTO DEL DINERO -->
+<div class="card card-full">
+  <div class="card-header">💰 POSICIONAMIENTO DEL DINERO</div>
+  <table>
+    <thead>
+      <tr><th>Indicador</th><th>Lectura</th><th>Interpretación</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Flujos institucionales (GLD)</td><td>-$6,000M en 3 semanas; salidas acelerándose</td><td>Saliendo</td></tr>
+      <tr class="zebra"><td>CTA posicionamiento</td><td>Net long 102,236 contratos; reducido desde extremos, no lavado</td><td>Desapalancando; riesgo de más liquidación bajo $4,100</td></tr>
+      <tr><td>Bancos centrales</td><td>PBoC/NBP comprando (insensible al precio); CBRT vendiendo 60t; Rusia vendiendo</td><td>Mixto; flujo activo bajista, estructural alcista</td></tr>
+      <tr class="zebra"><td>IAU flujos</td><td>Mixto: grandes asignadores aumentan, pequeños reducen</td><td>Neutral</td></tr>
+    </tbody>
+  </table>
+  <div><span class="money-badge money-corto">Dirección del dinero: CORTO</span></div>
+  <div style="font-size:0.85rem;color:#8b949e;margin-top:6px;">Capital activo y sensible al precio alineado bajista; capital estructural insensible al precio no contrarresta a corto plazo</div>
+</div>
+
+<!-- ACTIVOS CORRELACIONADOS -->
+<div class="card card-full">
+  <div class="card-header">🔗 ACTIVOS CORRELACIONADOS</div>
+  <table>
+    <thead>
+      <tr><th>Activo</th><th>Relación</th><th>Dirección</th><th>Señal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Brent Crude (&gt;$107)</td><td>Alimenta inflación → tipos altos</td><td>Sube</td><td>Confirma bajista oro</td></tr>
+      <tr class="zebra"><td>USD / DXY</td><td>Alimenta (correlación inversa)</td><td>Sube</td><td>Confirma bajista oro</td></tr>
+      <tr><td>UST 10Y (4.384%)</td><td>Alimenta (rendimiento real)</td><td>Sube</td><td>Confirma bajista oro</td></tr>
+      <tr class="zebra"><td>T-bills (4.9%)</td><td>Alternativa sin riesgo</td><td>Atrae flujos</td><td>Confirma bajista oro</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ESCENARIO DESCONTADO -->
+<div class="card card-full">
+  <div class="card-header">🧠 ESCENARIO DESCONTADO</div>
+  <div class="escenario-quote">
+    <strong>¿Qué está descontando el mercado?</strong><br>
+    Inflación persistente por el shock petrolero de Irán mantiene a la Fed sin recortar tipos hasta mediados de 2026. Rendimientos reales elevados hacen al oro no competitivo frente a T-bills al 4.9%. El mercado descuenta que no habrá alto el fuego creíble a corto plazo.
+  </div>
+  <p style="font-weight:700;margin-bottom:10px;">Escenarios alternativos:</p>
+  <table>
+    <thead>
+      <tr><th>Escenario</th><th>Probabilidad</th><th>Impacto en precio</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Alto el fuego US-Iran creíble: petróleo -$15-20, reapertura de expectativas de recorte</td><td>Baja</td><td>+10-15% (short squeeze)</td></tr>
+      <tr class="zebra"><td>NFP débil 3 abril: revive especulación de recorte</td><td>Media-baja</td><td>+3-5%</td></tr>
+      <tr><td>NFP fuerte + sin alto el fuego: consolida narrativa higher-for-longer</td><td>Media-alta</td><td>-5-8% (ruptura bajo $4,100)</td></tr>
+      <tr class="zebra"><td>OPEC+ aumenta cuotas 1 abril: petróleo baja, alivia inflación</td><td>Baja-media</td><td>+3-5%</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- TRIGGER DE ENTRADA -->
+<div class="card">
+  <div class="card-header">🎯 TRIGGER DE ENTRADA</div>
+  <table>
+    <thead>
+      <tr><th>Check</th><th>Resultado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sentimiento claro?</td><td><span class="check-si">SÍ</span> (bajista; GLD salidas, CTAs desapalancando, peor semana desde 2011)</td></tr>
+      <tr class="zebra"><td>Precio confirma dirección?</td><td><span class="check-si">SÍ</span> (caída 10% semanal; cerca de soporte $4,100)</td></tr>
+      <tr><td>Failure to respond?</td><td><span class="check-si">SÍ</span> (rebotes por rumores de alto el fuego se revierten completamente en 24h)</td></tr>
+      <tr class="zebra"><td>Pre-market confirma?</td><td>N/A</td></tr>
+    </tbody>
+  </table>
+  <div style="margin-top:10px;font-size:0.9rem;"><strong>Tipo de trigger:</strong> FAILURE TO RESPOND (rallies por alto el fuego totalmente revertidos)</div>
+  <div><span class="trigger-decision-badge">Decisión: GO</span></div>
+</div>
+
+<!-- RIESGOS -->
+<div class="card">
+  <div class="card-header">⚠️ RIESGOS</div>
+  <div class="riesgo-bullet">Alto el fuego creíble US-Iran colapsaría petróleo $15-20/bbl, reabriendo expectativas de recorte y provocando un short squeeze contra posiciones CTA reducidas.</div>
+  <div class="riesgo-bullet">NFP materialmente débil el 3 de abril invalidaría la narrativa higher-for-longer e impulsaría al oro.</div>
+  <div class="riesgo-bullet">OPEC+ aumenta producción el 1 de abril, bajando petróleo y aliviando presión inflacionaria.</div>
+</div>
+
+<!-- CATALIZADORES PRÓXIMOS -->
+<div class="card card-full">
+  <div class="card-header">📅 CATALIZADORES PRÓXIMOS</div>
+  <table>
+    <thead>
+      <tr><th>Fecha</th><th>Evento</th><th>Impacto esperado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>28/03</td><td>CFTC COT (posicionamiento CTA actualizado)</td><td>MEDIO</td></tr>
+      <tr class="zebra"><td>31/03</td><td>JOLTS Job Openings (febrero 2026)</td><td>MEDIO</td></tr>
+      <tr><td>01/04</td><td>ISM Manufacturing PMI (marzo 2026)</td><td>MEDIO</td></tr>
+      <tr class="zebra cat-alto"><td>01/04</td><td>OPEC+ JMMC (revisión cuotas producción)</td><td class="impact-cell">ALTO</td></tr>
+      <tr class="cat-alto"><td>03/04</td><td>Nonfarm Payrolls (marzo 2026)</td><td class="impact-cell">ALTO</td></tr>
+      <tr class="zebra cat-alto"><td>Continuo</td><td>Negociaciones alto el fuego US-Iran</td><td class="impact-cell">ALTO</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- HECHOS BASE -->
+<div class="card card-full">
+  <div class="card-header">📝 HECHOS BASE</div>
+  <div class="hechos-sub">
+    <h4>Verificados (fuentes alta fiabilidad)</h4>
+    <div class="hechos-item">1. Core PCE enero 2026: 3.1% YoY, máximo en casi dos años — <em>BEA / Reuters</em> (Rank 4, composite 24)</div>
+    <div class="hechos-item">2. Irán rechaza propuesta de alto el fuego de 15 puntos; Brent supera $107/bbl — <em>Bloomberg / CNBC</em> (Rank 1, composite 27)</div>
+    <div class="hechos-item">3. CBRT vende ~60 toneladas de oro en dos semanas para defensa de la lira — <em>Bloomberg</em> (Rank 3, composite 24). Intencionalidad: CBRT se beneficia de que la narrativa se enmarque como temporal/defensiva.</div>
+    <div class="hechos-item">4. Oro cae ~10% en la peor semana desde 2011; mínimo de 4 meses en $4,099 — <em>CNBC</em> (Rank 6, composite 14)</div>
+    <div class="hechos-item">5. CTA net long en 102,236 contratos; reducido desde extremos pero no lavado — <em>CFTC</em> (Rank 12, composite 12). Intencionalidad: narrativa de "riesgo de más liquidación" beneficia a compradores institucionales contra-tendencia.</div>
+    <div class="hechos-item">6. PBoC añade 30,000 onzas troy en febrero; total 74.22M onzas — <em>Bloomberg</em> (Rank 15, composite 12). Intencionalidad: PBoC se beneficia de que se crea la narrativa de "demanda estructural" que soporta el valor de su posición existente.</div>
+    <div class="hechos-item">7. NFP marzo 2026 (3 abril): evento de confirmación o refutación clave — <em>BLS</em> (Rank 2, composite 27)</div>
+  </div>
+  <div class="hechos-sub no-verificados">
+    <h4>No verificados (contexto/narrativa)</h4>
+    <div class="hechos-item">1. Negociaciones alto el fuego US-Iran en curso; potencial resolución súbita — <em>White House / Iran</em> (Rank 5, composite 8, credibilidad 1). Declaración política sin mecanismo vinculante ni plazo verificable.</div>
+    <div class="hechos-item">2. GLD pierde $1,500M en una semana; salidas YTD superan $2,000M — <em>BanklessTimes / Invezz</em> (Rank 7, composite 7, credibilidad 1). Intencionalidad: framing bajista de salidas puede beneficiar a actores acumulando a precios bajos mientras minoristas venden.</div>
+    <div class="hechos-item">3. Rusia vende oro a mínimo de reservas de 4 años — <em>BullionVault</em> (Rank 14, composite 6, credibilidad 1). Narrativa de "bancos centrales vendiendo" contradice tesis alcista estructural.</div>
+  </div>
+</div>
+
+</div><!-- /grid -->
+
+<!-- IMPACTO POR ACTOR -->
+<div class="impact-section">
+  <h2>Impacto por Actor</h2>
+  <div class="entity-grid">
+
+    <div class="entity-card">
+      <span class="entity-badge badge-opposed">Opposed</span>
+      <strong>People's Bank of China (PBoC)</strong>
+      <p class="entity-text">The bearish context driven by rising real yields and eliminated rate-cut expectations works against PBoC's structural long of 2,309 tonnes. However, the PBoC's accumulation mandate is multi-year and price-insensitive, so short-term bearish pressure is unlikely to alter their purchasing cadence. The opposition is real in mark-to-market terms but irrelevant to their strategic timeline.</p>
+    </div>
+
+    <div class="entity-card">
+      <span class="entity-badge badge-neutral">Neutral</span>
+      <strong>Reserve Bank of India (RBI)</strong>
+      <p class="entity-text">The RBI's buying pace already moderated sharply since September 2025, adding only 4 tonnes versus 72.6 the prior year, indicating price sensitivity at elevated levels. The bearish context reinforces the pause already underway, but does not threaten the existing 880-tonne reserve position given its structural, non-leveraged nature.</p>
+    </div>
+
+    <div class="entity-card">
+      <span class="entity-badge badge-favored">Favored</span>
+      <strong>Central Bank of Turkey (CBRT)</strong>
+      <p class="entity-text">The CBRT shifted to net seller in March 2026 to defend the lira, deploying roughly 60 tonnes through sales and swaps. A bearish gold environment provides a less punitive backdrop for these sales, as selling into a declining market attracts less adverse attention and faces fewer opportunity costs than selling into a rally.</p>
+    </div>
+
+    <div class="entity-card">
+      <span class="entity-badge badge-opposed">Opposed</span>
+      <strong>National Bank of Poland (NBP)</strong>
+      <p class="entity-text">NBP is the largest central bank buyer with an explicit 700-tonne target and 550 tonnes accumulated. The bearish context pressures the mark-to-market value of recent acquisitions, though the open-ended, publicly stated mandate with no timeline pressure means accumulation will continue regardless of short-term price direction.</p>
+    </div>
+
+    <div class="entity-card">
+      <span class="entity-badge badge-favored">Favored</span>
+      <strong>SPDR Gold Shares (GLD)</strong>
+      <p class="entity-text">GLD has already experienced over $6 billion in outflows across three consecutive weeks as gold dropped from $5,400 to $4,560. The bearish context aligns with continued redemption activity by authorized participants, reinforcing the ongoing deleveraging trend. GLD amplifies the dominant bias rather than resisting it.</p>
+    </div>
+
+    <div class="entity-card">
+      <span class="entity-badge badge-neutral">Neutral</span>
+      <strong>iShares Gold Trust (IAU)</strong>
+      <p class="entity-text">IAU shows mixed institutional activity with large allocators increasing and smaller firms reducing exposure. As a passive flow vehicle with no directional mandate, it reflects rather than drives the current environment, and its 59.67% institutional ownership base has not exhibited the sharp outflows seen in GLD.</p>
+    </div>
+
+    <div class="entity-card">
+      <span class="entity-badge badge-neutral">Neutral</span>
+      <strong>Bridgewater Associates</strong>
+      <p class="entity-text">Bridgewater fully exited its GLD position in Q3 2025 and holds no disclosed gold exposure as of the Q4 2025 13F. With zero current positioning, the bearish context neither benefits nor harms the firm's portfolio relative to gold.</p>
+    </div>
+
+    <div class="entity-card">
+      <span class="entity-badge badge-opposed">Opposed</span>
+      <strong>Ray Dalio / Dalio Family Office</strong>
+      <p class="entity-text">Dalio holds approximately $438.5 million in GLD, representing roughly 90% of the disclosed US portfolio, and publicly advocates 5-15% gold allocation. The bearish context driven by higher-for-longer rates directly pressures this concentrated position. His structural thesis on fiat currency erosion remains intact but faces a hostile near-term environment.</p>
+    </div>
+
+    <div class="entity-card">
+      <span class="entity-badge badge-opposed">Opposed</span>
+      <strong>Shanghai Gold Exchange (SGE)</strong>
+      <p class="entity-text">Persistent SGE withdrawals of 126 tonnes in January and 85 tonnes in February reflect sustained Eastern structural demand, which the bearish context works against by reducing price momentum and narrowing the Shanghai premium. Rapid price declines may temporarily suppress wholesale and jewelry demand, dampening withdrawal volumes.</p>
+    </div>
+
+    <div class="entity-card">
+      <span class="entity-badge badge-favored">Favored</span>
+      <strong>Commodity Trading Advisors (CTA aggregate)</strong>
+      <p class="entity-text">CTAs have already shifted from extended long to neutral-to-short positioning as systematic trend-following models responded to the USD resurgence and rising yields. The bearish context validates their current directional lean and could trigger additional short entries if gold breaks below $4,100, though reduced positioning limits the magnitude of further forced selling.</p>
+    </div>
+
+  </div>
+
+  <div class="aggregate-card">
+    <h3>Aggregate Smart Money Stance</h3>
+    <p>Central bank structural longs (PBoC, NBP, RBI, Dalio) remain the dominant weight but are price-insensitive and non-leveraged, while the active, price-sensitive capital (CTAs, GLD flows) aligns with and amplifies the bearish bias, meaning smart money collectively reinforces the downside in the near term despite a structural bullish floor from sovereign accumulators.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  Generado: 2026-03-27 &nbsp;|&nbsp; Ventana válida: 3-5 días &nbsp;|&nbsp; Revisión requerida ante alto el fuego creíble o NFP débil el 3 de abril.
+</div>
+
+</div><!-- /container -->
+
+<script>
+// Collapsible details elements are handled natively by the browser.
+// No additional JavaScript required.
+</script>
+</body>
+</html>

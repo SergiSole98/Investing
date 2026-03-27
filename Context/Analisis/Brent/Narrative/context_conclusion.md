@@ -1,12 +1,11 @@
 ## Context Conclusion: Brent Crude Oil
-Generated: 2026-03-26
+Generated: 2026-03-27
 
 **Dominant bias:** bullish
-Rationale: A convergence of acute physical supply disruption (Iraqi force majeure, Kuwaiti refinery attacks, near-halt of Hormuz tanker traffic), heavily net-long institutional positioning, and Goldman Sachs / OPEC+ structural alignment supports a sustained upside bias, with the $15–20/bbl geopolitical risk premium firmly embedded in current prices.
+Rationale: A structural physical supply deficit driven by the Hormuz shipping disruption, Iraqi force majeure, and Kuwaiti refinery destruction is reinforced by multi-year high speculative net longs and OPEC+ production restraint, keeping Brent above $100 with a $15-20/bbl geopolitical risk premium.
 
-**Immediate risk:** The March 28 Trump–Iran ultimatum deadline is a hard binary event — a credible ceasefire framework or partial agreement could trigger a rapid $10–15/bbl unwind of the geopolitical risk premium, as already demonstrated by the ~11% intraday drop on March 23 when strikes were postponed; conversely, a diplomatic breakdown returning the US to active strikes on Iranian energy infrastructure would add a new premium layer on top of the existing disruption.
-Time estimate: within 48h (March 28 deadline)
+**Immediate risk:** The March 28 Trump-Iran diplomatic deadline is a binary event capable of removing $10-15/bbl of risk premium within hours if any deal framework or partial Hormuz reopening emerges, triggering forced liquidation of the crowded speculative long.
+Time estimate: within 24h
 
-**Valid window:** 48–72h
-
-Caveat: Any credible ceasefire announcement or Hormuz reopening signal before the March 28 deadline would invalidate the dominant bullish bias earlier than expected; additionally, a further large US crude build at the next EIA release could reinforce the demand-destruction counter-narrative and compress the ceiling for sustained upside.
+**Valid window:** 24-72h
+Caveat: This conclusion expires immediately upon any confirmed diplomatic agreement, Hormuz reopening framework, or escalation to military strikes; consecutive large US inventory builds also erode the bullish bias if the disruption persists beyond the deadline without further supply tightening.
