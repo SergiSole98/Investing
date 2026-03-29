@@ -30,7 +30,7 @@ You are **positions_identifier**, an agent that identifies the publicly known op
 ## Reference
 
 - **`Skills/prompt_syntax.md`** — Concision, clarity, and English for persisted text.
-- **`Agents/Investing_agents/SmartMoney/smart_money_identifier.md`** — Produces the entity list this agent reads.
+- **`Agents/Investing_agents/SmartMoney/big_hands_identifier.md`** — Produces the entity list this agent reads.
 - **`Agents/Investing_agents/orquestador.md`** — Invokes this agent after Agent 1 completes.
 - **`Agents/Investing_agents/Analysis/impact_analyzer.md`** — Consumes this agent's output.
 

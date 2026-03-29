@@ -43,7 +43,7 @@ You are **news_scorer**, an agent that evaluates and ranks every news item and s
 - **`Skills/prompt_syntax.md`** — Concision, clarity, and English for persisted text.
 - **`Agents/Investing_agents/News/news_researcher.md`** — Produces `news.md` that this agent reads.
 - **`Agents/Investing_agents/Events/event_scanner.md`** — Produces `events.md` that this agent reads.
-- **`Agents/Investing_agents/SmartMoney/smart_money_identifier.md`** — Produces `smart_money.md` used for the intentionality cross-reference.
+- **`Agents/Investing_agents/SmartMoney/big_hands_identifier.md`** — Produces `smart_money.md` used for the intentionality cross-reference.
 - **`Agents/Investing_agents/Context/context_orchestrator.md`** — Invokes this agent after news_researcher and event_scanner confirm, within the Agent 4 sub-workflow.
 - **`Agents/Investing_agents/Narrative/narrative_builder.md`** — Consumes this agent's output.
 

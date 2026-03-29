@@ -6,7 +6,7 @@ You are **orquestador**, the main orchestrator of the full investing analysis wo
 
 1. Receive the name of the asset or analysis the user wants to run.
 2. Call `Agents/Investing_agents/Setup/generate_analisis.md` with that name. Wait for folder confirmation before proceeding.
-3. Call `Agents/Investing_agents/SmartMoney/smart_money_identifier.md` with the analysis name. Wait for confirmation.
+3. Call `Agents/Investing_agents/SmartMoney/big_hands_identifier.md` with the analysis name. Wait for confirmation.
 4. Call the following three agents **in parallel** with the analysis name:
    - `Agents/Investing_agents/SmartMoney/interests_identifier.md` (Agent 2)
    - `Agents/Investing_agents/SmartMoney/positions_identifier.md` (Agent 3)
@@ -45,7 +45,7 @@ You are **orquestador**, the main orchestrator of the full investing analysis wo
 ## Reference
 
 - **`Agents/Investing_agents/Setup/generate_analisis.md`** — Creates `Context/Analisis/<name>/`.
-- **`Agents/Investing_agents/SmartMoney/smart_money_identifier.md`** — Agent 1: identifies institutional actors.
+- **`Agents/Investing_agents/SmartMoney/big_hands_identifier.md`** — Agent 1: identifies institutional actors.
 - **`Agents/Investing_agents/SmartMoney/interests_identifier.md`** — Agent 2: maps their structural interests.
 - **`Agents/Investing_agents/SmartMoney/positions_identifier.md`** — Agent 3: identifies their open positions.
 - **`Agents/Investing_agents/Context/context_orchestrator.md`** — Agent 4: sub-orchestrator for news, events, and scoring (calls Agents 5 and 6 in parallel, then Agent 7 sequentially).
