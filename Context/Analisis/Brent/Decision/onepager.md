@@ -1,177 +1,171 @@
 # INVESTMENT ONE-PAGER
 
-**ACTIVO:** Brent Crude Oil (ICE BRN) | **MERCADO:** ICE Futures Europe / NYMEX | **FECHA:** 2026-03-27
+**ACTIVO:** Brent Crude Oil (ICE BRN) | **MERCADO:** Commodities / ICE Futures Europe | **FECHA:** 2026-03-29
 
 ---
 
-## RECOMENDACION
+## 🎯 RECOMENDACIÓN
 
 | Rating | Precio Actual | Target | Potencial | Horizonte |
 |--------|---------------|--------|-----------|-----------|
-| **WAIT** | $112.38 | -- (pendiente trigger) | N/D | 24-72h |
+| **BUY** | $112,57 | $115 (base) / $120–$128 (deadline sin acuerdo) | +2,2% base / +6,6–13,7% escenario escalada | 3–5 días |
 
 ---
 
-## TESIS (3 bullets)
+## 💡 TESIS (3 bullets máximo)
 
-- El deficit fisico de oferta por el cierre del Estrecho de Ormuz, la fuerza mayor iraqui (2,4 mb/d) y la destruccion de capacidad kuwaiti (730 kbpd) mantiene Brent por encima de $100 con una prima geopolitica de $15-20/bbl.
-- La fecha limite diplomatica del 6 de abril (Trump-Iran) es un evento binario capaz de eliminar $10-15/bbl de prima de riesgo en horas, exponiendo el largo especulativo record (320.952 lotes ICE Brent) a liquidacion forzada.
-- Entrar antes de la resolucion del 6 de abril expone el capital a un riesgo de reversion asimetrico desproporcionado respecto al potencial alcista residual dentro de la ventana valida.
+- El Estrecho de Hormuz permanece efectivamente cerrado desde finales de febrero (solo 21 buques desde el 28/02 vs. 100+/día previo); el precio físico de Dubai a ~$126/bbl confirma escasez real no resuelta por las liberaciones de reservas estratégicas, y ningún catalizador dentro de la ventana de 3–5 días puede revertir el sesgo alcista sin una resolución diplomática confirmada antes del 6 de abril.
+- El dinero especulativo amplifica el sesgo dominante al máximo: managed money en ICE Brent con posición neta larga en máximos de seis años (~428.000 lotes), CTAs al 100% largo en Brent y WTI, y ocho de once actores identificados alineados o pasivamente expuestos al alza; la liberación IEA de 400 millones de barriles ya fue absorbida sin revertir la tendencia.
+- La reunión ministerial OPEC+ el 5 de abril (dentro de la ventana válida) proporciona un mecanismo formal para reforzar la disciplina de oferta; el deadline del 6 de abril de Trump crea una estructura de payoff asimétrica donde el fallo sin acuerdo añadiría $10–15/bbl, y el escenario base dado que Irán rechaza negociaciones directas al 29 de marzo favorece la continuación del bloqueo.
 
 ---
 
-## NIVELES CLAVE
+## 📊 NIVELES CLAVE
 
 | Tipo | Nivel | Toques | Distancia |
 |------|-------|--------|-----------|
-| Resistencia 2 | $135 (escenario Goldman 6 meses Ormuz) | N/D | +20.1% |
-| Resistencia 1 | $115 (target Goldman abril) | N/D | +2.3% |
-| **PRECIO ACTUAL** | **$112.38** | - | - |
-| Soporte 1 | $99.94 (minimo intradiario 23-mar) | 1 | -11.1% |
-| Soporte 2 | $85-95 (breakeven fiscal OPEP+/Arabia Saudita) | N/D | -15.5% a -24.4% |
+| Resistencia 2 (escenario disrupción prolongada Goldman Sachs, 6 meses) | $135 | N/D | +19,9% |
+| Resistencia 1 (objetivo GS abril / deadline sin acuerdo) | $115–$120 | N/D | +2,2–6,6% |
+| **PRECIO ACTUAL** | **$112,57** | - | - |
+| Soporte 1 (mínimo intradía 23-mar post-declaración Trump) | $99,94 | 1 | –11,2% |
+| Soporte 2 (rango normalizado post-conflicto Goldman Sachs) | $66–$85 | N/D | –24,5–41,4% |
 
 ---
 
-## INDICADORES
+## 📈 INDICADORES
 
-| Indicador | Valor | Senal | Fiabilidad |
+| Indicador | Valor | Señal | Fiabilidad |
 |-----------|-------|-------|------------|
-| Posicion especulativa neta (ICE Brent) | 320.952 lotes net long (maximo 2 anos) | Alcista, pero abarrotada | Alta |
-| Curva futuros | Backwardation pronunciada | Alcista (escasez fisica) | Alta |
-| Flujos semanales managed money | Largos +4.080 / Cortos -609 w/w | Alcista | Alta |
-| Swap Dealers neto (NYMEX) | +53.663 contratos (~53,7 mb) | Alcista | Alta |
-| Inventarios EIA | +6,9 mb (5a build consecutiva) | Bajista | Alta |
+| Sentimiento (F&G) | N/D | N/D | N/D |
+| Curva futuros | Backwardation profunda (~$112 prompt vs. <$90 diferido) | Alcista — escasez física extrema | ⭐⭐⭐ |
+| Put/Call Ratio | N/D | N/D | N/D |
+| Volatilidad implícita / OVX | Elevada — whipsaw de $10/bbl en dos sesiones (25–26/03) | Régimen de alta volatilidad activo | ⭐⭐ |
+| Pre-market | N/D | N/D | N/D |
 
 ---
 
-## ACTIVOS CORRELACIONADOS
+## 🔗 ACTIVOS CORRELACIONADOS
 
-| Activo | Relacion | Direccion | Senal |
+| Activo | Relación | Dirección | Señal |
 |--------|----------|-----------|-------|
-| WTI | Par directo | Alza ($100 intradiario 27-mar) | Confirma |
-| Inventarios Cushing | Indicador fisico | Build +3,4 mb (mayor desde ene-2023) | Diverge |
-| USD (via PCE/tipos) | Inversa | PCE +3,1% YoY; USD fuerte | Diverge (presion bajista indirecta) |
+| WTI Crude Oil (NYMEX CL) | Correlación directa | ↑ ($99,64 el 27/03) | Confirma — CTAs al 100% largo en WTI también |
+| Dubai Physical Crude | Precio spot físico de referencia regional | ↑ (~$126/bbl) | Confirma — spread +$14/bbl sobre Brent futures señala escasez extrema no resuelta |
+| USD (vía PCE / tipos Fed) | Inversa — dólar fuerte pesa sobre materias primas en USD | → / ↑ leve | Diverge marginalmente — PCE enero +3,1% YoY; impacto indirecto de segundo orden |
 
 ---
 
-## ACTORES E INCENTIVOS
+## 🎭 ACTORES E INCENTIVOS
 
-| Actor | Que gana | Que pierde | Limite temporal |
+| Actor | Qué gana | Qué pierde | Límite temporal |
 |-------|----------|------------|-----------------|
-| Arabia Saudita (Aramco) | Precios >$85-95 financian Vision 2030 y dividendos Aramco; OSP abril subido +$1,60/bbl confirma confianza | Colapso de prima si acuerdo diplomatico; perdida cuota mercado si precios destruyen demanda | Reunion OPEP+ abr-jun 2026; resultados Q1 Aramco may 2026 |
-| Managed Money / Hedge Funds | Posicion net long record (320.952 lotes ICE + 14.194 NYMEX) se revaloriza si escalada | Liquidacion forzada masiva si acuerdo Ormuz; posicion mas vulnerable al evento del 6 abril | COT semanal; rebalanceo fin trimestre 31-mar |
-| China (CNPC/Sinopec/CNOOC) | Acopio a 1,24 mb/d absorbe oferta y refuerza reservas (~1.300 mb); 169 mb nueva capacidad en construccion | Denegacion de transito por Ormuz (27-mar) interrumpe programa de acopio | Fin mantenimiento refinerias abr-may; aumento estacional importaciones |
-| DOE / IEA (reservas estrategicas) | Supresion de precios via liberacion coordinada 400 mb (172 mb SPR EEUU); 45 mb ya entregados | SPR en ~415 mb agotandose sin contener prima; intervencion insuficiente frente a deficit fisico | Programa activo hasta mediados 2026 |
+| **Managed Money / Especulativos (ICE Brent, ~428.000 lotes neto largo — máximo seis años)** | Mark-to-market favorable; validación del posicionamiento récord; Andurand Capital ~+20% YTD | Liquidación forzada masiva ante cualquier señal creíble de reapertura de Hormuz o acuerdo antes del 6 de abril; riesgo de cascada reflexiva | COT semanal (viernes); apertura lunes 7 de abril post-deadline |
+| **Arabia Saudí / Saudi Aramco** | Ingresos fiscales máximos; OSP de marzo el mayor desde agosto 2022 (+$2,40/bbl a Asia); validación de disciplina de oferta ante Hormuz | No puede exportar físicamente a través del estrecho; daño reputacional si OPEC+ pierde credibilidad | Reunión ministerial OPEC+, 5 de abril 2026 |
+| **OPEC+ (8 productores core: Arabia Saudí, EAU, Iraq, Kuwait, Rusia, Kazajistán, Argelia, Gabón)** | Precios elevados sirven intereses fiscales colectivos; aumento de 206.000 b/d físicamente inentregable, por lo que la narrativa de disciplina no tiene coste real para la mayoría | Aceleración del deshacimiento de recortes si presión de Washington aumenta; riesgo de incumplimiento de Rusia y Kazajistán | Reunión ministerial 5 de abril; próxima decisión mensual |
+| **IEA / DOE (oposición activa)** | Demostrar capacidad institucional de intervención; contener presiones inflacionistas en países miembros | Credibilidad si 400 millones de barriles no frena el precio; offsetea solo ~15% del flujo perdido por Hormuz | Ventana de 120 días desde mediados de marzo hasta mediados de julio 2026 |
 
 ---
 
-## POSICIONAMIENTO DEL DINERO
+## 💰 POSICIONAMIENTO DEL DINERO
 
-| Indicador | Lectura | Interpretacion |
+| Indicador | Lectura | Interpretación |
 |-----------|---------|----------------|
-| Managed Money ICE Brent | Net long 320.952 lotes (maximo ~2 anos); +4.080 largos, -609 cortos w/w | Entrando agresivamente; posicion abarrotada |
-| Managed Money NYMEX Brent | Net long +14.194 contratos (~14,2 mb) | Entrando |
-| Swap Dealers NYMEX | Net long +53.663 contratos (~53,7 mb) | Entrando |
-| Productores/Merchants NYMEX | Net short -42.184 contratos (~42,2 mb) | Cobertura vendedora habitual |
-| Arabia Saudita / OPEP+ | Produccion 9 mb/d vs capacidad 12,5 mb/d; recortes voluntarios 5,86 mb/d | Restriccion deliberada de oferta |
-| China | Acopio 1,24 mb/d; reservas ~1.300 mb | Compra agresiva |
-| DOE / IEA | Liberacion 400 mb coordinada; 45 mb ya entregados | Intervencion bajista activa |
+| Flujos institucionales — Managed Money ICE Brent | Neto largo ~428.000 lotes (máximo seis años); +77.000 lotes en una sola semana al 17/03 | Entrando agresivamente — máxima acumulación especulativa alcista registrada |
+| Curva de futuros | Backwardation profunda: prompt ~$112/bbl vs. diferido <$90/bbl | Backwardation — confirma expectativa de escasez física persistente en el corto plazo |
+| Posicionamiento sistemático (CTAs) | 100% largo en Brent y WTI — primera vez para WTI desde septiembre 2021 | Alcista — amplificación mecánica del uptrend; reversión solo ante ruptura de medias clave |
 
-**Direccion del dinero:** LARGO — dominado por especuladores record, productores soberanos y compras estrategicas chinas; solo DOE/IEA activamente en contra.
+**Dirección del dinero:** LARGO
 
 ---
 
-## ESCENARIO DESCONTADO
+## 🧠 ESCENARIO DESCONTADO
 
-**Que esta descontando el mercado?**
-Continuacion de la disrupcion del Estrecho de Ormuz sin resolucion diplomatica a corto plazo, con deficit fisico estructural sostenido por fuerza mayor iraqui (2,4 mb/d), destruccion refino kuwaiti (730 kbpd), y recortes voluntarios OPEP+ (5,86 mb/d). La backwardation pronunciada y el posicionamiento especulativo record confirman que el mercado asigna alta probabilidad a que la crisis persista. El sistema iraniano de "peaje" selectivo para 5 naciones ha demostrado ser poco fiable (barcos chinos denegados el 27-mar).
+**¿Qué está descontando el mercado?**
+El mercado descuenta la continuación del bloqueo del Estrecho de Hormuz sin resolución diplomática inminente, con una prima de riesgo geopolítico estimada en $14–18/bbl embebida en el precio actual de ~$112,57/bbl. La backwardation profunda y el diferencial Dubai spot (~$126/bbl) vs. Brent futures (~$112/bbl) confirman que el mercado físico cotiza escasez estructural y no expectativa de resolución a corto plazo. El deadline del 6 de abril es un evento binario cuyo resultado el mercado no puede anticipar con certeza; Irán insiste en negociar solo a través de intermediarios al 29 de marzo.
 
 **Escenarios alternativos:**
 
 | Escenario | Probabilidad | Impacto en precio |
 |-----------|--------------|-------------------|
-| Sin acuerdo el 6 abril; strikes EEUU contra infraestructura energetica iraniana | Moderada | +$10-25/bbl (hacia $120-135) |
-| Acuerdo parcial o reapertura parcial de Ormuz | Baja (Iran rechaza dialogo directo) | -$10-15/bbl (hacia $95-100) |
-| Destruccion de demanda acelerada + recesion EEUU (Goldman 30% prob.) | Baja-moderada | -$15-25/bbl a medio plazo (hacia $85-90) |
+| Deadline 6 de abril: sin acuerdo / EE.UU. ataca infraestructura iraní (escenario base dado postura iraní) | Escenario base | +$10–15/bbl; potencial $120–$128 en apertura del lunes 7 |
+| Acuerdo diplomático o extensión con concesiones verificables antes del 6 de abril | Bajo-moderado (precedente: 3 extensiones previas) | –$14–18/bbl de compresión de prima; rango $94–$99 |
+| OPEC+ 5 de abril suspende aumento de producción (bullish add) | Alta probabilidad — aumento físicamente inentregable | +$3–5/bbl adicionales; amplificación del sesgo alcista |
+| Señal creíble de reapertura de Hormuz + acuerdo duradero (rango post-conflicto) | Bajo dentro de la ventana de 3–5 días | –$26–$47/bbl; rango normalizado $66–$85 (Goldman Q4 2026) |
 
 ---
 
-## TRIGGER DE ENTRADA
+## 🎯 TRIGGER DE ENTRADA
 
 | Check | Resultado |
 |-------|-----------|
-| Sentimiento claro? | SI — alcista dominante |
-| Precio confirma direccion? | SI — Brent >$112, por encima de $100 |
-| Failure to respond? | N/A — no aplicable pre-deadline |
-| Pre-market confirma? | N/A |
+| ¿Sentimiento claro? | SÍ — sesgo alcista dominante confirmado por posicionamiento, físico y narrativa |
+| ¿Precio confirma dirección? | SÍ — $112,57 máximo desde mediados de 2022; backwardation profunda; Dubai +76% vs. febrero |
+| ¿Failure to respond? | SÍ — precio rebotó desde $99,94 (caída del ~11% del 23/03) y recuperó íntegramente el terreno perdido; liberación IEA de 400 millones de barriles absorbida sin reversal sostenido |
+| ¿Pre-market confirma? | N/D |
 
-**Tipo de trigger:** NINGUNO — evento binario pendiente (deadline 6 abril)
+**Tipo de trigger:** CLÁSICO (continuación de tendencia con catalizador binario próximo como amplificador)
 
-**Decision:** WAIT
-
-**Condicion de upgrade:** Si el deadline del 6 de abril pasa sin acuerdo de resolucion para Ormuz — upgrade a GO. Si se anuncia acuerdo creible de desescalada — downgrade a NO GO.
+**Decisión:** 🟢 GO
 
 ---
 
-## RIESGOS (3 bullets)
+## ⚠️ RIESGOS (2-3 bullets)
 
-- Liquidacion forzada del largo especulativo record (320.952 lotes) si cualquier marco de acuerdo o reapertura parcial de Ormuz emerge antes o el 6 de abril, con potencial caida de $10-15/bbl en horas (referencia: -11% intradiario el 23-mar).
-- Builds de inventarios EIA consecutivos (5 semanas, +6,9 mb ultima) senalan destruccion de demanda que erosiona la tesis alcista si la disrupcion persiste pero los precios no ajustan.
-- Asesinato del comandante Tangsiri (IRGC Navy) puede provocar represalias iranianas impredecibles que amplifiquen volatilidad en ambas direcciones.
+- **Resolución diplomática sorpresiva antes del 6 de abril:** cualquier señal creíble de reapertura de Hormuz, extensión del deadline con concesiones iraníes verificables, o confirmación de acuerdo intermediado comprimiría la prima de $14–18/bbl de forma brusca sin mercado abierto disponible hasta el lunes 7 de abril (máximo gap risk); el precedente del 23 de marzo muestra caídas de ~11% intradía ante declaraciones unilaterales no confirmadas.
+- **Liquidación forzada del posicionamiento especulativo:** con managed money en máximos de seis años (~428.000 lotes), cualquier catalizador bajista puede desencadenar una cascada de cierre de largos que amplifica el downside muy por encima del movimiento fundamental justificado; la concentración extrema es un riesgo reflexivo bidireccional.
+- **EIA del 1 de abril (último dato antes del deadline):** una sexta build consecutiva por encima del consenso reforzaría la narrativa de destrucción de demanda y podría presionar el precio a la baja intradía; aunque no invierte el sesgo dominante sin resolución del Hormuz, puede crear condiciones de entrada más favorables antes del evento binario.
 
 ---
 
-## CATALIZADORES PROXIMOS
+## 📅 CATALIZADORES PRÓXIMOS
 
 | Fecha | Evento | Impacto esperado |
 |-------|--------|------------------|
-| 27/03 | PCE febrero (08:30 ET) — inflacion preferida Fed | MEDIO |
-| 31/03 | Expiracion futuros ICE Brent mayo 2026 — roll a junio | MEDIO |
-| 31/03 | HICP flash Eurozona marzo | BAJO |
-| 01/04 | ISM Manufacturing PMI marzo | MEDIO |
-| 01/04 | EIA inventarios semanales (semana 27-mar) | ALTO |
-| 02/04 | ADP empleo privado marzo | BAJO |
-| 03/04 | Viernes Santo — mercados cerrados (riesgo de gap) | ALTO |
-| 05/04 | Reunion ministerial OPEP+ 8 paises | ALTO |
-| 06/04 | Deadline Trump-Iran reapertura Ormuz (20:00 ET) | MUY ALTO — catalizador binario principal |
+| 29/03 | PCE de febrero 2026 (08:30 ET) — anterior +3,1% YoY | MEDIO — dato caliente fortalece USD y pesa sobre demanda; dato suave apoya risk appetite y precios |
+| 31/03 | Vencimiento contrato mayo ICE Brent — roll a junio; backwardation profunda | MEDIO — flujos de roll amplifican volatilidad intradía |
+| 31/03 | HICP flash Eurozona marzo 2026 | BAJO — transmisión indirecta vía EUR/USD |
+| 01/04 | EIA informe semanal de inventarios (semana al 27/03) — 10:30 ET | ALTO — primer dato post-26/03; build grande cap el upside; draw sorpresa muy alcista |
+| 01/04 | ISM Manufacturing PMI marzo 2026 — 10:00 ET | BAJO-MEDIO — PMI de febrero fue 49,8 (contracción); dato más débil activa narrativa de destrucción de demanda |
+| 02/04 | ADP Employment marzo 2026 — 08:15 ET | BAJO — precursor de NFP; debilidad refuerza temores recesivos |
+| 03/04 | Good Friday — cierre ICE Brent y NYMEX | ALTO (estructural) — comienza gap period; noticias del fin de semana no se precian hasta el lunes 7 |
+| 05/04 | Reunión ministerial OPEC+ (8 productores core) | ALTO — suspensión del aumento de abril añadiría $3–5/bbl; aceleración del unwind sería bajista |
+| 06/04 | Deadline Trump — pausa en ataques a infraestructura iraní expira (20:00 ET) | MUY ALTO — evento binario dominante; gap event garantizado en apertura del lunes 7 de abril |
 
 ---
 
-## EJECUCION
+## ✅ EJECUCIÓN
 
 | Campo | Valor |
 |-------|-------|
-| **Accion** | -- (pendiente trigger) |
-| **Ticker (Broker)** | ICE BRN (Brent Crude Futures) |
-| **Entry** | -- (pendiente trigger) |
-| **Stop Loss** | -- (pendiente trigger) |
-| **Take Profit** | -- (pendiente trigger) |
-| **Sizing** | -- (pendiente trigger) |
-
-**Condicion de activacion:** Deadline 6 abril pasa sin acuerdo Ormuz — upgrade a GO (largo). Acuerdo creible de desescalada — downgrade a NO GO.
+| **Acción** | COMPRAR |
+| **Ticker (Broker)** | ICE BRN (front month — roll a junio antes del cierre del 31/03) |
+| **Entry** | $112,57 (cierre del 27/03; entrada en apertura del 31/03 o ante confirmación de postura iraní intransigente) |
+| **Stop Loss** | $102 (–9,4%) — por debajo del mínimo del 25 de marzo; cierre sostenido bajo $102 implicaría reversión creíble del risk premium |
+| **Take Profit** | $115 (+2,2%) objetivo conservador; $120 (+6,6%) en escenario de fallo del deadline |
+| **Sizing** | N/D — calibrar según tolerancia al gap risk del fin de semana 3–7 de abril |
 
 ---
 
-## HECHOS BASE
+## 📝 HECHOS BASE
 
-### Verificados (fuentes alta fiabilidad)
-1. Iraq declaro fuerza mayor sobre todos los campos operados por extranjeros; produccion Basra Oil reducida de 3,3 mb/d a ~900 kbpd — *Reuters / CNBC, 2026-03-20*
-2. Ataques con drones destruyeron ~730 kbpd de capacidad refino kuwaiti (Mina Al-Ahmadi y Mina Abdullah); Arabia Saudita cerro Ras Tanura (550 kbpd) preventivamente — *Reuters / CNBC, 2026-03-20*
-3. IEA coordino liberacion de 400 mb (la mayor de la historia); EEUU contribuye 172 mb del SPR; primeras entregas en 9 dias — *Bloomberg / DOE / NPR, 2026-03-11*
-4. EIA reporto build de +6,926 mb (vs +0,5 mb esperados), quinta build consecutiva; Cushing +3,421 mb — *EIA, 2026-03-25*
-5. CFTC COT: managed money net long ICE Brent 320.952 lotes (maximo ~2 anos); NYMEX net long +14.194 contratos; swap dealers net long +53.663 contratos — *CFTC, 2026-03-10*
-6. Trump extendio deadline de strikes contra Iran al 6 de abril 20:00 ET (segunda extension) — *Bloomberg / CNBC / NPR, 2026-03-26*
-7. Israel mato al comandante de la Armada del IRGC, Tangsiri, responsable del cierre de Ormuz — *Reuters / CNBC, 2026-03-26*
-8. Barcos chinos denegados transito por Ormuz pese a anuncio iraniano de permiso para 5 naciones; Brent a $112,38 — *CNBC, 2026-03-27*
-9. OFAC emitio waiver de sanciones 30 dias para ~140 mb de crudo iraniano varado (expira 19 abril) — *CNBC / Washington Post, 2026-03-20*
-10. OPEP+ aprobo aumento 206.000 bpd para abril; fisicamente inentregable por bloqueo Ormuz — *Bloomberg / CNBC, 2026-03-01* — Intencionalidad OPEP+: narrativa de gestion cooperativa de oferta mientras restriccion fisica impide la entrega real
+### Verificados (fuentes ⭐⭐⭐)
+
+1. Estrecho de Hormuz efectivamente cerrado: solo 21 buques transitaron desde el 28 de febrero vs. 100+/día previos; ~22 buques anclados en espera de autorización — *CNBC, 2026-03-28 (Composite 18, CLEAR)*
+2. Iraq declaró fuerza mayor en todos los campos operados por extranjeros; producción colapsó de ~4,3 mb/d a ~1,2 mb/d; drone strikes sobre refinerías de Kuwait (730.000 bpd capacidad combinada) y cierre precautorio de Saudi Ras Tanura (~550.000 bpd) — *Reuters / CNBC / Benzinga, 2026-03-20 (Composite 30, CLEAR)*
+3. Dubai physical price ~$126/bbl (+76% desde el 27 de febrero), confirmando escasez spot extrema superior al nivel de futuros de Brent (~$112/bbl) — *Bloomberg, 2026-03-25 (Composite 18, CLEAR)*
+4. Managed money neto largo en ICE Brent: ~428.000 lotes (máximo seis años), con aumento de +77.000 lotes en una sola semana al 17/03 — *ICE Futures Europe COT Disaggregated, 2026-03-17*
+5. IEA autorizó la mayor liberación de reservas estratégicas de su historia: 400 millones de barriles; EE.UU. contribuye ~172 millones de barriles (~1,4 mb/d durante 120 días); pese al anuncio, Brent siguió subiendo — *Bloomberg / CNBC, 2026-03-11 (Composite 30)* — NOTA: FLAGGED — DOE tiene incentivo político de supresión de precios (actor smart money alineado con presión bajista)
+6. EIA: quinta build consecutiva de inventarios en EE.UU. (+6,926 mb vs. consenso +0,5 mb; Cushing mayor build desde enero 2023, +3,421 mb) — *EIA, 2026-03-25 (Composite 21, CLEAR)*
+7. Trump extendió el deadline de ataques a infraestructura iraní al 6 de abril 20:00 ET (segunda extensión); Irán negó negociaciones directas y exigió intermediarios — *Bloomberg / CNBC, 2026-03-26 (Composite 27, CLEAR)*
+8. Comandante de la Armada del IRGC Alireza Tangsiri eliminado en ataque israelí el 26 de marzo; era el responsable operativo del bloqueo del Estrecho de Hormuz — *Reuters / CNBC, 2026-03-26 (Composite 27, CLEAR)*
+9. CTAs al 100% largo en Brent y WTI — primera vez para WTI desde septiembre 2021 — *Bloomberg, 2026-03-09 (citando datos Kpler)*
+10. OPEC+ acordó aumento de 206.000 b/d para abril; próxima revisión el 5 de abril 2026; físicamente inentregable para la mayoría de productores del Golfo bajo condiciones actuales de Hormuz — *OPEC communiqué / Bloomberg, 2026-03-01 (Composite 21)* — NOTA: FLAGGED — OPEC+ tiene incentivo fiscal directo en narrativas de disciplina de oferta (actor smart money alineado)
 
 ### No verificados (contexto/narrativa)
-1. Goldman Sachs subio forecast Brent 2026 a $85/bbl promedio, near-term $115 abril, escenario extremo $135 — *Bloomberg / Goldman Sachs, 2026-03-23* — Intencionalidad: swap dealer que se beneficia de volumenes de trading y posicionamiento largo especulativo
-2. Goldman subio probabilidad recesion EEUU a 30% — *Fortune / CNBC, 2026-03-25* — Intencionalidad: genera demanda de cobertura y revenue de asesoria
-3. Trump describio conversaciones con Iran como "productivas"; Iran nego cualquier dialogo directo — *CNBC / NBC News, 2026-03-23* — Intencionalidad: declaracion unilateral no confirmada por contraparte
-4. J.P. Morgan mantiene base case bajista ~$60/bbl para 2026; reconoce tail risk $100-120 — *J.P. Morgan Global Research* — Intencionalidad: postura de research que sirve a negocio de asesoria institucional
+
+1. Goldman Sachs elevó objetivo de Brent a $110/bbl (media marzo-abril), $115/bbl en escenario de disrupción de Hormuz y $135/bbl en tail de seis meses; media anual 2026 revisada a $85/bbl — *Bloomberg, 2026-03-23 (Composite 24)* — Incentivo: Goldman como swap dealer y market-maker en Brent OTC gana de volúmenes de clientes y posicionamiento alcista reforzado por sus propias previsiones (FLAGGED)
+2. J.P. Morgan mantiene base case de $60/bbl para 2026 y califica los precios actuales como "misalignment" por prima de guerra temporal sobre superávit estructural — *JPM Research, 2026-03-18* — Incentivo: narrativa bajista impulsa cobertura de clientes y posicionamiento corto que crea resistencia overhead; investigación declarativa sin posición de futuros verificada
+3. OPEC+ ministerial del 5 de abril ampliamente esperado para suspender o pausar el aumento de producción dado que es físicamente inentregable bajo las condiciones actuales de Hormuz; JMMC confirma sin planes de acelerar antes del Q3 2026 — *OPEC / Bloomberg (Composite 27)* — Incentivo: cartel tiene incentivo fiscal directo en comunicar disciplina de oferta (FLAGGED doble — Ranks 4 y 13 en news_scored.md)
 
 ---
 
-*Si no puedes llenar este one-pager con conviccion, el analisis ha fallado. Vuelve atras e identifica que te falta.*
+*Si no puedes llenar este one-pager con convicción, el análisis ha fallado. Vuelve atrás e identifica qué te falta.*

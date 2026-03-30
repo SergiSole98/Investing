@@ -1,14 +1,12 @@
 ## Decision: Brent Crude Oil
-Generated: 2026-03-27
-Valid window: 24-72h
+Generated: 2026-03-29
+Valid window: 3–5 days
 
-### Verdict: WAIT
+### Verdict: GO
 
 Rationale:
-- Dominant bias is clearly bullish, supported by aggregate smart money stance: record speculative net longs, OPEC+ supply restraint, Saudi pricing confidence, and Chinese stockpile absorption all reinforce the upward context.
-- Four high-influence entities are favored (Saudi Arabia, OPEC+, China, Managed Money) versus two opposed (U.S. DOE/SPR, IEA coordinated release), confirming majority alignment with the bullish bias.
-- The March 28 diplomatic deadline is a binary event occurring within the valid window that could abruptly collapse the geopolitical premium, triggering forced liquidation of the record-crowded speculative long (320,952 lots ICE Brent).
-- Goldman Sachs vs J.P. Morgan divergence explicitly hinges on this same deadline, confirming the event as the single catalyst that determines directional outcome.
-- Entering before resolution of the March 28 deadline exposes capital to asymmetric reversal risk disproportionate to the remaining upside within the valid window.
-
-Condition to upgrade/downgrade: March 28 diplomatic deadline passes without a Hormuz resolution agreement — upgrade to GO; a credible de-escalation deal is announced — downgrade to NO GO.
+- Aggregate smart money is a net amplifier of the bullish bias: eight of eleven entities are aligned with or passively exposed to the upside, including the largest speculative net long inventory in six years (~428,000 lots) and CTAs at a 100% long signal in both Brent and WTI.
+- The sustained Hormuz supply disruption has overwhelmed the IEA's record 400 million barrel emergency release, as confirmed by physical spot premiums (~$126/bbl Dubai vs. ~$112/bbl Brent futures) that validate scarcity rather than surplus.
+- The April 5 OPEC+ ministerial falls within the valid window, giving Saudi Arabia and the eight core producers a formal mechanism to reinforce supply-discipline messaging and support the dominant bullish bias at a moment of maximum geopolitical premium.
+- Goldman Sachs' near-term target of $110/bbl and Hormuz-disruption upside scenario of $115/bbl are both directionally consistent with and validated by current physical price levels, adding research-driven client-order flow reinforcement to the uptrend.
+- The two opposing forces — JPM's structural surplus research and the IEA's emergency release — are either longer-horizon in nature or have already been priced and absorbed, leaving no near-term catalyst within the 3–5 day window capable of reversing the dominant bias absent a confirmed Hormuz resolution or Iran-U.S. deal before April 6.
