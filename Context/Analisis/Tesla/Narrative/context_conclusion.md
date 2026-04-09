@@ -1,0 +1,11 @@
+## Context Conclusion: Tesla (TSLA)
+Generated: 2026-04-09
+
+**Dominant bias:** bearish
+Rationale: The Q1 2026 production-to-delivery gap of 50,363 units — the largest in at least four years — combined with the EV tax credit expiry (structural multi-quarter demand headwind), accelerating consumer boycotts (brand damage from Musk/DOGE), and the April 9 tariff implementation (cost headwind of unknown but material magnitude) creates a fundamental environment where the near-term earnings trajectory is more likely to disappoint than surprise positively. The stock's 328x trailing GAAP P/E is entirely dependent on the technology optionality narrative (Cybercab, FSD, Optimus) executing on schedule, which remains unconfirmed pending the April 22 earnings call. The bearish bias is not a call for collapse toward $145–$119 bear targets — the $44.1B cash position, energy segment (30%+ margins), and structural passive index support (~17% of float) prevent a freefall scenario. The bearish bias reflects the asymmetry of risk between now and April 22: there are more ways for the earnings call to disappoint (margin miss, guidance cut, Cybercab delay, NHTSA commentary) than to significantly beat (all four variables must be better than feared simultaneously).
+
+**Immediate risk:** Q1 2026 earnings call — April 22, 5:30 PM ET — is the primary binary event. The automotive gross margin print and Q2 2026 delivery guidance are the decisive variables: auto margins below 16% would confirm Narratives 1 and 3 are dominating and trigger a test of $290–310 support; auto margins above 19% with a Cybercab production confirmation would collapse the bear narrative and drive a test of $390–420 resistance.
+Time estimate: 13 days
+
+**Valid window:** 13 days (until April 22 Q1 2026 earnings)
+Caveat: Three events within the valid window could invalidate the current context before April 22: (1) EU FSD regulatory approval (~April 10) — a stronger-than-expected authorization (e.g., Level 3 or Level 4 conditional) would be a meaningful positive catalyst; (2) NHTSA public statement on FSD investigation — an adverse preliminary finding would be a severe negative catalyst; (3) tariff environment change — a 90-day US-China tariff pause announcement would be the single largest positive macro catalyst for TSLA, potentially driving a 15–20% relief rally.

@@ -1,11 +1,11 @@
-## Context Conclusion: Gold (XAU/USD)
-Generated: 2026-03-27
+## Context Conclusion: Gold (XAU/GCM6)
+Generated: 2026-04-08
 
-**Dominant bias:** bearish
-Rationale: Persistent inflation (Core PCE 3.1%, Brent above $100) has eliminated rate-cut expectations through mid-2026, making real yields the primary headwind for zero-yield gold, confirmed by CTA deleveraging and $6 billion in GLD outflows.
+**Dominant bias:** conflicted
+Rationale: Structural central bank demand (PBoC 17-month streak, ~68% of surveyed EM CBs accumulating) has demonstrated a credible price floor by absorbing 120t of Turkish selling and $5.4bn in ETF outflows without breaching $4,650, yet the April 8 FOMC minutes have introduced genuine two-sided Fed rate risk that removes the consensus easing tailwind and leaves the $4,700 price level without a confirmed fundamental anchor pending the April 10 CPI print.
 
-**Immediate risk:** A credible US-Iran ceasefire agreement would collapse oil by $15-20/bbl, reopen rate-cut pricing, and reverse the dominant bearish narrative via the oil-inflation-rates transmission chain, triggering a short squeeze against reduced CTA positioning.
-Time estimate: within 3-5 days (active negotiations ongoing; NFP on April 3 is the parallel confirmation event for the bearish case)
+**Immediate risk:** April 10 CPI print — a hot reading above 3.8% YoY would validate the stagflation narrative, reinforce the hawkish Fed repricing, and test whether the $4,580 support zone can hold against simultaneous ETF outflow pressure; a cool reading would collapse the tension in the opposite direction by reviving rate-cut expectations and potentially triggering CTA re-entry.
+Time estimate: within 48h
 
-**Valid window:** 3-5 days
-Caveat: A sudden ceasefire announcement or a materially weak NFP print on April 3 would invalidate this conclusion immediately; the fracturing of central bank consensus means the structural floor is lower than previously assumed, so a bearish break below $4,100 could accelerate beyond this window.
+**Valid window:** 48–72h
+Caveat: Any confirmed Hormuz reopening or US-Iran ceasefire stabilization before April 21 would compress the geopolitical war premium ahead of schedule and invalidate the current context earlier; conversely, a fresh military escalation (e.g., Israeli strikes expanding beyond Beirut) would independently spike the safe-haven bid and override the macro framework.

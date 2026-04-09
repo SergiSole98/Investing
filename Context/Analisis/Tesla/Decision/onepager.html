@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[TSLA] Investment One-Pager</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 24px 16px 48px;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #30363d;
+    }
+    .page-header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #e6edf3;
+      letter-spacing: 0.02em;
+    }
+    .page-header .meta {
+      margin-top: 6px;
+      color: #8b949e;
+      font-size: 0.85rem;
+    }
+    .page-header .meta strong { color: #e6edf3; }
+
+    /* ── Grid layout ── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      .full-width { grid-column: 1 / -1; }
+    }
+    .full-width { grid-column: 1 / -1; }
+
+    /* ── Card ── */
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .card-header {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #e6edf3;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #30363d;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Verdict badge ── */
+    .verdict-badge {
+      display: block;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 900;
+      color: #0d1117;
+      background: #ffd600;
+      border-radius: 6px;
+      padding: 12px 24px;
+      margin-bottom: 16px;
+      letter-spacing: 0.1em;
+      line-height: 1.1;
+    }
+
+    /* ── Context bias badge ── */
+    .bias-strip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      background: rgba(213,0,0,0.08);
+      border: 1px solid rgba(213,0,0,0.25);
+    }
+    .bias-label { color: #8b949e; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .bias-value { color: #d50000; font-weight: 800; font-size: 1rem; letter-spacing: 0.06em; }
+    .bias-window { color: #8b949e; font-size: 0.82rem; margin-left: auto; }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    th {
+      background: #1c2128;
+      color: #8b949e;
+      font-weight: 600;
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid #30363d;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #21262d;
+      vertical-align: top;
+    }
+    tbody tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    tbody tr:last-child td { border-bottom: none; }
+
+    /* ── RECOMENDACIÓN table ── */
+    .rec-table td { font-size: 0.9rem; }
+
+    /* ── Precio actual row ── */
+    .precio-actual td {
+      color: #58a6ff;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    /* ── Catalysts ALTO row ── */
+    .cat-alto td { background: rgba(255,214,0,0.12) !important; }
+    .cat-alto td.impact-cell { font-weight: 700; color: #ffd600; }
+
+    /* ── TESIS bullets ── */
+    .tesis-bullets { display: flex; flex-direction: column; gap: 10px; }
+    .tesis-bullet {
+      border-left: 4px solid #ffd600;
+      background: rgba(255,214,0,0.05);
+      border-radius: 0 6px 6px 0;
+      padding: 10px 14px;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* ── RIESGOS bullets ── */
+    .riesgo-bullets { display: flex; flex-direction: column; gap: 10px; }
+    .riesgo-bullet {
+      border-left: 4px solid #d50000;
+      background: rgba(213,0,0,0.08);
+      border-radius: 0 6px 6px 0;
+      padding: 10px 14px;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* ── EJECUCIÓN card ── */
+    .exec-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .exec-card .card-header { font-size: 1rem; }
+    .exec-table td.field-name { color: #8b949e; font-weight: 600; width: 35%; }
+    .exec-table td.field-val {
+      color: #ffd600;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .exec-table td.field-val-normal { color: #e6edf3; font-size: 1.05rem; }
+    .exec-condition {
+      margin-top: 14px;
+      border: 1px solid #ffd600;
+      border-radius: 6px;
+      background: rgba(255,214,0,0.06);
+      padding: 12px 14px;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .exec-condition strong { color: #ffd600; }
+    .exec-condition + .exec-condition { margin-top: 8px; border-color: #d50000; background: rgba(213,0,0,0.06); }
+    .exec-condition + .exec-condition strong { color: #d50000; }
+    .exec-condition.alt { margin-top: 8px; border-color: #58a6ff; background: rgba(88,166,255,0.06); }
+    .exec-condition.alt strong { color: #58a6ff; }
+
+    /* ── Trigger checks ── */
+    .check-si td { background: rgba(0,200,83,0.10) !important; }
+    .check-no td { background: rgba(213,0,0,0.10) !important; }
+    .check-si td.result { color: #00c853; font-weight: 700; }
+    .check-no td.result { color: #d50000; font-weight: 700; }
+    .check-partial td { background: rgba(255,214,0,0.08) !important; }
+    .check-partial td.result { color: #ffd600; font-weight: 700; }
+    .check-na td { background: rgba(88,166,255,0.06) !important; }
+    .check-na td.result { color: #58a6ff; font-weight: 600; }
+
+    .trigger-tipo {
+      margin-top: 12px;
+      font-size: 0.875rem;
+      color: #8b949e;
+    }
+    .trigger-tipo strong { color: #e6edf3; }
+
+    .wait-decision-badge {
+      display: inline-block;
+      background: #ffd600;
+      color: #0d1117;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      padding: 2px 12px;
+      letter-spacing: 0.08em;
+      vertical-align: middle;
+    }
+
+    /* ── POSICIONAMIENTO badge ── */
+    .money-direction {
+      margin-top: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 0.875rem;
+    }
+    .money-direction .badge-label { color: #8b949e; font-weight: 600; }
+    .money-direction .badge-val {
+      display: inline-block;
+      background: rgba(255,214,0,0.15);
+      border: 1px solid #ffd600;
+      color: #ffd600;
+      border-radius: 4px;
+      padding: 1px 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-left: 6px;
+    }
+
+    /* ── ESCENARIO blockquote ── */
+    .scenario-blockquote {
+      border-left: 4px solid #58a6ff;
+      background: rgba(88,166,255,0.05);
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #c9d1d9;
+    }
+    .scenario-blockquote strong { color: #58a6ff; display: block; margin-bottom: 6px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* ── HECHOS BASE ── */
+    .hechos-section { margin-bottom: 16px; }
+    .hechos-section-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    .hechos-verified .hechos-section-title {
+      color: #00c853;
+      background: rgba(0,200,83,0.08);
+      border-left: 3px solid #00c853;
+    }
+    .hechos-unverified .hechos-section-title {
+      color: #ffd600;
+      background: rgba(255,214,0,0.08);
+      border-left: 3px solid #ffd600;
+    }
+    .hecho-item {
+      padding: 8px 12px;
+      border-bottom: 1px solid #21262d;
+      font-size: 0.845rem;
+      line-height: 1.6;
+    }
+    .hecho-item:last-child { border-bottom: none; }
+    .hecho-item .hecho-num {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .hechos-verified .hecho-item .hecho-num { background: rgba(0,200,83,0.15); color: #00c853; }
+    .hechos-unverified .hecho-item .hecho-num { background: rgba(255,214,0,0.15); color: #ffd600; }
+    .hecho-source { color: #8b949e; font-style: italic; font-size: 0.8rem; }
+    .hecho-flag {
+      display: inline-block;
+      background: rgba(255,214,0,0.12);
+      border: 1px solid rgba(255,214,0,0.3);
+      color: #ffd600;
+      font-size: 0.72rem;
+      border-radius: 3px;
+      padding: 1px 6px;
+      margin-left: 4px;
+      font-style: normal;
+      vertical-align: middle;
+    }
+    .hecho-incentivo {
+      margin-top: 6px;
+      margin-left: 28px;
+      color: #8b949e;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* ── Collapsible rationale ── */
+    details { margin-top: 14px; }
+    summary {
+      cursor: pointer;
+      color: #58a6ff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 6px 0;
+      user-select: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before {
+      content: '▸';
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    details[open] summary::before { transform: rotate(90deg); }
+    .rationale-content {
+      margin-top: 10px;
+      padding: 12px 14px;
+      background: rgba(88,166,255,0.04);
+      border-radius: 6px;
+      border: 1px solid #21262d;
+    }
+    .rationale-bullet {
+      padding: 6px 0;
+      border-bottom: 1px solid #21262d;
+      font-size: 0.855rem;
+      line-height: 1.6;
+      color: #c9d1d9;
+      padding-left: 16px;
+      position: relative;
+    }
+    .rationale-bullet::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: #8b949e;
+    }
+    .rationale-bullet:last-child { border-bottom: none; }
+    .upgrade-callout {
+      margin-top: 12px;
+      border: 1px solid #ffd600;
+      border-radius: 6px;
+      background: rgba(255,214,0,0.06);
+      padding: 10px 14px;
+      font-size: 0.855rem;
+      line-height: 1.6;
+    }
+    .upgrade-callout strong { color: #ffd600; }
+
+    /* ── Narratives section ── */
+    .narratives-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 768px) {
+      .narratives-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .narrative-card {
+      background: #1c2128;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 14px;
+    }
+    .narrative-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .narrative-title { font-weight: 700; font-size: 0.88rem; color: #e6edf3; }
+    .narrative-strength {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: auto;
+    }
+    .strength-strong { background: rgba(213,0,0,0.15); color: #d50000; border: 1px solid rgba(213,0,0,0.3); }
+    .strength-moderate { background: rgba(255,214,0,0.12); color: #ffd600; border: 1px solid rgba(255,214,0,0.3); }
+    .narrative-body { font-size: 0.845rem; line-height: 1.65; color: #c9d1d9; }
+
+    .key-tension {
+      margin-top: 14px;
+      border: 1px solid #58a6ff;
+      border-radius: 6px;
+      background: rgba(88,166,255,0.05);
+      padding: 14px 16px;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #c9d1d9;
+    }
+    .key-tension-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #58a6ff;
+      margin-bottom: 8px;
+    }
+
+    /* ── Impact Analysis section ── */
+    .impact-section {
+      max-width: 1200px;
+      margin: 32px auto 0;
+    }
+    .impact-section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #e6edf3;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #30363d;
+    }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 768px) {
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      .impact-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .impact-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .impact-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .impact-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 2px 10px;
+      border-radius: 20px;
+    }
+    .badge-favored { background: rgba(0,200,83,0.15); color: #00c853; border: 1px solid rgba(0,200,83,0.3); }
+    .badge-neutral  { background: rgba(139,148,158,0.15); color: #8b949e; border: 1px solid rgba(139,148,158,0.3); }
+    .badge-opposed  { background: rgba(213,0,0,0.15); color: #d50000; border: 1px solid rgba(213,0,0,0.3); }
+    .impact-entity-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #e6edf3;
+    }
+    .impact-assessment {
+      font-size: 0.84rem;
+      line-height: 1.65;
+      color: #c9d1d9;
+    }
+
+    .smart-money-summary {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-left: 4px solid #58a6ff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .smart-money-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+    .smart-money-text {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #c9d1d9;
+    }
+    .sm-counts {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .sm-count-item {
+      font-size: 0.82rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+    .sm-count-favored { background: rgba(0,200,83,0.12); color: #00c853; border: 1px solid rgba(0,200,83,0.25); }
+    .sm-count-neutral { background: rgba(139,148,158,0.12); color: #8b949e; border: 1px solid rgba(139,148,158,0.25); }
+    .sm-count-opposed { background: rgba(213,0,0,0.12); color: #d50000; border: 1px solid rgba(213,0,0,0.25); }
+
+    /* ── Footer ── */
+    .page-footer {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+      font-size: 0.78rem;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ── Utility ── */
+    .muted { color: #8b949e; }
+    .amber { color: #ffd600; }
+    .green { color: #00c853; }
+    .red   { color: #d50000; }
+    .blue  { color: #58a6ff; }
+    strong { color: #e6edf3; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE HEADER ═══════════════════ -->
+<div class="page-header">
+  <h1>INVESTMENT ONE-PAGER</h1>
+  <div class="meta">
+    <strong>ACTIVO:</strong> TSLA (Tesla, Inc.) &nbsp;|&nbsp;
+    <strong>MERCADO:</strong> NASDAQ &nbsp;|&nbsp;
+    <strong>FECHA:</strong> 2026-04-09
+  </div>
+</div>
+
+<!-- ═══════════════════ MAIN GRID ═══════════════════ -->
+<div class="grid">
+
+  <!-- ─── 🎯 RECOMENDACIÓN ─── -->
+  <div class="card full-width">
+    <div class="card-header">🎯 RECOMENDACIÓN</div>
+
+    <div class="bias-strip">
+      <span class="bias-label">Sesgo de contexto</span>
+      <span class="bias-value">BEARISH</span>
+      <span class="bias-window">Ventana válida: 13 días — hasta earnings 22-abr</span>
+    </div>
+
+    <span class="verdict-badge">WAIT</span>
+
+    <table class="rec-table">
+      <thead>
+        <tr>
+          <th>Rating</th>
+          <th>Precio Actual</th>
+          <th>Target Alcista</th>
+          <th>Target Bajista</th>
+          <th>Horizonte</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong class="amber">WAIT</strong></td>
+          <td>$343.25</td>
+          <td class="green">$390–$420 (margen &gt;19% + Cybercab confirmado)</td>
+          <td class="red">$290–$310 (margen &lt;16% + guidance recortado)</td>
+          <td>13 días (hasta earnings 22-abr)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <details>
+      <summary>Ver razonamiento completo</summary>
+      <div class="rationale-content">
+        <div class="rationale-bullet">El sesgo es "bearish", pero el Q1 2026 earnings del 22-abr es un binario sin resolver que determina directamente si la tesis bajista se valida o se desafía — entrar en una posición corta 13 días antes de earnings en un stock con P/E 328x y movimientos históricos post-earnings de 8–12% crea un riesgo de timing no cuantificable.</div>
+        <div class="rationale-bullet">La ventana de catalizadores pre-earnings (9–22 abr) contiene múltiples variables independientes: aprobación FSD en Europa (~10-abr), escalada/desescalada arancelaria USA-China, comunicación NHTSA (sin deadline fijo), y confirmación de producción Cybercab — ninguna tiene un outcome binario visible desde hoy.</div>
+        <div class="rationale-bullet">La señal activa institucional dominante es ARK comprando el dip ($28M en 3 días), que provee soporte táctico en $330–345. La señal estructural bajista dominante es JPMorgan ($145 PT) y $16.67B en short interest. Estas fuerzas crean un rango limitado pre-earnings en lugar de una tendencia direccional.</div>
+        <div class="rationale-bullet">El IV rank bajo (~20) refleja que el mercado de opciones no está descontando un movimiento inusualmente grande — pero la volatilidad realizada histórica de TSLA en earnings (8–12%) típicamente supera la implícita, creando un setup asimétrico para un volatility play (straddle/strangle) en lugar de una apuesta direccional.</div>
+        <div class="rationale-bullet">Los 4 actores pasivos neutrales (Vanguard, BlackRock, State Street, Goldman Hold) representan el peso dominante de influencia institucional y están direccionalmente inactivos — no hay ningún fondo grande dirigiendo el precio en ninguna dirección en la ventana actual.</div>
+        <div class="upgrade-callout">
+          <strong>Condición de upgrade alcista:</strong> Q1 earnings (22-abr): margen auto &gt;19% + Cybercab en producción confirmado + guidance Q2 positivo → GO alcista; target $390–$420; stop $320.<br><br>
+          <strong>Condición de upgrade bajista:</strong> Q1 earnings: margen auto &lt;16% + Cybercab delayed o guidance Q2 recortado → GO bajista; target $280–$310; stop $370.<br><br>
+          <strong>Pre-earnings:</strong> Anuncio de pausa 90 días aranceles USA-China antes del 22-abr = catalizador alcista pre-binario; GO táctico 3–5 días solamente.
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ─── 💡 TESIS ─── -->
+  <div class="card">
+    <div class="card-header">💡 TESIS</div>
+    <div class="tesis-bullets">
+      <div class="tesis-bullet">El build de inventario de <strong>50.363 unidades en Q1 2026</strong> — el mayor en al menos 4 años — es la evidencia más concreta de destrucción de demanda estructural: expiración del crédito fiscal EV ($7.500, caducó 30-sep-2025), boicot de consumidores por la controversia Musk/DOGE y aranceles del 9-abr crean un escenario de presión de márgenes que el mercado no ha terminado de descontar.</div>
+      <div class="tesis-bullet">La tesis de optionalidad tecnológica (<strong>Cybercab en producción este mes en Giga Texas</strong>; aprobación FSD en Europa ~10-abr; Optimus Gen 3 en producción Q2 2026) sigue intacta narrativamente, pero no ha sido confirmada operativamente — el earnings del <strong>22-abr es el primer checkpoint de ejecución real</strong>.</div>
+      <div class="tesis-bullet">El <strong>binario de valoración extremo</strong> (P/E trailing 328x vs. múltiplos auto 8–12x) significa que el stock tiene un rango post-earnings de ±10–15% según se valide o invalide la narrativa de plataforma tecnológica — no hay tesis de entrada con convicción hasta que los márgenes Q1 y la confirmación de Cybercab resuelvan la ambigüedad.</div>
+    </div>
+  </div>
+
+  <!-- ─── ⚠️ RIESGOS ─── -->
+  <div class="card">
+    <div class="card-header">⚠️ RIESGOS</div>
+    <div class="riesgo-bullets">
+      <div class="riesgo-bullet"><strong>Upside risk pre-earnings:</strong> Pausa 90 días aranceles USA-China antes del 22-abr genera rally de 10–15% que convierte una entrada corta/put en pérdida antes del binario principal.</div>
+      <div class="riesgo-bullet"><strong>Tail risk bajista:</strong> NHTSA emite declaración pública desfavorable sobre Engineering Analysis FSD (3,2M vehículos) antes del 22-abr — caída de 8–12% pre-earnings al destruir la narrativa de optionalidad tecnológica en el peor momento posible.</div>
+      <div class="riesgo-bullet"><strong>Estructural:</strong> El build de 50.363 unidades puede forzar price cuts en Q2 2026 si no se resuelve orgánicamente — espiral de márgenes que validaría el thesis JPMorgan ($145) y desencadenaría cascada de downgrades institucionales.</div>
+      <div class="riesgo-bullet"><strong>Volatilidad:</strong> IV rank ~20 subestima la volatilidad real esperada post-earnings — la asimetría favorece un straddle/strangle, no una posición direccional, en las 2 semanas previas al evento.</div>
+    </div>
+  </div>
+
+  <!-- ─── 📰 NARRATIVAS ─── -->
+  <div class="card full-width">
+    <div class="card-header">📰 NARRATIVAS DOMINANTES</div>
+    <div class="narratives-grid">
+      <div class="narrative-card">
+        <div class="narrative-header">
+          <span class="narrative-title">1 · Destrucción de Demanda</span>
+          <span class="narrative-strength strength-strong">Fuerte</span>
+        </div>
+        <div class="narrative-body">Build inventario 50.363 uds (récord 4+ años) + expiración crédito EV ($7.500) + boycotts Musk/DOGE + altos costes financiación. Implica presión de márgenes multi-trimestral hasta que el Model Y affordable llegue (Q3/Q4 2026 mínimo). JPMorgan ($145) y shorts ($16.67B) alineados con esta narrativa.</div>
+      </div>
+      <div class="narrative-card">
+        <div class="narrative-header">
+          <span class="narrative-title">2 · Optionalidad Tecnológica</span>
+          <span class="narrative-strength strength-moderate">Moderada</span>
+        </div>
+        <div class="narrative-body">Cybercab producción este mes en Giga Texas + aprobación FSD Europa ~10-abr + Optimus Gen 3 Q2 2026 + energy business 30%+ márgenes. ARK ($2.600 2029), Wedbush ($600), Morgan Stanley (OW/$410) alineados. Requiere ejecución en todos los steps — NHTSA Engineering Analysis es el riesgo de cola directo.</div>
+      </div>
+      <div class="narrative-card">
+        <div class="narrative-header">
+          <span class="narrative-title">3 · Tariff Trap</span>
+          <span class="narrative-strength strength-strong">Fuerte</span>
+        </div>
+        <div class="narrative-body">Aranceles en vigor hoy (+34% China, +20% UE): Tesla detuvo pedidos Model S/X en China; Model Y affordable retrasado a Q3/Q4 2026; specialty components expuestos. Mitigation parcial: Giga Shanghai 90%+ local sourcing; LG Energy Solution $4.3B LFP deal para Megapack. Goldman cortó PT $405→$375 post-delivery miss con tariffs en mente.</div>
+      </div>
+      <div class="narrative-card">
+        <div class="narrative-header">
+          <span class="narrative-title">4 · Energy como Activo Oculto</span>
+          <span class="narrative-strength strength-moderate">Moderada</span>
+        </div>
+        <div class="narrative-body">Revenue energía 2025: $12.77B (+27% YoY); márgenes brutos 30.3% vs. ~17–20% en auto. Megapack 3 + Megablock; tercer Megafactory en Texas. Q1 2026 miss (8.8 GWh vs. 14.4 GWh) atribuido a timing de proyectos — recovery esperada en Q2. LG Energy Solution deal asegura suministro doméstico de baterías LFP.</div>
+      </div>
+    </div>
+    <div class="key-tension">
+      <div class="key-tension-label">⚡ Tensión Central</div>
+      El P/E de 328x sólo es sostenible si Narrativa 2 (Cybercab/FSD/Optimus) ejecuta. Si Narrativas 1 y 3 (demanda + aranceles) son correctas, el stock debería cotizar a 15–30x earnings en comps automóviles: $80–$180/acción implícito. El earnings del <strong>22-abr</strong> es el primer checkpoint real: margen auto &gt;19% + Cybercab confirmado colapsa la tensión alcistamente; margen &lt;16% + Cybercab delayed acelera la compresión de múltiplo hacia el rango $200–$250 donde se sitúan los bulls moderados.
+    </div>
+  </div>
+
+  <!-- ─── 📊 NIVELES CLAVE ─── -->
+  <div class="card">
+    <div class="card-header">📊 NIVELES CLAVE</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Nivel</th>
+          <th>Notas</th>
+          <th>Distancia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="muted">Resistencia 3</td>
+          <td>$498.83</td>
+          <td class="muted">Máximo 52 semanas (oct-2025)</td>
+          <td>+45.3%</td>
+        </tr>
+        <tr>
+          <td class="muted">Resistencia 2</td>
+          <td>$420–$450</td>
+          <td class="muted">Zona reconsolidación; analyst PT consensus</td>
+          <td>+22.5%–31.1%</td>
+        </tr>
+        <tr>
+          <td>Resistencia 1</td>
+          <td>$390–$410</td>
+          <td>Morgan Stanley PT ($410); consensus $400.56</td>
+          <td>+13.6%–19.5%</td>
+        </tr>
+        <tr class="precio-actual">
+          <td><strong>PRECIO ACTUAL</strong></td>
+          <td><strong>$343.25</strong></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Soporte 1</td>
+          <td>$320–$330</td>
+          <td>Soporte técnico pre-selloff reciente</td>
+          <td>-3.9%–6.8%</td>
+        </tr>
+        <tr>
+          <td>Soporte 2</td>
+          <td>$290–$310</td>
+          <td>Bear case técnico post-earnings miss</td>
+          <td>-9.7%–15.5%</td>
+        </tr>
+        <tr>
+          <td class="muted">Soporte 3</td>
+          <td>$217.80</td>
+          <td class="muted">Mínimo 52 semanas</td>
+          <td>-36.5%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 📈 INDICADORES ─── -->
+  <div class="card">
+    <div class="card-header">📈 INDICADORES</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Indicador</th>
+          <th>Valor</th>
+          <th>Señal</th>
+          <th>Fiabilidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sesgo de contexto</td>
+          <td>Bearish</td>
+          <td class="red">Pre-earnings ambigüedad</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>P/E trailing (GAAP)</td>
+          <td>~328x</td>
+          <td class="amber">Extremo — dependiente de optionalidad tech</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Inventario Q1 2026</td>
+          <td>+50.363 uds (build récord)</td>
+          <td class="red">Señal bajista estructural demanda</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>IV rank opciones (30d)</td>
+          <td>~20 (bajo para TSLA)</td>
+          <td class="blue">Opciones baratas; setup straddle</td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Short interest</td>
+          <td>$16.67B / 1.82% float</td>
+          <td class="red">Resistencia estructural a alzas</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>ARK compras (6–8 abr)</td>
+          <td>$28M en 3 días</td>
+          <td class="green">Dip-buying activo; soporte $330–345</td>
+          <td>⭐⭐</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 📅 CATALIZADORES ─── -->
+  <div class="card full-width">
+    <div class="card-header">📅 CATALIZADORES PRÓXIMOS</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Evento</th>
+          <th>Impacto esperado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cat-alto">
+          <td>09/04 (hoy)</td>
+          <td>Aranceles recíprocos en vigor (+34% China, +20% UE, +24% Japón)</td>
+          <td class="impact-cell">ALTO — presión macro y de costes sobre TSLA; China retaliation 125%</td>
+        </tr>
+        <tr>
+          <td>~10/04</td>
+          <td>Aprobación regulatoria FSD Europa (UN R-171) — pendiente</td>
+          <td>MEDIO — 2–5% alcista si confirma; leve negativo si se retrasa</td>
+        </tr>
+        <tr>
+          <td>11/04</td>
+          <td>Ventas minoristas EEUU marzo 2026 (08:30 ET)</td>
+          <td>BAJO-MEDIO — dato de demanda del consumidor; confirma/desmiente deterioro</td>
+        </tr>
+        <tr>
+          <td>14/04</td>
+          <td>PPI marzo 2026 (BLS, 08:30 ET)</td>
+          <td>BAJO-MEDIO — inflación vía aranceles; indicador de presión de costes Q2</td>
+        </tr>
+        <tr class="cat-alto">
+          <td>22/04 17:30 ET</td>
+          <td><strong>Q1 2026 Earnings — catalizador binario principal</strong></td>
+          <td class="impact-cell">ALTO — determina upgrade GO alcista o GO bajista; move histórico ±8–12%</td>
+        </tr>
+        <tr>
+          <td>Ongoing (abr)</td>
+          <td>Cybercab producción Giga Texas — confirmación pendiente</td>
+          <td>MEDIO — cada anuncio de ciudad expansion es catalizador de sentimiento</td>
+        </tr>
+        <tr>
+          <td>Ongoing</td>
+          <td>NHTSA FSD Engineering Analysis (3.2M vehículos) — sin deadline</td>
+          <td>ALTO si adverse finding — tail risk a la baja de 8–12% instantáneo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── ✅ EJECUCIÓN ─── -->
+  <div class="exec-card full-width">
+    <div class="card-header">✅ EJECUCIÓN</div>
+    <table class="exec-table">
+      <thead>
+        <tr><th>Campo</th><th>Valor</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="field-name"><strong>Acción</strong></td>
+          <td class="field-val">— (pendiente trigger)</td>
+        </tr>
+        <tr>
+          <td class="field-name"><strong>Ticker (Broker)</strong></td>
+          <td class="field-val-normal">TSLA (NASDAQ)</td>
+        </tr>
+        <tr>
+          <td class="field-name"><strong>Entry</strong></td>
+          <td class="field-val">— (pendiente earnings 22-abr)</td>
+        </tr>
+        <tr>
+          <td class="field-name"><strong>Stop Loss</strong></td>
+          <td class="field-val">— (pendiente trigger)</td>
+        </tr>
+        <tr>
+          <td class="field-name"><strong>Take Profit</strong></td>
+          <td class="field-val">— (pendiente trigger)</td>
+        </tr>
+        <tr>
+          <td class="field-name"><strong>Sizing</strong></td>
+          <td class="field-val">— (pendiente trigger)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="exec-condition">
+      <strong>Condición GO alcista (22-abr):</strong> Margen auto &gt;19% + Cybercab producción confirmada en Texas + guidance Q2 positivo → LONG; target $390–$420; stop $320.
+    </div>
+    <div class="exec-condition">
+      <strong>Condición GO bajista (22-abr):</strong> Margen auto &lt;16% + Cybercab delayed o guidance Q2 recortado → SHORT/PUT; target $280–$310; stop $370.
+    </div>
+    <div class="exec-condition alt">
+      <strong>Setup alternativo pre-earnings (IV rank ~20):</strong> Straddle ATM (~$345 strike, vencimiento 23-abr) captura el earnings move en cualquier dirección con prima inferior a la histórica. Válido si se ejecuta antes del 18-abr, cuando IV empieza a expandirse hacia el evento.
+    </div>
+  </div>
+
+  <!-- ─── 🎭 ACTORES E INCENTIVOS ─── -->
+  <div class="card full-width">
+    <div class="card-header">🎭 ACTORES E INCENTIVOS</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Actor</th>
+          <th>Qué gana</th>
+          <th>Qué pierde</th>
+          <th>Límite temporal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ARK Invest</strong> (TSLA 9.94% ARKK; $28M comprado 6–8 abr)</td>
+          <td>Validación tesis $2.600 2029; AUM ARKK sube con precio TSLA</td>
+          <td>Pérdidas en papel si selloff continúa; credibilidad si Cybercab se retrasa</td>
+          <td>Earnings 22-abr; DCA continua mientras conviction intacta</td>
+        </tr>
+        <tr>
+          <td><strong>Elon Musk</strong> (~13% capital, ~$148B notional)</td>
+          <td>Narrativa de plataforma tecnológica confirmada; milestone Cybercab production</td>
+          <td>Erosión de $148B en stake si demanda destruction se confirma estructural</td>
+          <td>Earnings 22-abr (CEO call); DOGE disolución 4-jul-2026 (rehabilitación marca)</td>
+        </tr>
+        <tr>
+          <td><strong>JPMorgan / Brinkman</strong> (Underweight $145)</td>
+          <td>Validación thesis auto-company valuation; flujo hedging de clientes</td>
+          <td>Credibilidad erosionada si Cybercab escala y stock retoma $400+</td>
+          <td>Earnings 22-abr; Q2 2026 delivery data (junio 2026)</td>
+        </tr>
+        <tr>
+          <td><strong>Short Sellers</strong> ($16.67B; mayor US por $)</td>
+          <td>Bajada a $200–$290 valida thesis destrucción demanda + compresión múltiplo</td>
+          <td>Short squeeze si earnings + Cybercab baten fuerte</td>
+          <td>Earnings 22-abr como catalizador binario para cover/añadir</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 💰 POSICIONAMIENTO DEL DINERO ─── -->
+  <div class="card full-width">
+    <div class="card-header">💰 POSICIONAMIENTO DEL DINERO</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Indicador</th>
+          <th>Lectura</th>
+          <th>Interpretación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pasivo (Vanguard + BlackRock + SSgA)</td>
+          <td>~17.3% outstanding (~572M acc.; ~$196B notional)</td>
+          <td>Soporte estructural de precio; sin convicción direccional</td>
+        </tr>
+        <tr>
+          <td>ARK Invest (ARKK + ARKQ)</td>
+          <td>~$900M+ position; 9.94% ARKK; comprando activamente dip</td>
+          <td class="green">Dip-buying activo; alcista de convicción media-larga</td>
+        </tr>
+        <tr>
+          <td>Short sellers</td>
+          <td>$16.67B / ~60.86M acciones; marginal decrease reciente</td>
+          <td class="red">Reducción táctica; no añadiendo agresivamente a $343</td>
+        </tr>
+        <tr>
+          <td>Consensus analistas (32 cobertura)</td>
+          <td>PT $400.56; 10 Buy / 15 Hold / 7 Sell</td>
+          <td class="amber">Hold plurality; bifurcación extrema auto vs. tech platform</td>
+        </tr>
+        <tr>
+          <td>Opciones (IV rank)</td>
+          <td>~20 (bajo histórico para TSLA)</td>
+          <td class="blue">Opciones baratas pre-earnings; setup volatility play</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="money-direction">
+      <span class="badge-label">Dirección del dinero:</span>
+      <span class="badge-val">DIVIDIDO — SIN FLUJO DOMINANTE</span>
+      <span style="color:#c9d1d9; font-size:0.85rem; margin-left:8px;">Pasivos (&gt;17% float) precio-insensibles; ARK compra el dip tácticamente; shorts mantienen posición; institucionales activos en hold/espera. Sin catalizador direccional hasta earnings 22-abr.</span>
+    </div>
+  </div>
+
+  <!-- ─── 🔗 ACTIVOS CORRELACIONADOS ─── -->
+  <div class="card full-width">
+    <div class="card-header">🔗 ACTIVOS CORRELACIONADOS</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Activo</th>
+          <th>Relación</th>
+          <th>Dirección</th>
+          <th>Señal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>QQQ / NASDAQ-100</td>
+          <td>Directa (beta ~1.9x)</td>
+          <td>Caída tech/macro = amplificación bajista TSLA</td>
+          <td class="red">Confirma (aranceles 9-abr presionan QQQ)</td>
+        </tr>
+        <tr>
+          <td>ARKK ETF</td>
+          <td>Directa (9.94% peso)</td>
+          <td>ARK compra = soporte táctico TSLA</td>
+          <td class="green">Alcista táctico (ARK comprando dip)</td>
+        </tr>
+        <tr>
+          <td>XLY (Consumer Discretionary)</td>
+          <td>Directa (TSLA es top holding)</td>
+          <td>Sector auto/consumo bajo presión arancelaria</td>
+          <td class="red">Bajista (XLY bajo presión macro)</td>
+        </tr>
+        <tr>
+          <td>BYD (002594.SZ)</td>
+          <td>Inversa parcial (competencia EV China)</td>
+          <td>BYD cuota China vs. Tesla; aranceles benefician BYD localmente</td>
+          <td class="muted">Neutro (mercados distintos; BYD PHEV vs. Tesla BEV)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 🧠 ESCENARIO DESCONTADO ─── -->
+  <div class="card full-width">
+    <div class="card-header">🧠 ESCENARIO DESCONTADO</div>
+    <div class="scenario-blockquote">
+      <strong>¿Qué está descontando el mercado?</strong>
+      A $343 (~328x trailing P/E), el mercado descuenta un escenario híbrido: la destrucción de demanda de Q1 2026 es real pero parcialmente transitoria (tax credit hangover + boycott timing); la narrativa Cybercab/FSD sigue siendo plausible aunque no confirmada; los aranceles son un headwind manejable dada la ventaja de producción local de Tesla vs. competidores. El precio ya incorporó el delivery miss (-5% el 2-abr) y parte del riesgo arancelario (-30% desde máximos), pero no ha incorporado plenamente un escenario de márgenes Q1 por debajo del 16%.
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Escenario</th>
+          <th>Probabilidad</th>
+          <th>Impacto en precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Earnings beat: margen auto &gt;19% + Cybercab confirmado + guidance Q2 positivo</td>
+          <td>~25%</td>
+          <td class="green">+10% a +18% (test $375–$405)</td>
+        </tr>
+        <tr>
+          <td>Earnings in-line: margen 16–18% + Cybercab confirmado + tariff commentary neutral</td>
+          <td>~35%</td>
+          <td class="muted">-2% a +5% (rango $330–$360)</td>
+        </tr>
+        <tr>
+          <td>Earnings miss: margen &lt;16% + Cybercab delay o guidance recortado</td>
+          <td>~30%</td>
+          <td class="red">-10% a -18% (test $280–$308)</td>
+        </tr>
+        <tr>
+          <td>Tariff 90-day pause USA-China antes del 22-abr (macro relief rally)</td>
+          <td>~10%</td>
+          <td class="amber">+8% a +15% pre-earnings (test $370–$395)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 🎯 TRIGGER DE ENTRADA ─── -->
+  <div class="card">
+    <div class="card-header">🎯 TRIGGER DE ENTRADA</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Check</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="check-si">
+          <td>¿Sesgo claro?</td>
+          <td class="result">SÍ — sesgo "bearish" confirmado</td>
+        </tr>
+        <tr class="check-partial">
+          <td>¿Precio confirma dirección?</td>
+          <td class="result">PARCIAL — bajo vs. consensus PT ($343 vs. $400) pero sin breakdown técnico</td>
+        </tr>
+        <tr class="check-no">
+          <td>¿Failure to respond?</td>
+          <td class="result">NO — no hay catalizador alcista sin respuesta bajista todavía</td>
+        </tr>
+        <tr class="check-no">
+          <td>¿Catalizador pre-earnings confirmado?</td>
+          <td class="result">NO — EU FSD pendiente; Cybercab pendiente; earnings 22-abr es el trigger definitivo</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="trigger-tipo" style="margin-top:12px;">
+      <strong>Tipo de trigger:</strong> NINGUNO (pendiente catalizador binario)
+    </div>
+    <div style="margin-top:10px; font-size:0.9rem;">
+      <strong>Decisión:</strong>&nbsp;<span class="wait-decision-badge">WAIT</span>
+    </div>
+  </div>
+
+  <!-- ─── 📝 HECHOS BASE ─── -->
+  <div class="card full-width">
+    <div class="card-header">📝 HECHOS BASE</div>
+
+    <!-- Verificados -->
+    <div class="hechos-section hechos-verified">
+      <div class="hechos-section-title">✔ Verificados — fuentes de alta credibilidad</div>
+
+      <div class="hecho-item">
+        <span class="hecho-num">1</span>
+        Tesla Q1 2026: <strong>358.023 entregas vs. 365.645 consenso; producción 408.386; build inventario 50.363 unidades</strong> (máximo 4+ años). —
+        <span class="hecho-source">Tesla IR press release, 2026-04-02; CNBC; Electrek</span>
+      </div>
+      <div class="hecho-item">
+        <span class="hecho-num">2</span>
+        Tesla Q4 2025: <strong>margen bruto 20,1%; margen auto ex-créditos 17,9%; EPS ajustado $0,50 vs. $0,44 est.; cash $44,1B.</strong> —
+        <span class="hecho-source">Tesla IR / InvestingLive, 2026-01-28</span>
+      </div>
+      <div class="hecho-item">
+        <span class="hecho-num">3</span>
+        <strong>Aranceles recíprocos USA en vigor desde 9-abr-2026:</strong> +34% China, +20% UE, +24% Japón. Tesla detuvo pedidos Model S/X en China. China retaliation 125%. —
+        <span class="hecho-source">Reuters / Fox Business; Tesla SEC filing</span>
+      </div>
+      <div class="hecho-item">
+        <span class="hecho-num">4</span>
+        <strong>NHTSA escaló investigación FSD a Engineering Analysis:</strong> 3,2M vehículos; 9 accidentes, 1 muerte; fallo de visibilidad por reflejos sol/polvo/niebla. —
+        <span class="hecho-source">Electrek / CBT News / NHTSA, 2026-03-19</span>
+      </div>
+      <div class="hecho-item">
+        <span class="hecho-num">5</span>
+        <strong>ARK Invest compró ~$28M en TSLA en 3 días consecutivos</strong> (6–8 abr) a $337–$362; TSLA = 9,94% de ARKK (~$900M+). —
+        <span class="hecho-source">Benzinga daily ARK disclosures, 2026-04-06 a 2026-04-08</span>
+      </div>
+      <div class="hecho-item">
+        <span class="hecho-num">6</span>
+        <strong>Crédito fiscal EV federal ($7.500) expiró 30-sep-2025;</strong> Morgan Stanley: "headwind de doble dígito porcentual" sobre la demanda. —
+        <span class="hecho-source">US Treasury; Benzinga/Morgan Stanley, 2025-10</span>
+      </div>
+      <div class="hecho-item">
+        <span class="hecho-num">7</span>
+        <strong>LG Energy Solution: Tesla confirmado como comprador en acuerdo LFP de $4.300M</strong> para Megapack 3. —
+        <span class="hecho-source">Electrek, 2026-03-17</span>
+      </div>
+    </div>
+
+    <!-- No verificados -->
+    <div class="hechos-section hechos-unverified">
+      <div class="hechos-section-title">⚑ No verificados — declaraciones / narrativa institucional</div>
+
+      <div class="hecho-item">
+        <span class="hecho-num">1</span>
+        Aprobación regulatoria FSD en Europa bajo UN R-171 prevista ~10-abr-2026.
+        <span class="hecho-flag">FLAGGED</span> —
+        <span class="hecho-source">Electrek sourcing Tesla management</span>
+        <div class="hecho-incentivo"><strong>Incentivo:</strong> Management beneficia de confirmar progreso regulatorio pre-earnings; la fecha es management-guided, no confirmada por autoridades regulatorias de la UE.</div>
+      </div>
+      <div class="hecho-item">
+        <span class="hecho-num">2</span>
+        Cybercab producción comenzando en Giga Texas en abril 2026.
+        <span class="hecho-flag">FLAGGED</span> —
+        <span class="hecho-source">Tesla Q4 2025 earnings call / InsideEVs</span>
+        <div class="hecho-incentivo"><strong>Incentivo:</strong> Management beneficia de mantener la narrativa de ejecución en Cybercab para sustentar el múltiplo premium; historia previa de guías con retrasos documentados.</div>
+      </div>
+      <div class="hecho-item">
+        <span class="hecho-num">3</span>
+        Goldman Sachs redujo PT de $405 a $375 tras miss de entregas del 2-abr.
+        <span class="hecho-flag">FLAGGED</span> —
+        <span class="hecho-source">Teslarati / MarketBeat, 2026-04-02</span>
+        <div class="hecho-incentivo"><strong>Incentivo:</strong> Goldman tiene intereses en mantener cobertura activa en TSLA por flujos de banca de inversión; el recorte de PT puede ser una señal honesta o un ajuste mínimo para preservar la relación.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .grid -->
+
+<!-- ═══════════════════ IMPACT ANALYSIS ═══════════════════ -->
+<div class="impact-section">
+  <div class="impact-section-title">⚡ ANÁLISIS DE IMPACTO — Smart Money</div>
+  <div class="impact-grid">
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-favored">Favored</span>
+        <span class="impact-entity-name">ARK Invest / Cathie Wood</span>
+      </div>
+      <div class="impact-assessment">3 días consecutivos comprando $28M+ (6–8 abr) en el selloff del delivery miss. TSLA 9.94% de ARKK (~$900M+). Señal activa alcista más accionable del período. Limitación: ARK ha comprado dips que continuaron bajando en ciclos anteriores (2021–2022). Soporte táctico en $330–345, no floor estructural.</div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-favored">Favored</span>
+        <span class="impact-entity-name">Morgan Stanley / Adam Jonas</span>
+      </div>
+      <div class="impact-assessment">Overweight / $410 PT mantenido tras el delivery miss — señal de convicción tier-1. Implica +19.5% upside desde $343. La tesis de Jonas no requiere FSD completo — sólo estabilización de márgenes + Cybercab near-term. Clientes institucionales ajustan posiciones según research de MS; el mantenimiento del OW limita el selling institucional.</div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-favored">Favored</span>
+        <span class="impact-entity-name">Wedbush / Dan Ives</span>
+      </div>
+      <div class="impact-assessment">$600 PT (más alto entre brokers mayores; +75% upside). "Tech company not car company" — narrativa que atrae retail momentum. Amplificación mediática significativa (CNBC, Bloomberg TV). Impacto principalmente en sentimiento retail, no en posicionamiento institucional tier-1. Anchor para bulls en el debate valuación.</div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-neutral">Neutral</span>
+        <span class="impact-entity-name">Vanguard Group</span>
+      </div>
+      <div class="impact-assessment">252M acciones (7.59% outstanding; ~$86.6B notional) de replicación pasiva de índices. Sin opinión direccional. Compra/vende sólo para mantener pesos de índice. A $343 TSLA sigue bien dentro del S&P 500 top 10 por market cap — no hay rebalanceo relevante que se active en la ventana de 13 días.</div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-neutral">Neutral</span>
+        <span class="impact-entity-name">BlackRock</span>
+      </div>
+      <div class="impact-assessment">207M acciones (6.22% outstanding; ~$70.9B notional) mecánicamente indexadas. ETFs como IDRV podrían ver outflows si el sector EV se deteriora bajo presión arancelaria — esto reduciría mecánicamente la exposición a TSLA. Impacto neto negligible en el precio vs. los flujos de SPY/QQQ.</div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-neutral">Neutral</span>
+        <span class="impact-entity-name">Goldman Sachs</span>
+      </div>
+      <div class="impact-assessment">Hold / $375 PT (cortado de $405 post-delivery miss). La reducción inmediata del PT tras el miss del 2-abr es el movimiento direccionalmente más honesto de Goldman en este ciclo. $375 por encima del precio actual ($343) pero insuficiente para Buy. El Hold es efectivamente "esperar claridad en márgenes antes de añadir" — los clientes reducen/hedgean TSLA en respuesta.</div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-opposed">Opposed</span>
+        <span class="impact-entity-name">JPMorgan / Ryan Brinkman</span>
+      </div>
+      <div class="impact-assessment">Underweight / $145 PT (más bajista entre brokers mayores; -57.8% implied downside). El thesis "auto company priced as AI platform" gana credibilidad incremental con cada delivery miss. El PT del $145 crea overhead resistance institucional en cualquier rally hacia $380–400 y provee intellectual cover para shorts. Reafirmado el 6-abr tras el miss.</div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-opposed">Opposed</span>
+        <span class="impact-entity-name">HSBC Research</span>
+      </div>
+      <div class="impact-assessment">Reduce / $119 PT — caso extremo bajista, -65.3% implied downside. Mayor impacto en mercados institucionales europeos. El $119 funciona como tail-risk anchor que mantiene a shorts cubiertos intelectualmente incluso en los niveles actuales. Una catástrofe operativa (recall NHTSA + margins collapse) podría acercar el precio a este nivel.</div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-opposed">Opposed</span>
+        <span class="impact-entity-name">Short Sellers (aggregate)</span>
+      </div>
+      <div class="impact-assessment">$16.67B en short interest (mayor stock shorted USA por $); ~60.86M acciones (~1.82% float). Reducción marginal reciente — shorts no están añadiendo agresivamente a $343, consistente con soporte táctico a estos niveles. Amplifican cualquier catalizador negativo; crean resistencia estructural a alzas. Earnings beat fuerte = short squeeze fuel.</div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-opposed">Opposed</span>
+        <span class="impact-entity-name">NHTSA</span>
+      </div>
+      <div class="impact-assessment">Engineering Analysis activa en 3.2M vehículos (FSD visibility failures: sol, polvo, niebla). Final step antes de recall obligatorio. Sin deadline en la ventana de 13 días — base case es remedio OTA negociado (precedente: recall Autopilot 2022 vía OTA en 362K vehículos). Tail risk más severo a la tesis FSD/Cybercab si se ordena recall; deprime la disposición del mercado a pagar optionalidad de autonomía.</div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-card-header">
+        <span class="impact-badge badge-favored">Favored</span>
+        <span class="impact-entity-name">Elon Musk (Insider)</span>
+      </div>
+      <div class="impact-assessment">~13% equity stake (~$148B notional) — alcista incondicional estructural sin presión de venta a $343. Controla roadmap Cybercab, FSD, Optimus y decisiones de talento ejecutivo. La tensión DOGE/política es la fuente del brand damage que suprime demanda — DOGE dissolution (4-jul-2026) es el catalizador de rehabilitación de marca fuera del horizonte actual. El earnings call del 22-abr es el vehículo principal de Musk para reafirmar la narrativa tecnológica.</div>
+    </div>
+
+  </div>
+
+  <!-- Smart Money Summary -->
+  <div class="smart-money-summary">
+    <div class="smart-money-title">Postura Agregada del Smart Money</div>
+    <div class="sm-counts">
+      <span class="sm-count-item sm-count-favored">▲ Favored: ARK, Wedbush, Morgan Stanley, Musk (4)</span>
+      <span class="sm-count-item sm-count-neutral">● Neutral: Vanguard, BlackRock, State Street, Goldman Hold (4)</span>
+      <span class="sm-count-item sm-count-opposed">▼ Opposed: JPMorgan, HSBC, Short Sellers, NHTSA (4)</span>
+    </div>
+    <div class="smart-money-text" style="margin-top:12px;">
+      El smart money está perfectamente bifurcado: 4 Favored vs. 4 Opposed vs. 4 Neutrales. No hay un flujo institucional dominante en ninguna dirección dentro de la ventana de 13 días — los pasivos (Vanguard, BlackRock, SSgA, ~17% float) son el peso más grande pero están direccionalmente inactivos. El earnings del <strong>22-abr es la única fuerza capaz de romper el standoff</strong>: un beat consolida el campo alcista y fuerza la reevaluación de JPMorgan/HSBC; un miss valida el campo bajista y convierte el Hold de Goldman en Sell. La bifurcación extrema ($119–$2.600 como rango de PTs) refleja el debate fundamental sin resolver: ¿es Tesla una empresa de automóviles o una plataforma de inteligencia artificial?
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<div class="page-footer">
+  Si no puedes llenar este one-pager con convicción, el análisis ha fallado. Vuelve atrás e identifica qué te falta.
+</div>
+
+</body>
+</html>

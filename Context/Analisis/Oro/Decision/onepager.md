@@ -1,97 +1,97 @@
 # INVESTMENT ONE-PAGER
 
-**ACTIVO:** XAU/USD | **MERCADO:** COMEX / Spot | **FECHA:** 2026-03-27
+**ACTIVO:** XAU/GCM6 (Oro — COMEX Futuros Junio 2026) | **MERCADO:** COMEX (USA) | **FECHA:** 2026-04-08
 
 ---
 
-## RECOMENDACION
+## RECOMENDACIÓN
 
 | Rating | Precio Actual | Target | Potencial | Horizonte |
 |--------|---------------|--------|-----------|-----------|
-| **SELL** | $4,400 | $4,100 | -6.8% | 3-5 dias |
+| **WAIT** | $4.660/oz | $5.000–$5.400 (soft CPI) / $4.580 (hot CPI) | Binario | 48–72h (hasta CPI 10-abr) |
 
 ---
 
-## TESIS (3 bullets maximo)
+## TESIS (3 bullets máximo)
 
-- Inflacion persistente (Core PCE 3.1%) ha eliminado expectativas de recorte de tipos hasta mediados de 2026; los rendimientos reales son el principal viento en contra para el oro sin rendimiento.
-- El capital activo y sensible al precio (CTAs, GLD) esta posicionado corto o desapalancandose, amplificando el impulso bajista: GLD acumula mas de $6,000M en salidas en tres semanas consecutivas.
-- La fractura del consenso comprador de bancos centrales (CBRT vendiendo ~60 toneladas, Rusia en minimos de 4 anos) debilita el suelo estructural que respaldaba al oro.
+- El suelo estructural de la demanda de bancos centrales (PBoC 17 meses consecutivos, ~60t/mes EM agregado) ha absorbido 120t de ventas turcas y $5.400M en salidas de ETFs sin romper $4.650, confirmando un suelo de precio no-precio-sensible estimado en $4.300–$4.500.
+- Las minutas del FOMC del 8-abr introdujeron riesgo bidireccional genuino en tipos de interés, eliminando el viento de cola dovish consensual; el CPI del 10-abr es el catalizador binario que determina si la narrativa de recorte de tipos se restaura (GO alcista) o se fractura (NO GO bajista).
+- La tregua condicional de dos semanas entre EEUU e Irán (vence ~21-22 abr) preserva una prima geopolítica residual incluso en el escenario de armisticio, con cada acción militar israelí y declaración de Trump funcionando como micro-catalizador en tiempo real.
 
 ---
 
 ## NIVELES CLAVE
 
-| Tipo | Nivel | Toques | Distancia |
+| Tipo | Nivel | Toches | Distancia |
 |------|-------|--------|-----------|
-| Resistencia 2 | $5,400 | 1 | +22.7% |
-| Resistencia 1 | $4,560 | 2 | +3.6% |
-| **PRECIO ACTUAL** | **$4,400** | - | - |
-| Soporte 1 | $4,100 | 1 | -6.8% |
-| Soporte 2 | $4,099 | 1 | -6.8% |
+| Resistencia 2 | $5.000 | N/D | +7,3% |
+| Resistencia 1 | $4.857 | 1 (máx. 7-abr) | +4,2% |
+| **PRECIO ACTUAL** | **$4.660** | - | - |
+| Soporte 1 | $4.580–$4.622 | 1 (mín. 2-abr, "Warsh Shock") | -0,8% a -1,7% |
+| Soporte 2 | $4.300–$4.450 | N/D (MM200 estimado) | -5,4% a -7,7% |
 
 ---
 
 ## INDICADORES
 
-| Indicador | Valor | Senal | Fiabilidad |
+| Indicador | Valor | Señal | Fiabilidad |
 |-----------|-------|-------|------------|
-| GLD Flows | -$6,000M (3 semanas) | Bajista | Alta |
-| Curva futuros | Backwardation implicita (T-bills 4.9% vs oro 0%) | Bajista | Alta |
-| CTA Net Long | 102,236 contratos (reducido desde extremos) | Bajista | Media |
-| Core PCE | 3.1% YoY | Bajista (tipos altos) | Alta |
-| Brent | >$107/bbl | Bajista (via inflacion y tipos) | Alta |
+| Sesgo de contexto | Conflicted | Neutral / Ambiguo | ⭐⭐⭐ |
+| Curva futuros GCM6 | N/D | N/D | ⭐⭐ |
+| COMEX Managed Money (net long) | +92.814 contratos (~289t, disagg.) | Largo reducido (-19t marzo) | ⭐⭐⭐ |
+| CPI Nowcast (marzo 2026) | 3,71% YoY | Riesgo alcista de inflación | ⭐⭐⭐ |
+| CME FedWatch (corte abril) | 0% | Sin recorte inmediato | ⭐⭐⭐ |
 
 ---
 
 ## ACTIVOS CORRELACIONADOS
 
-| Activo | Relacion | Direccion | Senal |
+| Activo | Relación | Dirección | Señal |
 |--------|----------|-----------|-------|
-| Brent Crude (>$107) | Alimenta inflacion -> tipos altos | Sube | Confirma bajista oro |
-| USD / DXY | Alimenta (correlacion inversa) | Sube | Confirma bajista oro |
-| UST 10Y (4.384%) | Alimenta (rendimiento real) | Sube | Confirma bajista oro |
-| T-bills (4.9%) | Alternativa sin riesgo | Atrae flujos | Confirma bajista oro |
+| DXY (Índice Dólar) | Inversa | Fortaleza dólar = presión oro | Diverge (dólar firme post-minutas FOMC) |
+| Crudo / Brent | Directa (prima geopolítica) | Tensión Hormuz = soporte oro | Confirma (ceasefire frágil, prime residual) |
+| Tipos reales EEUU (TIPS 10a) | Inversa | Tipos reales al alza = presión oro | Diverge (hawkish FOMC = headwind) |
 
 ---
 
 ## ACTORES E INCENTIVOS
 
-| Actor | Que gana | Que pierde | Limite temporal |
+| Actor | Qué gana | Qué pierde | Límite temporal |
 |-------|----------|------------|-----------------|
-| CTAs (agregado) | Beneficio en posiciones cortas/neutrales si oro cae bajo $4,100 | Squeeze si alto el fuego colapsa petroleo | Reactivo a precio; sin plazo fijo |
-| GLD / Participantes autorizados | Liquidez en T-bills al 4.9% vs oro sin rendimiento | Exposicion alcista si tipos bajan | Continuo; flujo diario |
-| CBRT | Divisas para defensa de la lira; menor coste de oportunidad vendiendo en mercado bajista | Reservas de oro reducidas (~641t restantes) | Mientras persista presion sobre la lira |
-| PBoC | Diversificacion estructural; valor de 2,309 toneladas existentes si sube | Mark-to-market negativo a corto plazo | Mandato multianual; sin presion temporal |
+| **PBoC** (2.313t, comprador estructural) | Continuidad del mandato de des-dolarización; precio sobre cualquier nivel de coste estimado | Pérdida de reservas FX nominal en correcciones bruscas (sin relevancia táctica) | Sin límite; publicación mensual de reservas (próxima: may-2026) |
+| **COMEX Managed Money** (~289t net long, CTAs) | Amplificación de la tendencia alcista si CPI suave reactiva entradas; beneficio si ruptura al alza sobre máximos previos | Pérdida por liquidación forzada si CPI caliente empuja precio bajo $4.580; reducción adicional del net long ya iniciada en marzo (-19t) | Binario: CPI 10-abr 08:30 ET; informe COT viernes 11-abr |
+| **Goldman Sachs / JPMorgan** (target $5.400–$6.300; JPM >$4bn entrega COMEX) | Validación de tesis alcista; flujos de clientes hacia productos de oro si narrativa se confirma; revalorización de posiciones propias/clientes | Erosión de credibilidad si CPI caliente desplaza el recorte de tipos; consolidación prolongada retrasa el re-rating | CPI 10-abr; minutas FOMC ya absorbidas como headwind parcial |
+| **CBRT — Turquía** (vendedor táctico ~58-60t) | Recuperación de reservas FX y alivio de presión de cuenta corriente por shock energético guerra Irán | Pérdida si precio sube antes de poder recomprar; reputación de estabilidad de reservas | Normalización de tensión iraní / reapertura Hormuz; datos semanales de reservas CBRT |
 
 ---
 
 ## POSICIONAMIENTO DEL DINERO
 
-| Indicador | Lectura | Interpretacion |
+| Indicador | Lectura | Interpretación |
 |-----------|---------|----------------|
-| Flujos institucionales (GLD) | -$6,000M en 3 semanas; salidas acelerandose | Saliendo |
-| CTA posicionamiento | Net long 102,236 contratos; reducido desde extremos, no lavado | Desapalancando; riesgo de mas liquidacion bajo $4,100 |
-| Bancos centrales | PBoC/NBP comprando (insensible al precio); CBRT vendiendo 60t; Rusia vendiendo | Mixto; flujo activo bajista, estructural alcista |
-| IAU flujos | Mixto: grandes asignadores aumentan, pequenos reducen | Neutral |
+| Flujos ETF (GLD + IAU) | Salidas: $5.400M YTD Norteamérica; entradas Asia parcialmente compensatorias | Saliendo (Occidente); Entrando (Asia) — neto: estancado |
+| COMEX Managed Money (disagg.) | Net long +92.814 contratos (~289t); reducción de -19t en marzo | Largo pero en proceso de reducción táctica; reflexivo ante CPI |
+| Bancos centrales EM (físico) | Net +19t comprados en feb-2026; previsión WGC 850t año completo | Entrando de forma estructural, no sensible al precio |
+| CBRT / Rusia | ~58-60t vendidos (CBRT); ~6t/mes (Rusia) | Saliendo tácticamente; presión de oferta acotada y transitoria |
+| Posición JPMorgan | >$4.000M entrega física COMEX feb-2026; target $6.300 | Largo estructural con convicción alta a nivel de principal |
 
-**Direccion del dinero:** CORTO (capital activo y sensible al precio alineado bajista; capital estructural insensible al precio no contrarresta a corto plazo)
+**Dirección del dinero:** LARGO estructural (bancos centrales, ETFs Asia, JPM) + LARGO reflexivo reducido (CTAs) — sin catalizador de dirección en las próximas 48h hasta CPI.
 
 ---
 
 ## ESCENARIO DESCONTADO
 
-**Que esta descontando el mercado?**
-Inflacion persistente por el shock petrolero de Iran mantiene a la Fed sin recortar tipos hasta mediados de 2026. Rendimientos reales elevados hacen al oro no competitivo frente a T-bills al 4.9%. El mercado descuenta que no habra alto el fuego creible a corto plazo.
+**¿Qué está descontando el mercado?**
+El precio actual de ~$4.660 descuenta un equilibrio tenso: el suelo estructural de la demanda de bancos centrales está intacto y ha absorbido múltiples shocks de oferta, pero el nivel de $4.700 carece de ancla fundamental confirmada tras la eliminación del viento de cola dovish por las minutas FOMC. El mercado descuenta implícitamente que el CPI del 10-abr es ambiguo (ni claramente frío ni claramente caliente) y que la tregua Irán-EEUU es frágil pero mantiene una prima residual.
 
 **Escenarios alternativos:**
 
 | Escenario | Probabilidad | Impacto en precio |
 |-----------|--------------|-------------------|
-| Alto el fuego US-Iran creible: petroleo -$15-20, reapertura de expectativas de recorte | Baja | +10-15% (short squeeze) |
-| NFP debil 3 abril: revive especulacion de recorte | Media-baja | +3-5% |
-| NFP fuerte + sin alto el fuego: consolida narrativa higher-for-longer | Media-alta | -5-8% (ruptura bajo $4,100) |
-| OPEC+ aumenta cuotas 1 abril: petroleo baja, alivia inflacion | Baja-media | +3-5% |
+| CPI frío (<3,5% YoY) — restaura narrativa recorte tipos, CTAs re-entran en largo | ~35% | +5% a +7% (test $4.900–$5.000) |
+| CPI caliente (>3,8% YoY) — confirma stagflación, FOMC hawkish, ETF outflows aceleran | ~40% | -3% a -5% (test $4.500–$4.580) |
+| Rotura ceasefire / escalada Israel-Irán antes del CPI | ~15% | +4% a +8% (prima de guerra; test $4.850–$5.000) |
+| Confirmación ceasefire estable + CPI moderado (escenario híbrido) | ~10% | -1% a +2% (rango contenido $4.600–$4.750) |
 
 ---
 
@@ -99,22 +99,22 @@ Inflacion persistente por el shock petrolero de Iran mantiene a la Fed sin recor
 
 | Check | Resultado |
 |-------|-----------|
-| Sentimiento claro? | SI (bajista; GLD salidas, CTAs desapalancando, peor semana desde 2011) |
-| Precio confirma direccion? | SI (caida 10% semanal; cerca de soporte $4,100) |
-| Failure to respond? | SI (rebotes por rumores de alto el fuego se revierten completamente en 24h) |
-| Pre-market confirma? | N/A |
+| ¿Sesgo claro? | NO — sesgo explícitamente "conflicted" |
+| ¿Precio confirma dirección? | NO — $4.660 sin ancla fundamental confirmada en $4.700 |
+| ¿Failure to respond? | NO — no se ha producido intento de ruptura en ninguna dirección |
+| ¿Pre-market confirma? | N/A — ventana 48-72h pendiente de CPI |
 
-**Tipo de trigger:** FAILURE TO RESPOND (rallies por alto el fuego totalmente revertidos)
+**Tipo de trigger:** NINGUNO (pendiente catalizador binario)
 
-**Decision:** GO
+**Decisión:** WAIT
 
 ---
 
-## RIESGOS (2-3 bullets)
+## RIESGOS
 
-- Alto el fuego creible US-Iran colapsaria petroleo $15-20/bbl, reabriendo expectativas de recorte y provocando un short squeeze contra posiciones CTA reducidas.
-- NFP materialmente debil el 3 de abril invalidaria la narrativa higher-for-longer e impulsaria al oro.
-- OPEC+ aumenta produccion el 1 de abril, bajando petroleo y aliviando presion inflacionaria.
+- CPI caliente el 10-abr (>3,8% YoY headline) valida la narrativa de stagflación, refuerza la postura hawkish de la Fed expresada en las minutas del 8-abr, y presiona el oro hacia el soporte $4.580–$4.622; si ese nivel cede, la corrección se extiende hacia $4.300–$4.450 (zona MM200 estimada).
+- Rotura completa de la tregua EEUU-Irán (escalada israelí en Beirut, re-cierre de Hormuz, represalia iraní) antes del 21-abr puede anular el marco macro y generar un spike no operacionalmente explotable por la velocidad y reversión histórica de las primas de guerra (precedente Soleimani 2020: +4,5% revertido en 72h).
+- Continuación de salidas de ETFs occidentales (ya -$13.000M YTD Norteamérica) si el CPI es caliente; la capacidad de absorción de los compradores EM/PBoC es real pero no ilimitada ante un ciclo sostenido de desinversión institucional occidental.
 
 ---
 
@@ -122,12 +122,11 @@ Inflacion persistente por el shock petrolero de Iran mantiene a la Fed sin recor
 
 | Fecha | Evento | Impacto esperado |
 |-------|--------|------------------|
-| 28/03 | CFTC COT (posicionamiento CTA actualizado) | MEDIO |
-| 31/03 | JOLTS Job Openings (febrero 2026) | MEDIO |
-| 01/04 | ISM Manufacturing PMI (marzo 2026) | MEDIO |
-| 01/04 | OPEC+ JMMC (revision cuotas produccion) | ALTO |
-| 03/04 | Nonfarm Payrolls (marzo 2026) | ALTO |
-| Continuo | Negociaciones alto el fuego US-Iran | ALTO |
+| 09/04 | GDP Q4 2025 (3ª estimación) + PCE febrero (BEA, 08:30 ET) | MEDIO — PCE por encima de 3,5% refuerza postura hawkish antes del CPI |
+| 10/04 | CPI marzo 2026 (BLS, 08:30 ET) — catalizador binario principal | ALTO — determina upgrade (GO) o downgrade (NO GO) del veredicto WAIT |
+| 11/04 | Informe COT CFTC (posiciones a martes 8-abr) + Ventas Minoristas marzo | MEDIO — valida o invalida re-entrada de CTAs tras spike de tregua |
+| 14/04 | PPI marzo 2026 (BLS, 08:30 ET) | MEDIO — confirma o mitiga trayectoria inflacionaria post-CPI |
+| ~21/04 | Vencimiento tregua EEUU-Irán / condicional reapertura Hormuz | ALTO — catalizador geopolítico binario de segundo orden |
 
 ---
 
@@ -135,31 +134,34 @@ Inflacion persistente por el shock petrolero de Iran mantiene a la Fed sin recor
 
 | Campo | Valor |
 |-------|-------|
-| **Accion** | VENDER |
-| **Ticker (Broker)** | XAU/USD (spot) / GLD (ETF) |
-| **Entry** | $4,400 |
-| **Stop Loss** | $4,570 (+3.9%) |
-| **Take Profit** | $4,100 (-6.8%) |
-| **Sizing** | Segun gestion de riesgo individual |
+| **Acción** | — (pendiente trigger) |
+| **Ticker (Broker)** | GCM6 (COMEX Gold Futures Junio 2026) |
+| **Entry** | — (pendiente trigger) |
+| **Stop Loss** | — (pendiente trigger) |
+| **Take Profit** | — (pendiente trigger) |
+| **Sizing** | — (pendiente trigger) |
+
+**Condicion de upgrade:** El CPI del 10-abr imprime en línea o por debajo del consenso (frío/moderado) — restaura la narrativa de recorte de tipos de la Fed y eleva el veredicto a GO alcista. Un CPI caliente (>3,8% YoY) eleva el riesgo bajista y degrada a NO GO.
 
 ---
 
 ## HECHOS BASE
 
-### Verificados (fuentes alta fiabilidad)
-1. Core PCE enero 2026: 3.1% YoY, maximo en casi dos anos -- *BEA / Reuters* (Rank 4, composite 24)
-2. Iran rechaza propuesta de alto el fuego de 15 puntos; Brent supera $107/bbl -- *Bloomberg / CNBC* (Rank 1, composite 27)
-3. CBRT vende ~60 toneladas de oro en dos semanas para defensa de la lira -- *Bloomberg* (Rank 3, composite 24). Intencionalidad: CBRT se beneficia de que la narrativa se enmarque como temporal/defensiva.
-4. Oro cae ~10% en la peor semana desde 2011; minimo de 4 meses en $4,099 -- *CNBC* (Rank 6, composite 14)
-5. CTA net long en 102,236 contratos; reducido desde extremos pero no lavado -- *CFTC* (Rank 12, composite 12). Intencionalidad: narrativa de "riesgo de mas liquidacion" beneficia a compradores institucionales contra-tendencia.
-6. PBoC anade 30,000 onzas troy en febrero; total 74.22M onzas -- *Bloomberg* (Rank 15, composite 12). Intencionalidad: PBoC se beneficia de que se crea la narrativa de "demanda estructural" que soporta el valor de su posicion existente.
-7. NFP marzo 2026 (3 abril): evento de confirmacion o refutacion clave -- *BLS* (Rank 2, composite 27)
+### Verificados (fuentes de alta credibilidad)
 
-### No verificados (contexto/narrativa)
-1. Negociaciones alto el fuego US-Iran en curso; potencial resolucion subita -- *White House / Iran* (Rank 5, composite 8, credibilidad 1). Declaracion politica sin mecanismo vinculante ni plazo verificable.
-2. GLD pierde $1,500M en una semana; salidas YTD superan $2,000M -- *BanklessTimes / Invezz* (Rank 7, composite 7, credibilidad 1). Intencionalidad: framing bajista de salidas puede beneficiar a actores acumulando a precios bajos mientras minoristas venden.
-3. Rusia vende oro a minimo de reservas de 4 anos -- *BullionVault* (Rank 14, composite 6, credibilidad 1). Narrativa de "bancos centrales vendiendo" contradice tesis alcista estructural.
+1. PBoC extendio su racha de compras a 16–17 meses consecutivos; tenencias en 2.308–2.313t (~10% reservas FX) a fecha febrero-marzo 2026. — *Bloomberg 2026-03-07; WGC Central Bank Gold Statistics 2026-04-02*
+2. Tregua EEUU-Irán de dos semanas anunciada el 7-abr-2026 condicionada a la apertura total del Estrecho de Hormuz; oro subio 3,1% hasta $4.857 al anuncio y retrocedio a ~$4.705–$4.800 con grietas el 8-abr (Israel excluido; ataques en Beirut). — *CNBC / NPR / Washington Post / Reuters; Rango compuesto 30/30 — CLEAR*
+3. Minutas FOMC (reunion 17-18 mar) publicadas el 8-abr-2026: riesgo "bidireccional", subida de tipos tan probable como bajada; probabilidad de recorte en abril = 0% (CME FedWatch). — *Federal Reserve / Kitco News; Rango compuesto 27/30 — FLAGGED: Fed gana opcionalidad de política con este lenguaje*
+4. Oro aguanto sobre $4.650 pese a 120t de ventas del CBRT y $5.400M en salidas de ETFs occidentales en 2026 YTD — confirma la capacidad de absorcion de la demanda EM/PBoC. — *Invezz / SSGA Monthly Gold Monitor Abril 2026; FLAGGED: SSGA enmarca las salidas como "compensadas por demanda asiática" — interés propio en estabilidad de GLD*
+5. COMEX Managed Money (disaggregado): net long +92.814 contratos (~289t) a 31-mar-2026; reduccion de ~$2.000M (~19t) en marzo. — *CFTC Disaggregated COT Futures-Only 2026-04-04; WGC Gold Market Commentary marzo 2026*
+6. CPI nowcast marzo 2026 en 3,71% YoY vs. 3,25% previo, impulsado por el shock energetico de la guerra de Iran; caida del 2,7%–3,6% del oro el 2-abr ("Warsh Shock") establece zona de soporte $4.580–$4.622. — *CNBC / FXStreet 2026-04-02*
+
+### No verificados (declaraciones / narrativa institucional)
+
+1. Goldman Sachs reafirma target $5.400 año-fin 2026; UBS eleva target a $6.200. — *TheStreet / Yahoo Finance / IndexBox 2026-04-06* — **Incentivo:** GS y JPM tienen posiciones largas estructurales en oro; mantener targets alcistas tras una corrección del 16% desde máximos beneficia su posicionamiento y atrae flujos de clientes. (Rango 9 — FLAGGED)
+2. Turquia clasifica sus ~120t de ventas como "tacticas y temporales"; CBRT afirma que reanudara compras al normalizarse el mercado energetico. — *Finance.BigGo / IndiaNewsNetwork 2026-04-04* — **Incentivo:** WGC tiene interes institucional en preservar la narrativa de "demanda estructural de bancos centrales"; la clasificacion "tactica" no esta aun verificada por reanudacion real de compras. (Rango 13 — FLAGGED)
+3. WGC enmarca las salidas de ETFs como "entradas orientales que compensan salidas occidentales". — *WGC ETF Flows Abril 2026* — **Incentivo:** WGC es el organo promotor de la industria del oro; su financiacion depende de una demanda sostenida; el enmarcamiento positivo de los datos de flujos sirve a ese interes. (Rango 5 — FLAGGED)
 
 ---
 
-*Generado: 2026-03-27 | Ventana valida: 3-5 dias | Revision requerida ante alto el fuego creible o NFP debil el 3 de abril.*
+*Si no puedes llenar este one-pager con conviccion, el analisis ha fallado. Vuelve atras e identifica que te falta.*

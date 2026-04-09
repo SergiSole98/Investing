@@ -1,52 +1,109 @@
-## Interests Map: Gold (XAU)
+## Interests Map: Gold (XAU/GCM6)
 Scope: structural incentives of identified smart money actors
+Reference date: 2026-04-08
+GCM6 context: June 2026 COMEX gold futures; spot ~$4,660–4,700/oz
+
+---
 
 ### People's Bank of China (PBoC)
 Bias: bullish | Confidence: high
-Reason: Strategic reserve diversification away from USD-denominated assets and reduction of sanctions vulnerability. 16 consecutive months of purchases through Q1 2026, adding roughly 40,000 ounces per month, bringing total reserves to 2,309 tonnes (10% of FX reserves). The consistency signals a long-term institutional mandate rather than tactical trading.
-Near-term deadline: monthly SAFE reserve disclosure (next: early April 2026)
+Reason: 17 consecutive months of gold purchases as of March 2026 (total ~2,313t, ~10% of FX reserves); non-price-sensitive buyer executing a de-dollarization and yuan-internationalisation mandate with no publicly stated ceiling.
+Near-term deadline: Monthly reserve data release (typically first week of each month); next PBoC gold statistics publication expected early May 2026.
 
-### Reserve Bank of India (RBI)
-Bias: bullish | Confidence: medium
-Reason: Multi-year accumulation programme raised gold share in reserves from 10% to 16% within one year. The RBI accelerated onshoring in 2025 (64 tonnes in H1 FY26). However, buying pace moderated sharply since September 2025, with only 4 tonnes added in calendar 2025 versus 72.6 tonnes in 2024, suggesting price sensitivity at current levels.
-Near-term deadline: RBI monthly bulletin update (ongoing)
-
-### Central Bank of Turkey (CBRT)
-Bias: neutral | Confidence: medium
-Reason: Structural accumulation mandate has been interrupted by lira defense needs. The CBRT deployed approximately 60 tonnes of gold through sales and swaps in March 2026 to stabilize the lira after the Iran conflict increased energy import costs and foreign currency demand. This shifted the bank from a net buyer to a tactical seller. With $135 billion in gold reserves and an estimated $30 billion stored at the Bank of England, further sales remain possible if lira pressure persists.
-Near-term deadline: ongoing Iran-related geopolitical developments and lira stability assessment
+---
 
 ### National Bank of Poland (NBP)
 Bias: bullish | Confidence: high
-Reason: Largest central bank gold buyer in 2025 with 102 tonnes added, bringing reserves to 550 tonnes (28% of total reserves). Publicly raised its target from 20% to 30% and Governor Glapinski announced a further goal of 700 tonnes for national security reasons. The explicit, publicly stated mandate with no timeline pressure indicates sustained structural demand.
-Near-term deadline: none identified; accumulation is open-ended toward 700-tonne target
+Reason: Board-approved plan to purchase 150t to reach a 700t target (current ~570t, ~31% of reserves); President Glapiński has cited gold's zero-counterparty-risk and geopolitical hedge properties as the structural rationale; 130t gap to target implies multi-year accumulation runway.
+Near-term deadline: No fixed purchase schedule; pace determined by internal traders. Poland surpassed the ECB in holdings in January 2026, which may generate further political pressure to accelerate.
 
-### SPDR Gold Shares (GLD)
-Bias: neutral | Confidence: medium
-Reason: GLD functions as a flow proxy rather than a directional actor. Early 2026 saw massive inflows as institutions rotated out of tech, but March 2026 brought over $6 billion in outflows across three consecutive weeks as gold prices fell from $5,400 to $4,560. With $184.8 billion in AUM, the fund amplifies directional moves through authorized participant creation and redemption of physical gold.
-Near-term deadline: ongoing; daily creation/redemption activity reflects real-time institutional sentiment shifts
+---
 
-### iShares Gold Trust (IAU)
-Bias: neutral | Confidence: medium
-Reason: Second-largest gold ETF with $69 billion market cap and 59.67% institutional ownership. Recent filings show mixed activity: large allocators like Envestnet and JPMorgan increased positions in Q3 2025, while smaller firms reduced holdings in Q4. IAU tracks institutional allocation shifts but does not itself hold a directional mandate.
-Near-term deadline: Q4 2025 13F filing disclosures (February 2026, already published)
-
-### Bridgewater Associates
-Bias: bullish | Confidence: medium
-Reason: Opened a new $318.8 million GLD position in Q1 2025, consistent with the all-weather framework that structurally allocates to gold as an inflation and currency-debasement hedge. The firm's macro worldview, emphasizing debt cycles and currency risks, supports continued gold allocation.
-Near-term deadline: Q4 2025 13F filing (published February 2026); next filing due May 2026
-
-### Ray Dalio / Dalio Family Office
+### SPDR Gold Shares (GLD) / State Street Global Advisors
 Bias: bullish | Confidence: high
-Reason: Publicly advocates 5-15% portfolio allocation to gold, up from the conventional 5%. At the World Governments Summit in early 2026, called gold "the safest money" and the second-largest reserve currency. His thesis centers on eroding trust in fiat currencies, rising sovereign debt, and a looming "capital war" with sanctions and capital controls. Public stance directly influences institutional sentiment.
-Near-term deadline: none identified; advocacy is structural and ongoing
+Reason: Mechanical, rule-bound physical gold buyer: every net inflow dollar triggers proportional gold purchase; GLD is the largest gold ETF by AUM and its flows are a direct transmission channel for institutional and retail demand into physical gold.
+Near-term deadline: Daily creation/redemption cycle is continuous. March 2026 saw record North American ETF outflows; April early-inflow recovery is the key catalyst to watch. SSGA Monthly Gold Monitor April 2026 is the next formal data release.
 
-### Shanghai Gold Exchange (SGE) institutional flows
+---
+
+### iShares Gold Trust (IAU) / BlackRock
+Bias: bullish | Confidence: high
+Reason: Same mechanical long mechanism as GLD; IAU holds over $65bn AUM and systematically buys physical gold on net inflows. BlackRock's broader multi-asset research has reinforced overweight-gold views for institutional clients, amplifying flows.
+Near-term deadline: March 2026 recorded IAU outflows as part of a broader $13bn North American ETF drawdown; April recovery in Asian and European demand (WGC: "Eastern inflows counterbalance Western outflows") is the near-term swing factor. WGC monthly ETF flow report for April 2026 due early May.
+
+---
+
+### Goldman Sachs
+Bias: bullish | Confidence: high
+Reason: Structural bull thesis rests on three pillars: ~60t/month EM central bank demand, Fed easing cycle, and portfolio diversification from USD assets. $5,400/oz year-end 2026 target (most conservative among major banks) drives client positioning and prop desk framing.
+Near-term deadline: April 10, 2026 US CPI print; April FOMC communications. Any miss on CPI or dovish Fed signal would reinforce GS's rate-cut thesis and could prompt an upward target revision.
+
+---
+
+### JPMorgan
+Bias: bullish | Confidence: high
+Reason: $6,300/oz 2026 base-case target with $8,000–$8,500 upside scenario; JPM Private Bank positioned long; research frames gold as a substitute for "duration risk" bonds as households rebalance portfolios. JPMorgan forecasts 800t of central bank purchases and ~250t of ETF inflows for 2026.
+Near-term deadline: April 8, 2026 FOMC minutes release; April 10 CPI. JPMorgan's easing thesis is contingent on confirmed Fed pivot; any delay pushes risk toward near-term consolidation without changing the structural long.
+
+---
+
+### COMEX Managed Money (Hedge Funds / CTAs)
 Bias: bullish | Confidence: medium
-Reason: SGE withdrawals totalled 126 tonnes in January 2026 and 85 tonnes in February (lower due to fewer trading days). Persistent Shanghai premium over London price signals sustained structural Eastern demand driven by restricted imports, domestic jewelry demand, and household investment buying. However, rapid price surges and volatility have moderated wholesale demand growth year-over-year.
-Near-term deadline: weekly SGE withdrawal data releases (ongoing)
+Reason: Retained net long bias after reducing exposure by ~$2bn (~19t) in March 2026; CTA trend-following models are long by mandate when gold is above key moving averages. The category is the most price-sensitive and reflexive: a break above prior ATH or a bullish macro catalyst triggers systematic re-entry.
+Near-term deadline: April 8 FOMC minutes and April 10 CPI are binary catalysts. A dovish signal or soft CPI reading could trigger rapid CTA re-loading of longs; a hawkish surprise could extend short-term net-long reduction. COT report published weekly (each Friday, as of prior Tuesday).
 
-### Commodity Trading Advisors (CTA aggregate)
+---
+
+### Sprott Asset Management
+Bias: bullish | Confidence: high
+Reason: CEO explicitly bullish, citing PBoC demand as structural anchor; PHYS and SGDM are pure-play precious metals vehicles with inflows tied to gold momentum. Sprott notes Western institutional gold allocation is ~2% vs. historical ~8% peak, implying a large structural re-allocation runway.
+Near-term deadline: No specific near-term deadline; flows are momentum-driven. Gold price consolidation above $4,500 would sustain the thesis; a breakdown below major technical support would risk outflows from momentum-sensitive retail allocators.
+
+---
+
+### Emerging Market Central Banks (aggregate — excl. China)
+Bias: bullish | Confidence: high
+Reason: WGC Central Bank Survey (March 2026): 68% of central banks intend to increase gold holdings in 2026, up from 62% in 2025; WGC projects ~755t of total central bank purchases for full-year 2026. Active buyers include Uzbekistan, Czech Republic, Malaysia, and Cambodia. Structural motive is reserve diversification away from dollar-denominated assets and sanctions risk mitigation.
+Near-term deadline: WGC Central Bank Gold Statistics monthly release (next: early May 2026, covering March 2026 data).
+
+---
+
+### World Gold Council (WGC)
+Bias: neutral | Confidence: high
+Reason: The WGC is an industry body funded by gold miners; its mandate is to grow gold demand across all categories. It does not hold or trade gold, but its data releases and research are near-term information catalysts that shape institutional positioning. The WGC is structurally incentivised to report and amplify demand signals.
+Near-term deadline: April 2026 ETF Flow Report (published April 2026, covering March data) — already released and flagged "Eastern inflows counterbalance Western outflows." Central Bank Gold Statistics for February 2026 released April 2, 2026. Next major release: May 2026 (March CB data + Q1 Gold Demand Trends).
+
+---
+
+### Central Bank of the Republic of Turkey (CBRT)
 Bias: bearish | Confidence: medium
-Reason: CTA net positioning has shifted from extended long to neutral or short as gold fell from $5,400 to $4,560 between January and late March 2026. The unwind reflects systematic trend-following models responding to a resurgent USD, rising Treasury yields (10Y at 4.384%), and reduced COMEX open interest. CTA liquidation has amplified downside momentum. At current reduced positioning levels, the risk of further forced selling is diminished, but re-entry requires a sustained price reversal.
-Near-term deadline: CFTC COT report every Friday at 15:30 ET (next: March 27, 2026)
+Reason: Tactical seller driven by acute balance-of-payments pressure: executed a historic ~$18bn gold drawdown (week of March 13–20, 2026) as energy import costs and FX liquidity needs spiked amid regional conflict. Approximately 49t were sold or swapped outright; selling is balance-of-payments necessity, not a structural view against gold.
+Near-term deadline: Stabilisation of regional tensions (Iran conflict) and FX reserve levels ($110–115bn target by mid-2026) are the conditions for cessation of selling. CBRT weekly reserve data is the tracking mechanism.
+
+---
+
+### Bank of Russia
+Bias: bearish | Confidence: high
+Reason: Structural seller: war expenditure and sanctions constraints force gold liquidation to fund the federal budget and support the ruble. Sold ~500,000 oz (January–February 2026); foreign intelligence estimates up to 115t (~$15bn) in 2026 sales. Holdings remain large (~2,300t, fifth-largest globally) but trending lower.
+Near-term deadline: No scheduled cessation; selling is driven by ongoing war finance needs. Any ceasefire or sanctions relief would be the reversal catalyst. Volume is modest relative to global daily turnover (~$220bn/day), so price impact per event is limited.
+
+---
+
+### US Federal Reserve (Fed)
+Bias: neutral | Confidence: high
+Reason: The Fed holds no gold in an active trading sense; its policy rate path is the structural exogenous variable for gold. Rates held at 3.50–3.75% as of April 2026; at least one 25bp cut projected for 2026 per the March SEP. Lower real rates reduce the opportunity cost of holding gold — a medium-term structural tailwind, but not an immediate catalyst.
+Near-term deadline: April 8, 2026: FOMC minutes from March 17–18 meeting released (flagged downside employment risk and softened tone). April 10, 2026: US CPI print is the next hard data catalyst that will calibrate the rate-cut timeline.
+
+---
+
+### Bank of Japan (BoJ)
+Bias: neutral | Confidence: medium
+Reason: The BoJ holds 765.2t of gold (~2.3% of total reserves, all-time high value of ~$117bn in December 2025) but has no active gold buying or selling programme. Monetary policy normalisation (policy rate raised to ~0.75% in December 2025) creates indirect dynamics: JPY appreciation reduces yen-denominated gold demand but continued rate normalisation signals tightening that does not directly support gold.
+Near-term deadline: BoJ monetary policy board meeting (next scheduled April/May 2026); JGB yield developments and potential unwinding of carry trades are the key indirect channels to monitor.
+
+---
+
+### European Central Bank (ECB)
+Bias: neutral | Confidence: high
+Reason: ECB gold reserves are stable and held as a long-term strategic asset; there is no active buying or selling mandate. The ECB's gradual easing path (multiple cuts already delivered in 2025) is mildly supportive of gold by reducing EUR real rates. Gold has overtaken the euro as the world's second-largest reserve asset — a development the ECB has documented but does not react to operationally.
+Near-term deadline: ECB Governing Council meeting (April 17, 2026); further rate cuts would mildly reinforce the structural gold tailwind via lower EUR real rates and potential EUR weakness.
