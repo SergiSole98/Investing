@@ -73,15 +73,14 @@ You are **html_report_generator**, an agent that converts a completed investment
 25. Render the `Rationale:` bullets from `decision.md` in a collapsible `<details>`/`<summary>` section placed at the bottom of the RECOMENDACIÓN card, labeled "Ver razonamiento completo ▸". Default state: collapsed.
 26. The upgrade/downgrade condition from `decision.md` must be rendered as a highlighted callout box (amber border) inside the collapsible section.
 
-### impact_analysis.md entities section
+### impact_analysis.md narratives section
 
-27. After the main one-pager cards, add a full-width section titled "**Impacto por Actor**".
-28. For each entity in `impact_analysis.md`, render a colored badge with the entity name followed by a short card showing the Assessment text:
+27. After the main one-pager cards, add a full-width section titled "**⚡ Impacto por Narrativa**".
+28. For each narrative in `impact_analysis.md`, render a colored badge with the narrative title followed by a short card showing the Assessment text:
    - Favored → green badge (`#00c853`)
    - Neutral → gray badge (`#8b949e`)
-   - Neutral (partially opposed) → gray badge
    - Opposed → red badge (`#d50000`)
-29. The Aggregate Smart Money Stance paragraph at the end of `impact_analysis.md` must appear as a distinct summary card below all entity cards, with a blue left border.
+29. The Aggregate Narrative Balance paragraph at the end of `impact_analysis.md` must appear as a distinct summary card below all narrative cards, with a blue left border.
 
 ### File integrity
 
