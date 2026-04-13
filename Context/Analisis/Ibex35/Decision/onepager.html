@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Ibex 35] Investment One-Pager</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 24px 16px 48px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e6edf3;
+    margin-bottom: 4px;
+  }
+
+  .header-meta {
+    color: #8b949e;
+    font-size: 0.82rem;
+    margin-bottom: 28px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .card.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .card h2 {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+
+  /* Badge */
+  .badge {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-amber { background: rgba(255,214,0,0.15); color: #ffd600; border: 1px solid rgba(255,214,0,0.4); }
+  .badge-green { background: rgba(0,200,83,0.15); color: #00c853; border: 1px solid rgba(0,200,83,0.4); }
+  .badge-red   { background: rgba(213,0,0,0.15);  color: #ff5252; border: 1px solid rgba(213,0,0,0.4); }
+  .badge-gray  { background: rgba(139,148,158,0.15); color: #8b949e; border: 1px solid rgba(139,148,158,0.4); }
+  .badge-blue  { background: rgba(88,166,255,0.15); color: #58a6ff; border: 1px solid rgba(88,166,255,0.4); }
+
+  .verdict-badge {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffd600;
+    text-align: center;
+    letter-spacing: 0.1em;
+    padding: 12px 0 8px;
+    display: block;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  th {
+    background: #0d1117;
+    color: #8b949e;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid #30363d;
+  }
+
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #21262d;
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  /* Zebra striping */
+  .zebra tr:nth-child(even) td { background: rgba(255,255,255,0.025); }
+
+  /* PRECIO ACTUAL row */
+  .precio-actual td {
+    font-weight: 700;
+    color: #58a6ff;
+    font-size: 1.0rem;
+  }
+
+  /* Catalyst ALTO highlight */
+  .alto-row td { background: rgba(255,214,0,0.08); }
+  .alto-row .impact-cell { font-weight: 700; color: #ffd600; }
+  .medio-row .impact-cell { color: #8b949e; }
+
+  /* Tesis callout */
+  .tesis-item {
+    border-left: 3px solid #ffd600;
+    background: rgba(255,214,0,0.06);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    font-size: 0.87rem;
+    line-height: 1.65;
+  }
+  .tesis-item:last-child { margin-bottom: 0; }
+
+  /* Riesgos warning card */
+  .riesgo-item {
+    border-left: 3px solid #d50000;
+    background: rgba(213,0,0,0.08);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    font-size: 0.87rem;
+    line-height: 1.65;
+  }
+  .riesgo-item:last-child { margin-bottom: 0; }
+  .riesgo-title {
+    font-weight: 600;
+    color: #ff5252;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+  }
+
+  /* Execution fields */
+  .exec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 0.87rem;
+  }
+  .exec-row:last-child { border-bottom: none; }
+  .exec-label { color: #8b949e; }
+  .exec-value { font-weight: 600; }
+  .exec-value.pending { color: #ffd600; }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid #58a6ff;
+    background: rgba(88,166,255,0.06);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: #e6edf3;
+  }
+
+  /* Trigger check table */
+  .check-yes  { color: #00c853; font-weight: 700; }
+  .check-no   { color: #ff5252; font-weight: 700; }
+  .check-na   { color: #8b949e; font-weight: 600; }
+
+  /* Hechos base */
+  .hechos-section {
+    margin-bottom: 14px;
+  }
+  .hechos-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .hechos-title.verified {
+    background: rgba(0,200,83,0.12);
+    color: #00c853;
+  }
+  .hechos-title.unverified {
+    background: rgba(255,214,0,0.10);
+    color: #ffd600;
+  }
+  .hecho-item {
+    padding: 6px 10px;
+    font-size: 0.84rem;
+    border-bottom: 1px solid #21262d;
+    line-height: 1.55;
+  }
+  .hecho-item:last-child { border-bottom: none; }
+  .hecho-num { color: #8b949e; margin-right: 6px; }
+  .flagged { color: #ff5252; font-size: 0.75rem; margin-left: 4px; }
+
+  /* details/summary collapsible */
+  details {
+    margin-top: 16px;
+    border-top: 1px solid #30363d;
+    padding-top: 14px;
+  }
+  summary {
+    cursor: pointer;
+    color: #58a6ff;
+    font-size: 0.84rem;
+    font-weight: 600;
+    user-select: none;
+    outline: none;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  details[open] summary { margin-bottom: 12px; }
+
+  .rationale-list {
+    list-style: none;
+    padding: 0;
+  }
+  .rationale-list li {
+    padding: 6px 0 6px 12px;
+    border-left: 2px solid #30363d;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #c9d1d9;
+  }
+
+  .upgrade-callout {
+    border-left: 3px solid #ffd600;
+    background: rgba(255,214,0,0.07);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 0.84rem;
+    line-height: 1.65;
+    color: #e6edf3;
+  }
+  .upgrade-callout strong { color: #ffd600; }
+
+  /* Narrative section */
+  .narratives-section {
+    margin-top: 16px;
+  }
+
+  .narrative-card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .narrative-card:last-child { margin-bottom: 0; }
+  .narrative-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .narrative-title {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #e6edf3;
+    flex: 1;
+  }
+  .narrative-body {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: #c9d1d9;
+  }
+
+  .aggregate-card {
+    border-left: 3px solid #58a6ff;
+    background: rgba(88,166,255,0.06);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 14px;
+    margin-top: 16px;
+    font-size: 0.87rem;
+    line-height: 1.7;
+    color: #e6edf3;
+  }
+  .aggregate-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #58a6ff;
+    margin-bottom: 6px;
+  }
+
+  /* neutral badge row */
+  .neutral-row {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  /* Condicion activacion */
+  .condicion-box {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-top: 12px;
+    font-size: 0.84rem;
+    line-height: 1.6;
+    color: #c9d1d9;
+  }
+  .condicion-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8b949e;
+    margin-bottom: 4px;
+  }
+
+  /* page header bar */
+  .page-header {
+    border-bottom: 1px solid #30363d;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+  }
+
+  .section-spacer { margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>[Ibex 35] Investment One-Pager</h1>
+  <div class="header-meta">Generado el 13 de abril de 2026 &nbsp;·&nbsp; Horizonte: 3–5 días &nbsp;·&nbsp; Precio actual: <strong style="color:#58a6ff">17.941 pts</strong></div>
+</div>
+
+<div class="grid">
+
+  <!-- RECOMENDACIÓN -->
+  <div class="card">
+    <h2>🎯 Recomendación</h2>
+    <span class="verdict-badge">WAIT</span>
+    <table class="zebra" style="margin-top:12px">
+      <thead>
+        <tr>
+          <th>Rating</th>
+          <th>Precio Actual</th>
+          <th>Target</th>
+          <th>Potencial</th>
+          <th>Horizonte</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-amber">WAIT</span></td>
+          <td style="color:#58a6ff;font-weight:700">17.941 pts</td>
+          <td style="color:#ffd600">— (pendiente trigger)</td>
+          <td style="color:#ffd600">— (pendiente trigger)</td>
+          <td>3–5 días</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <details>
+      <summary>Ver razonamiento completo ▸</summary>
+      <ul class="rationale-list">
+        <li>El sesgo dominante es explícitamente conflictivo: las financieras y los sectores sensibles a tipos se mueven en direcciones opuestas, lo que impide una tesis direccional única.</li>
+        <li>El balance agregado de narrativas amplifica en lugar de amortiguar la dispersión: las narrativas 1 y 3 profundizan la divergencia sectorial mientras la narrativa 2 carga downside asimétrico no resuelto sobre el clúster exportador.</li>
+        <li>La ventana de 72h apila tres catalizadores binarios (secuencia speakers BCE 14–15 Abr, deadline USTR Sección 301 el 15 Abr, resultados Bankinter Q1 el 15 Abr) con riesgo de secuencia compuesto.</li>
+        <li>El precedente Airbus 2019–2021 establece un ancla concreta de riesgo de cola: una escalada USTR confirmada desplazaría el sesgo del clúster exportador de conflictivo a claramente bajista.</li>
+        <li>El ruido con intencionalidad marcada es bajo, pero la ausencia de un setup limpio no justifica la entrada.</li>
+      </ul>
+      <div class="upgrade-callout">
+        <strong>Condición de upgrade/downgrade:</strong> El resultado de la Sección 301 USTR se publica antes del 15 Abr <em>Y</em> los speakers BCE (Lagarde, Schnabel, de Guindos) ofrecen un tono coherente y consistente — si ambos confirman sin escalada / pivote dovish → <strong>upgrade a GO</strong> (tesis liderada por financieras); si se confirma escalada → <strong>downgrade a NO GO</strong>, sesgo bajista en clúster exportador.
+      </div>
+    </details>
+  </div>
+
+  <!-- TESIS -->
+  <div class="card">
+    <h2>💡 Tesis</h2>
+    <div class="tesis-item">El sesgo dominante es conflictivo: el ciclo ECB "higher-for-longer" beneficia a los bancos (Santander, BBVA, Bankinter) pero comprime utilities y REITs, lo que impide una dirección limpia para el índice.</div>
+    <div class="tesis-item">Las 48 horas del 14–15 de abril apilan tres catalizadores binarios con riesgo de secuencia: ECB Lagarde/Schnabel/de Guindos, el deadline USTR Sección 301 y los resultados de Bankinter Q1, cualquiera de los cuales puede invalidar la lectura de los demás.</div>
+    <div class="tesis-item">El Ibex cotiza en máximo de 1 mes (+48% interanual) y ya descuenta el escenario base positivo, lo que eleva el coste de equivocarse: el potencial alcista es limitado y el riesgo de cola bajista (Airbus/aranceles) es concreto y asimétrico.</div>
+  </div>
+
+  <!-- RIESGOS -->
+  <div class="card">
+    <h2>⚠️ Riesgos</h2>
+    <div class="riesgo-item">
+      <div class="riesgo-title">Riesgo de cola arancelaria (Airbus/USTR)</div>
+      El precedente Airbus (aranceles del 25%) es un ancla concreta de riesgo bajista para el clúster exportador español (Inditex, IAG, Ferrovial, Amadeus, Grifols). Si el USTR ejecuta el deadline del 15 Abr, el downside es unidireccional y rápido.
+    </div>
+    <div class="riesgo-item">
+      <div class="riesgo-title">Riesgo de incoherencia ECB</div>
+      Si los tres speakers del BCE (de Guindos, Lagarde, Schnabel) del 14–15 Abr ofrecen señales contradictorias sobre el ritmo de tipos, el sesgo conflictivo se amplifica y el mercado puede reaccionar con alta volatilidad en ambas direcciones.
+    </div>
+    <div class="riesgo-item">
+      <div class="riesgo-title">Riesgo de vencimiento MEFF (17 Abr)</div>
+      El vencimiento mensual del Ibex 35 el 17 de abril eleva estructuralmente la volatilidad intraday en la ventana 14–17 Abr, pudiendo exagerar movimientos en cualquier dirección con independencia del fundamento.
+    </div>
+  </div>
+
+  <!-- CATALIZADORES -->
+  <div class="card">
+    <h2>📅 Catalizadores Próximos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Evento</th>
+          <th>Impacto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="alto-row">
+          <td>14/04 14:30 CEST</td>
+          <td>ECB de Guindos — discurso en Soria</td>
+          <td class="impact-cell">ALTO</td>
+        </tr>
+        <tr class="alto-row">
+          <td>14/04 22:00 CET</td>
+          <td>ECB Lagarde — keynote (Washington/FMI)</td>
+          <td class="impact-cell">ALTO</td>
+        </tr>
+        <tr class="alto-row">
+          <td>14/04 22:00 CET</td>
+          <td>ECB Schnabel — panel (Washington/IIF)</td>
+          <td class="impact-cell">ALTO</td>
+        </tr>
+        <tr class="alto-row">
+          <td>15/04 (mañana)</td>
+          <td>USTR Sección 301 — cierre período comentarios</td>
+          <td class="impact-cell">ALTO</td>
+        </tr>
+        <tr class="alto-row">
+          <td>15/04 09:00 CET</td>
+          <td>Bankinter Q1 resultados</td>
+          <td class="impact-cell">ALTO</td>
+        </tr>
+        <tr class="alto-row">
+          <td>16/04 10:00 CET</td>
+          <td>Eurostat HICP final marzo 2026</td>
+          <td class="impact-cell">ALTO</td>
+        </tr>
+        <tr class="medio-row">
+          <td>17/04 10:00 CET</td>
+          <td>MEFF Ibex 35 — vencimiento mensual</td>
+          <td class="impact-cell">MEDIO</td>
+        </tr>
+        <tr class="alto-row">
+          <td>17/04</td>
+          <td>INE IPC final España marzo 2026 (flash: 3,3% YoY)</td>
+          <td class="impact-cell">ALTO</td>
+        </tr>
+        <tr class="medio-row">
+          <td>14–18/04</td>
+          <td>FMI/Banco Mundial — Spring Meetings (WEO)</td>
+          <td class="impact-cell">MEDIO</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- EJECUCIÓN -->
+  <div class="card">
+    <h2>✅ Ejecución</h2>
+    <div style="text-align:center;margin-bottom:14px">
+      <span class="badge badge-amber" style="font-size:1rem;padding:6px 18px">🟡 WAIT — SIN TRIGGER</span>
+    </div>
+    <div class="exec-row">
+      <span class="exec-label">Acción</span>
+      <span class="exec-value"><span class="badge badge-amber">WAIT</span></span>
+    </div>
+    <div class="exec-row">
+      <span class="exec-label">Ticker (Broker)</span>
+      <span class="exec-value" style="color:#e6edf3">IBE35 / ETF IBEX35</span>
+    </div>
+    <div class="exec-row">
+      <span class="exec-label">Entry</span>
+      <span class="exec-value pending">— (pendiente trigger)</span>
+    </div>
+    <div class="exec-row">
+      <span class="exec-label">Stop Loss</span>
+      <span class="exec-value pending">— (pendiente trigger)</span>
+    </div>
+    <div class="exec-row">
+      <span class="exec-label">Take Profit</span>
+      <span class="exec-value pending">— (pendiente trigger)</span>
+    </div>
+    <div class="exec-row">
+      <span class="exec-label">Sizing</span>
+      <span class="exec-value pending">— (pendiente trigger)</span>
+    </div>
+  </div>
+
+  <!-- NIVELES CLAVE -->
+  <div class="card">
+    <h2>📊 Niveles Clave</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Nivel</th>
+          <th>Toques</th>
+          <th>Distancia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color:#ff5252">Resistencia 2</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+        </tr>
+        <tr>
+          <td style="color:#ff7b7b">Resistencia 1</td>
+          <td>18.204 pts</td>
+          <td>N/D</td>
+          <td>+1,5%</td>
+        </tr>
+        <tr class="precio-actual">
+          <td>PRECIO ACTUAL</td>
+          <td>17.941 pts</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td style="color:#5fdd9d">Soporte 1</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+        </tr>
+        <tr>
+          <td style="color:#00c853">Soporte 2</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- INDICADORES -->
+  <div class="card">
+    <h2>📈 Indicadores</h2>
+    <table class="zebra">
+      <thead>
+        <tr>
+          <th>Indicador</th>
+          <th>Valor</th>
+          <th>Señal</th>
+          <th>Fiabilidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sentimiento (F&amp;G)</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Curva futuros</td>
+          <td>MEFF venc. 17 Abr</td>
+          <td>Volatilidad intraday estructuralmente elevada</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Put/Call Ratio</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td>VIX</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Pre-market</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>⭐</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ACTORES E INCENTIVOS -->
+  <div class="card full-width">
+    <h2>🎭 Actores e Incentivos</h2>
+    <table class="zebra">
+      <thead>
+        <tr>
+          <th>Actor</th>
+          <th>Qué gana</th>
+          <th>Qué pierde</th>
+          <th>Límite temporal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ECB</strong> (Lagarde, Schnabel, de Guindos)</td>
+          <td>Credibilidad de política monetaria con señales de tipos claras</td>
+          <td>Credibilidad si el tono es incoherente o contradictorio</td>
+          <td>14–15 Abr</td>
+        </tr>
+        <tr>
+          <td><strong>USTR</strong> (Adm. USA)</td>
+          <td>Palanca comercial y presión negociadora vía aranceles Sección 301</td>
+          <td>Credibilidad negociadora si no ejecuta el deadline</td>
+          <td>15 Abr</td>
+        </tr>
+        <tr>
+          <td><strong>Santander</strong></td>
+          <td>Soporte de precio vía recompra (53,8% ejecutado) y señalización de dividendo</td>
+          <td>Pérdida de efecto si el mercado ya lo ha descontado</td>
+          <td>5 May</td>
+        </tr>
+        <tr>
+          <td><strong>Bankinter</strong></td>
+          <td>Confirmación de la tesis NIM con resultados Q1</td>
+          <td>Impacto negativo si el consenso (€281m) no se alcanza</td>
+          <td>15 Abr</td>
+        </tr>
+        <tr>
+          <td><strong>Grifols</strong> <span class="flagged">[FLAGGED]</span></td>
+          <td>Confianza del mercado en el proceso de desapalancamiento (TLB €3bn; redención €500m)</td>
+          <td>Daño reputacional si se cuestiona la comunicación corporativa</td>
+          <td>1 Abr + 13 Abr</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- POSICIONAMIENTO DEL DINERO -->
+  <div class="card full-width">
+    <h2>💰 Posicionamiento del Dinero</h2>
+    <table class="zebra">
+      <thead>
+        <tr>
+          <th>Indicador</th>
+          <th>Lectura</th>
+          <th>Interpretación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Narrativa ECB Higher-for-Longer</td>
+          <td>Favorece bancos (NIM); comprime utilities/REITs</td>
+          <td>Sesgo conflictivo: el dinero no fluye unidireccionalmente</td>
+        </tr>
+        <tr>
+          <td>Narrativa Escalada Arancelaria USA</td>
+          <td>Downside unidireccional para exportadoras (Inditex, IAG, Ferrovial, Amadeus, Grifols)</td>
+          <td>El dinero se retira de exportadoras ante riesgo de cola USTR</td>
+        </tr>
+        <tr>
+          <td>Narrativa Resultados Bancarios</td>
+          <td>Bankinter como test de la tesis NIM; Santander buyback en curso</td>
+          <td>Dinero aguarda confirmación de earnings antes de ampliar exposición</td>
+        </tr>
+        <tr>
+          <td>Narrativa Petróleo (Brent)</td>
+          <td>Dislocación ortogonal; bajo peso energético en Ibex</td>
+          <td>Impacto neutralizado por peso reducido; Repsol absorbe el golpe aisladamente</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="neutral-row">
+      <span class="badge badge-gray" style="margin-top:8px">NEUTRAL — La dispersión entre sectores impide una lectura neta positiva o negativa. El capital espera resolución de los catalizadores del 14–15 Abr.</span>
+    </div>
+  </div>
+
+  <!-- ACTIVOS CORRELACIONADOS -->
+  <div class="card full-width">
+    <h2>🔗 Activos Correlacionados</h2>
+    <table class="zebra">
+      <thead>
+        <tr>
+          <th>Activo</th>
+          <th>Relación</th>
+          <th>Dirección</th>
+          <th>Señal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Brent Crude</strong></td>
+          <td>Alimenta Repsol directamente</td>
+          <td>↓ Brent → ↓ Repsol</td>
+          <td style="color:#ff5252">Negativa: Brent −15% a $92,28; Repsol −5,76%</td>
+        </tr>
+        <tr>
+          <td><strong>Euro Stoxx Banks</strong></td>
+          <td>Mismo ciclo ECB</td>
+          <td>↑ con ECB hawkish</td>
+          <td style="color:#ffd600">Positiva condicionada a tono ECB Abr 14–15</td>
+        </tr>
+        <tr>
+          <td><strong>EUR/USD</strong></td>
+          <td>Alimenta exportadoras</td>
+          <td>↑ EUR → ↓ Inditex/IAG</td>
+          <td style="color:#ff5252">Negativa para el clúster exportador</td>
+        </tr>
+        <tr>
+          <td><strong>MEFF Ibex 35 futuros</strong></td>
+          <td>Mecánico, amplifica movimiento</td>
+          <td>Neutro-amplificador</td>
+          <td style="color:#8b949e">Vencimiento mensual 17 Abr eleva dispersión intraday</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ESCENARIO DESCONTADO -->
+  <div class="card full-width">
+    <h2>🧠 Escenario Descontado</h2>
+    <blockquote>
+      El mercado descuenta actualmente que el BCE mantendrá tipos en el 30 de abril (73,5% de probabilidad según Polymarket) y que el cese el fuego EE.UU.–Irán reducirá la inflación energética, permitiendo eventual normalización. El Ibex 35 cotiza con una ganancia del +48% interanual (máximo de 1 mes en 17.941 pts), lo que implica que la mayor parte del escenario positivo base ya está incorporada en precio.
+    </blockquote>
+    <table class="zebra">
+      <thead>
+        <tr>
+          <th>Escenario</th>
+          <th>Probabilidad</th>
+          <th>Impacto en precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Escalada arancelaria (USTR ejecuta + ECB hawkish)</td>
+          <td>N/D</td>
+          <td style="color:#ff5252">−3% a −5% en el índice; −8% a −12% en exportadoras</td>
+        </tr>
+        <tr>
+          <td>Resolución positiva (sin aranceles + ECB dovish)</td>
+          <td>N/D</td>
+          <td style="color:#00c853">+2% a +3% en el índice; +4% a +6% en utilities y REITs</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TRIGGER DE ENTRADA -->
+  <div class="card">
+    <h2>🎯 Trigger de Entrada</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Check</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>¿Sentimiento claro?</td>
+          <td class="check-no">NO</td>
+        </tr>
+        <tr>
+          <td>¿Precio confirma dirección?</td>
+          <td class="check-no">NO</td>
+        </tr>
+        <tr>
+          <td>¿Failure to respond?</td>
+          <td class="check-no">NO</td>
+        </tr>
+        <tr>
+          <td>¿Pre-market confirma?</td>
+          <td class="check-na">N/A</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="condicion-box">
+      <div class="condicion-label">Condición de activación</div>
+      Publicación del resultado USTR Sección 301 <strong>Y</strong> tono coherente y consistente de los speakers del BCE antes del 15 Abr.
+      <div style="margin-top:8px;color:#8b949e;font-size:0.82rem">Tipo de trigger: <strong style="color:#e6edf3">NINGUNO</strong></div>
+    </div>
+    <div style="text-align:center;margin-top:14px">
+      <span class="badge badge-amber" style="font-size:1rem;padding:6px 20px">🟡 WAIT</span>
+    </div>
+  </div>
+
+  <!-- HECHOS BASE -->
+  <div class="card">
+    <h2>📝 Hechos Base</h2>
+    <div class="hechos-section">
+      <span class="hechos-title verified">✓ Verificados (fuentes ⭐⭐⭐)</span>
+      <div class="hecho-item"><span class="hecho-num">1.</span><strong>ECB tipos (Lagarde/Schnabel/de Guindos)</strong> — Tasa de depósito BCE en 2,50%; decisión del 30 de abril en juego. <em style="color:#8b949e">Composite 27/24/21</em></div>
+      <div class="hecho-item"><span class="hecho-num">2.</span><strong>USTR Sección 301</strong> — Deadline de comentarios el 15 Abr. Precedente Airbus: aranceles del 25%. <em style="color:#8b949e">Composite 27</em></div>
+      <div class="hecho-item"><span class="hecho-num">3.</span><strong>Eurostat HICP marzo 2026</strong> — Flash +2,5% interanual (vs. 1,9% anterior). <em style="color:#8b949e">Composite 21</em></div>
+      <div class="hecho-item"><span class="hecho-num">4.</span><strong>INE IPC España marzo 2026</strong> — 3,3% interanual, máximo desde junio de 2024. <em style="color:#8b949e">Composite 21</em></div>
+      <div class="hecho-item"><span class="hecho-num">5.</span><strong>FMI/Banco Mundial WEO</strong> — Previsión de PIB Eurozona para 2026 revisada al 0,9%. <em style="color:#8b949e">Composite 21</em></div>
+      <div class="hecho-item"><span class="hecho-num">6.</span><strong>MEFF vencimiento mensual Ibex 35</strong> — 17 de abril. Volatilidad intraday estructuralmente elevada. <em style="color:#8b949e">Composite 18</em></div>
+      <div class="hecho-item"><span class="hecho-num">7.</span><strong>Santander SEC Filing</strong> — Recompra €2.705bn al 53,8%. Dividendo €0,125/acción el 5 de mayo. <em style="color:#8b949e">Composite 18</em></div>
+    </div>
+    <div class="hechos-section" style="margin-top:14px;margin-bottom:0">
+      <span class="hechos-title unverified">~ No verificados (contexto/narrativa)</span>
+      <div class="hecho-item"><span class="hecho-num">1.</span><strong>Ceasefire EE.UU.–Irán / Petróleo −15%</strong> — Brent a $92,28. Ceasefire frágil. <em style="color:#8b949e">CNBC, Cred. 2 · Composite 16</em></div>
+      <div class="hecho-item"><span class="hecho-num">2.</span><strong>Grifols TLB €3bn</strong><span class="flagged">[FLAGGED]</span> — Potencial sesgo de comunicación corporativa. <em style="color:#8b949e">Bloomberg + Grifols PR, Cred. 2 · Composite 14</em></div>
+      <div class="hecho-item"><span class="hecho-num">3.</span><strong>Bankinter Q1</strong> — Consenso €281m. Fuente: relación con inversores. <em style="color:#8b949e">Bankinter IR, Cred. 2 · Composite 18</em></div>
+      <div class="hecho-item"><span class="hecho-num">4.</span><strong>Repsol Q1 provisional</strong> — Producción estable en 539 kboepd. Baja fiabilidad. <em style="color:#8b949e">TipRanks, Cred. 1 · Composite 5</em></div>
+      <div class="hecho-item"><span class="hecho-num">5.</span><strong>Grifols redención bono €500m</strong><span class="flagged">[FLAGGED]</span> — Potencial sesgo corporativo. <em style="color:#8b949e">Grifols PR, Cred. 1 · Composite 5</em></div>
+    </div>
+  </div>
+
+</div><!-- end .grid -->
+
+<!-- IMPACTO POR NARRATIVA — full width section outside grid -->
+<div class="card full-width section-spacer">
+  <h2>⚡ Impacto por Narrativa</h2>
+  <div class="narratives-section">
+
+    <div class="narrative-card">
+      <div class="narrative-header">
+        <span class="badge badge-green">Favored</span>
+        <span class="narrative-title">Narrativa 1: ECB Higher-for-Longer — Riesgo de presión sobre sectores sensibles a tipos</span>
+      </div>
+      <div class="narrative-body">
+        El sesgo conflictivo dominante está estructuralmente anclado a esta narrativa. La secuencia de speakers BCE del 14–15 Abr es el catalizador de corto plazo primario que puede confirmar o modular el viento de cola NIM para Santander y BBVA, mientras extiende la presión de compresión de valoración sobre Iberdrola y Endesa.
+      </div>
+    </div>
+
+    <div class="narrative-card">
+      <div class="narrative-header">
+        <span class="badge badge-red">Opposed</span>
+        <span class="narrative-title">Narrativa 2: Riesgo de escalada de política comercial USA para exportadores del Ibex 35</span>
+      </div>
+      <div class="narrative-body">
+        Esta narrativa introduce un vector de downside unidireccional. La confirmación de la Sección 301 USTR el 15 Abr cristalizaría el riesgo de cola asimétrico. El precedente arancelario Airbus 2019–2021 apunta a caídas del 5–15% en las acciones del sector afectado.
+      </div>
+    </div>
+
+    <div class="narrative-card">
+      <div class="narrative-header">
+        <span class="badge badge-green">Favored</span>
+        <span class="narrative-title">Narrativa 3: Temporada de resultados del sector bancario español</span>
+      </div>
+      <div class="narrative-body">
+        El resultado de Bankinter pre-mercado del 15 Abr funciona como el primer test empírico de si el viento de cola NIM ya está fluyendo hacia los resultados reportados. Un resultado en o por encima del consenso (€281m) reforzaría el lado favorecido del split interno sin resolver la tensión a nivel de índice.
+      </div>
+    </div>
+
+    <div class="narrative-card">
+      <div class="narrative-header">
+        <span class="badge badge-gray">Neutral</span>
+        <span class="narrative-title">Narrativa 4: Dislocación del Brent y repricing del sector energético</span>
+      </div>
+      <div class="narrative-body">
+        La dislocación del Brent introduce una tercera línea de fractura ortogonal a los ejes primarios del sesgo conflictivo. El movimiento del −5,76% de Repsol ya ha repreciado parcialmente el escenario de ceasefire, y el riesgo de reversión de un ceasefire EE.UU.–Irán frágil es real pero no está directamente vinculado a los catalizadores ECB o arancelarios.
+      </div>
+    </div>
+
+    <div class="aggregate-card">
+      <div class="aggregate-label">Balance Agregado de Narrativas</div>
+      El balance narrativo amplifica en lugar de amortiguar el sesgo conflictivo dominante: las narrativas 1 y 3 refuerzan la divergencia interna entre financieras y sectores sensibles a tipos; la narrativa 2 carga downside asimétrico sobre el clúster exportador sin una fuerza compensatoria equivalente; y la narrativa 4 añade un riesgo de reversión contenido pero vivo — en conjunto, ampliando la dispersión de resultados plausibles del índice a lo largo de la secuencia de catalizadores del 14–17 Abr.
+    </div>
+
+  </div>
+</div>
+
+<div style="text-align:center;margin-top:32px;color:#8b949e;font-size:0.75rem">
+  [Ibex 35] Investment One-Pager · Generado 2026-04-13 · Uso interno
+</div>
+
+<script>
+  // No interactive logic required — pure static render.
+  // This block is intentionally minimal to satisfy the "script before /body" requirement.
+  document.addEventListener('DOMContentLoaded', function() {
+    // Ensure details elements are closed by default (already default browser behavior)
+    document.querySelectorAll('details').forEach(function(d) {
+      d.removeAttribute('open');
+    });
+  });
+</script>
+</body>
+</html>
