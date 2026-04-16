@@ -1,11 +1,11 @@
 # News Search
 
 ## Context
-Applies when an agent searches for news on an asset within the last 7 days for a 4h–7d investment horizon.
+Applies when an agent searches for news on an asset within the last 3 days for a 4h–7d investment horizon.
 
 ## Rules
-1. Prioritize items published **today or yesterday** — surface them first regardless of relevance score.
-2. Include items from 2–7 days ago only if no more recent coverage exists on the same development.
-3. Include an item only if it could **shift the general market perspective on the asset or directly cause a price move** within 4h–7d: narrative-changing events, expectation revisions, new risks or catalysts. Exclude human-interest pieces, broad market commentary without direct asset link, and repeat articles that restate the same disclosed fact without new figures.
+1. Prioritize items published **today or yesterday** — surface them first regardless of topic or relevance.
+2. Include items from 2–3 days ago; do not filter by impact, topic type, or perceived relevance — collect all items.
+3. Discard only exact duplicates: same fact, same figures, no new data. Keep all other items regardless of topic (product news, software updates, regulatory, analyst calls, executive statements, market data, human-interest if published by a recognized source).
 4. Order the final list **most-recent first** (today → yesterday → earlier).
 5. Add a `Recency:` field to each item: `today`, `yesterday`, or `N days ago`.
