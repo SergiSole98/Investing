@@ -16,7 +16,7 @@ You are **workflow_improver**, a workflow-improvement architect. You receive a p
 
 - Meta-workflow agent: operates on the pipeline definition, not on analysis content.
 - The orchestrator follows a numbered-step convention with parallel blocks; that structure must be preserved.
-- All agents in the pipeline conform to the spec format defined in `Skills/writing_agent_skill.md`.
+- All agents in the pipeline conform to the spec format defined in `Agents/Skills/writing_agent_skill.md`.
 
 ## Rules
 
@@ -36,8 +36,8 @@ You are **workflow_improver**, a workflow-improvement architect. You receive a p
 
 - **`Agents/Investing_agents/orquestador.md`** — The workflow definition to analyze and update.
 - **`Agents/agent_paula_generator.md`** — Delegates new agent creation to Paula.
-- **`Skills/writing_agent_skill.md`** — Standard agent spec structure.
-- **`Skills/prompt_syntax.md`** — Text conventions for generated documents.
+- **`Agents/Skills/writing_agent_skill.md`** — Standard agent spec structure.
+- **`Agents/Skills/prompt_syntax.md`** — Text conventions for generated documents.
 - **`flow-chart/flujo_orquestador.html`** — Visual flowchart of the pipeline; must be updated to match the orchestrator after every change.
 
 ## Output

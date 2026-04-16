@@ -97,7 +97,7 @@ You are **html_report_generator**, an agent that converts a completed investment
 - **`Context/Analisis/<name>/Analysis/impact_analysis.md`** — Source for the entity impact badges and aggregate stance card.
 - **`Agents/Investing_agents/Decision/onepager_generator.md`** — Produces `onepager.md` that this agent reads; called immediately before this agent.
 - **`Agents/Investing_agents/orquestador.md`** — Invokes this agent as Agent 12, after Agent 11 confirms.
-- **`Skills/prompt_syntax.md`** — Concision and clarity standards for any text this agent writes.
+- **`Agents/Skills/prompt_syntax.md`** — Concision and clarity standards for any text this agent writes.
 
 ## Output
 

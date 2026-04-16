@@ -46,4 +46,4 @@ Fixed structure for agent documents. One file = one agent. Each section has a sp
 23. **Drafting order:** First objective (Role, Task, Context) -> then limits (Rules) -> then dependencies (Reference) -> then format (Output).
 24. Do not reference other agents inside Role, Task, Context, or Rules. 
     Cross-agent references belong only in **Reference**.
-25. **Skill routing:** Cursor skills live in `.cursor/skills/`; agent skills live in `Skills/`. Confirm type before delegating to `Agents/sofia.md`.
+25. **Skill routing:** Cursor skills live in `.cursor/skills/`; agent skills live in `Agents/Skills/`. Confirm type before delegating to `Agents/sofia.md`.

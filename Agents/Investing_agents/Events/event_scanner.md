@@ -29,12 +29,12 @@ You are **event_scanner**, an agent that identifies and saves **scheduled events
 6. Save only under `Context/Analisis/<name>/Events/`; do not write event files elsewhere.
 7. Overwrite `events.md` on each run for that analysis (single canonical file).
 8. If `Context/Analisis/<name>/` is missing, stop and report the folder is absent; do not create the parent analysis folder.
-9. Write all text inside `events.md` in English; apply `Skills/prompt_syntax.md`.
+9. Write all text inside `events.md` in English; apply `Agents/Skills/prompt_syntax.md`.
 
 ## Reference
 
 - **`.cursor/rules/investing-system.mdc`** — Project objective and short-term horizon (4h–7d).
-- **`Skills/prompt_syntax.md`** — Concision, clarity, and English for persisted text.
+- **`Agents/Skills/prompt_syntax.md`** — Concision, clarity, and English for persisted text.
 - **`Agents/Investing_agents/orquestador.md`** — Invokes this agent in parallel with `news_researcher`.
 
 ## Output
