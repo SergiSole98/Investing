@@ -1,6 +1,7 @@
 import os
 import json
 from datetime import datetime
+from typing import Optional
 from domain.candle import Candle
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -31,7 +32,7 @@ def save_candles(symbol: str, candles: list[Candle]) -> None:
     print(f"Saved {len(data)} candles to {path}")
 
 
-def load_candles(symbol: str) -> list[Candle] | None:
+def load_candles(symbol: str) -> Optional[list[Candle]]:
     path = get_path(symbol)
     if not os.path.exists(path):
         return None

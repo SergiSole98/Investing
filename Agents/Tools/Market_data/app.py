@@ -1,8 +1,15 @@
 import os
+import sys
 import json
 import pandas as pd
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 import streamlit as st
+
+sys.path.insert(0, os.path.dirname(__file__))
+
+from application.calculate_rsi import calculate_rsi
+from infrastructure.json_repository import load_candles as load_candle_objects
 
 BASE_DIR = os.path.dirname(__file__)
 EXCLUDED = {"application", "domain", "infrastructure", "__pycache__"}
@@ -56,6 +63,10 @@ if not os.path.exists(poc_path):
 df = load_candles(symbol)
 poc = load_poc(symbol)
 
+candle_objects = load_candle_objects(symbol)
+rsi_values = calculate_rsi(candle_objects)
+rsi_series = pd.Series(rsi_values, index=df.index)
+
 summary = poc["summary"]
 supports = poc["supports"]
 resistances = poc["resistances"]
@@ -71,7 +82,12 @@ st.divider()
 
 # ── Chart ───────────────────────────────────────────────────────────────────
 
-fig = go.Figure()
+fig = make_subplots(
+    rows=2, cols=1,
+    shared_xaxes=True,
+    row_heights=[0.7, 0.3],
+    vertical_spacing=0.04,
+)
 
 fig.add_trace(go.Candlestick(
     x=df.index,
@@ -82,7 +98,7 @@ fig.add_trace(go.Candlestick(
     name=symbol,
     increasing_line_color="#26a69a",
     decreasing_line_color="#ef5350",
-))
+), row=1, col=1)
 
 for s in supports:
     fig.add_hline(
@@ -91,6 +107,7 @@ for s in supports:
         annotation_text=f"S {s['price']:.2f} (×{s['times_touched']})",
         annotation_position="left",
         annotation_font=dict(color="#26a69a", size=10),
+        row=1, col=1,
     )
 
 for r in resistances:
@@ -100,17 +117,28 @@ for r in resistances:
         annotation_text=f"R {r['price']:.2f} (×{r['times_touched']})",
         annotation_position="right",
         annotation_font=dict(color="#ef5350", size=10),
+        row=1, col=1,
     )
+
+fig.add_trace(go.Scatter(
+    x=rsi_series.index,
+    y=rsi_series.values,
+    line=dict(color="#b39ddb", width=1.5),
+    name="RSI(14)",
+), row=2, col=1)
+
+fig.add_hline(y=70, line=dict(color="rgba(239, 83, 80, 0.5)", width=1, dash="dash"), row=2, col=1)
+fig.add_hline(y=30, line=dict(color="rgba(38, 166, 154, 0.5)", width=1, dash="dash"), row=2, col=1)
 
 fig.update_layout(
     title=f"{symbol} — Supports & Resistances",
-    xaxis_title="Date",
-    yaxis_title="Price (USD)",
     xaxis_rangeslider_visible=False,
-    height=600,
+    height=750,
     template="plotly_dark",
     showlegend=False,
 )
+fig.update_yaxes(title_text="Price (USD)", row=1, col=1)
+fig.update_yaxes(title_text="RSI", range=[0, 100], row=2, col=1)
 
 st.plotly_chart(fig, use_container_width=True)
 
