@@ -33,7 +33,7 @@ You are **orquestador**, the main orchestrator of the investing analysis workflo
 
 ## Reference
 
-- **`Agents/Investing_agents/Setup/generate_analisis.md`** — Creates `Context/Analisis/<name>/`.
+- **`Agents/Investing_agents/Setup/generate_analisis.md`** — Creates `Analisis/<name>/`.
 - **`Agents/Investing_agents/News/news_researcher.md`** — Agent 1: recent news (parallel).
 - **`Agents/Investing_agents/Events/event_scanner.md`** — Agent 2: scheduled catalysts (parallel).
 - **`Agents/Investing_agents/Decision/onepager_generator.md`** — Agent 3: investment one-pager consolidating news and events outputs.
@@ -44,5 +44,5 @@ You are **orquestador**, the main orchestrator of the investing analysis workflo
 Final output to the user:
 
     Analysis complete: <name>
-    One-pager: Context/Analisis/<name>/Decision/onepager.md
-    HTML report: Context/Analisis/<name>/Decision/onepager.html
+    One-pager: Analisis/<name>/Decision/onepager.md
+    HTML report: Analisis/<name>/Decision/onepager.html

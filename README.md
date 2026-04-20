@@ -54,11 +54,11 @@ Investing/
 │   ├── Investing_agents/
 │   │   ├── orquestador.md      # Delega: Setup → (News + Events en paralelo)
 │   │   ├── Setup/
-│   │   │   └── generate_analisis.md   # Crea Context/Analisis/<nombre>/
+│   │   │   └── generate_analisis.md   # Crea Analisis/<nombre>/
 │   │   ├── News/
-│   │   │   └── news_researcher.md     # Escribe Context/Analisis/<nombre>/News/news.md
+│   │   │   └── news_researcher.md     # Escribe Analisis/<nombre>/News/news.md
 │   │   └── Events/
-│   │       └── event_scanner.md       # Escribe Context/Analisis/<nombre>/Events/events.md
+│   │       └── event_scanner.md       # Escribe Analisis/<nombre>/Events/events.md
 │   ├── agent_paula_generator.md # Paula — redacta agentes (Agents/)
 │   ├── agente_sofia.md         # Sofía — redacta Agent Skills (Skills/)
 │   └── agente_axel_auditor.md  # Axel — audita borradores (Paula/Sofía)
