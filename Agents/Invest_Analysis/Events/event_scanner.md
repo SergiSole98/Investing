@@ -35,7 +35,7 @@ You are **event_scanner**, an agent that identifies and saves **scheduled events
 
 - **`.cursor/rules/investing-system.mdc`** — Project objective and short-term horizon (4h–7d).
 - **`Agents/Skills/prompt_syntax.md`** — Concision, clarity, and English for persisted text.
-- **`Agents/Investing_agents/orquestador.md`** — Invokes this agent in parallel with `news_researcher`.
+- **`Agents/Invest_Analysis/agent_investm_analysis.md`** — Invokes this agent in parallel with `news_researcher`.
 
 ## Output
 

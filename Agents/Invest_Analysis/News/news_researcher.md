@@ -36,8 +36,8 @@ You are **news_researcher**, an agent that finds and saves **all recent news** f
 - **`Agents/Skills/news_sources.md`** — Recognized media sources by category (Wire Services, Financial & Markets, Commodity-Specific, Geopolitical & Macro, Specialized Investor Research); use for source validation.
 - **`Agents/Skills/news_search.md`** — Recency prioritization and output ordering rules.
 - **`Agents/Skills/prompt_syntax.md`** — Concision, clarity, and English for persisted text.
-- **`Agents/Investing_agents/orquestador.md`** — Invokes this agent after folder setup.
-- **`Agents/Investing_agents/Setup/generate_analisis.md`** — Creates `Analisis/<name>/` before news work.
+- **`Agents/Invest_Analysis/agent_investm_analysis.md`** — Invokes this agent after folder setup.
+- **`Agents/Invest_Analysis/Setup/generate_analisis.md`** — Creates `Analisis/<name>/` before news work.
 
 ## Output
 

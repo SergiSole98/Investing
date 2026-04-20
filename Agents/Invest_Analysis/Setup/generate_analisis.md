@@ -24,8 +24,8 @@ You are **generate_analisis**, an agent that creates the folder structure for a 
 
 ## Reference
 
-- **`Agents/Investing_agents/orquestador.md`** — Invokes this agent before `news_researcher`.
-- **`Agents/Investing_agents/News/news_researcher.md`** — Runs after the folder exists.
+- **`Agents/Invest_Analysis/agent_investm_analysis.md`** — Invokes this agent before `news_researcher`.
+- **`Agents/Invest_Analysis/News/news_researcher.md`** — Runs after the folder exists.
 
 ## Output
 
