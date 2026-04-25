@@ -29,15 +29,15 @@ You are **generate_analisis**, an agent that creates the folder structure for a 
 
 ## Output
 
-Confirmation message with the exact path created:
+Mensaje de confirmación con la ruta exacta creada:
 
 ```
-Folder created: Analisis/<name>
+Carpeta creada: Analisis/<name>
 ```
 
-If prior analysis existed, the output should note the reset:
+Si ya existía un análisis previo, la salida debe indicar el reinicio:
 
 ```
-Prior analysis at Analisis/<name> was deleted.
-Folder created (fresh): Analisis/<name>
+Se eliminó el análisis previo en Analisis/<name>.
+Carpeta creada (nueva): Analisis/<name>
 ```
