@@ -1,18 +1,18 @@
 {
   "summary": {
     "total_supports": 8,
-    "total_resistances": 11,
-    "period_start": "2025-04-25",
-    "period_end": "2026-04-24"
+    "total_resistances": 10,
+    "period_start": "2025-04-30",
+    "period_end": "2026-04-29"
   },
   "supports": [
     {
-      "price_center": 271.5925,
+      "price_center": 271.86,
       "price_range": {
-        "min": 270.79,
+        "min": 271.01,
         "max": 273.21
       },
-      "touches": 4,
+      "touches": 3,
       "last_touch": "2025-06-05 13:30:00"
     },
     {
@@ -80,15 +80,6 @@
     }
   ],
   "resistances": [
-    {
-      "price_center": 294.3033,
-      "price_range": {
-        "min": 293.29,
-        "max": 294.84
-      },
-      "touches": 3,
-      "last_touch": "2025-05-02 13:30:00"
-    },
     {
       "price_center": 336.5567,
       "price_range": {
