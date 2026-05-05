@@ -51,37 +51,39 @@ Investing/
 ├── .cursor/rules/
 │   └── investing-system.mdc    # Reglas del proyecto (objetivo, docs)
 ├── Agents/
-│   ├── Investing_agents/
-│   │   ├── orquestador.md      # Delega: Setup → (News + Events en paralelo)
+│   ├── Invest_Analysis/
+│   │   ├── agent_investm_analysis.md  # Delega: Setup -> (News + Events en paralelo)
 │   │   ├── Setup/
 │   │   │   └── generate_analisis.md   # Crea Analisis/<nombre>/
 │   │   ├── News/
 │   │   │   └── news_researcher.md     # Escribe Analisis/<nombre>/News/news.md
 │   │   └── Events/
 │   │       └── event_scanner.md       # Escribe Analisis/<nombre>/Events/events.md
-│   ├── agent_paula_generator.md # Paula — redacta agentes (Agents/)
-│   ├── agente_sofia.md         # Sofía — redacta Agent Skills (Skills/)
-│   └── agente_axel_auditor.md  # Axel — audita borradores (Paula/Sofía)
-├── Skills/
-│   ├── writing_agent_skill.md # Marco Role→Output (Paula + Sofía)
-│   └── prompt_syntax.md        # Sintaxis de instrucciones dentro de agentes (Paula)
-├── 00_meta/
-│   ├── tesis_inversion.md      # Horizonte y qué operas
-│   └── principios/             # Principios de inversión (incl. resumen)
-├── Context/
-│   └── Analisis/
-│       └── {nombre}/           # Carpeta por análisis (generate_analisis)
-│           ├── News/
-│           │   └── news.md     # Output de news_researcher
-│           └── Events/
-│               └── events.md   # Output de event_scanner
-└── 99_templates/
-    ├── plantilla_noticias.md
-    ├── plantilla_onepager.md
-    ├── plantilla_sintesis.md
-    ├── plantilla_final.md
-    └── plantilla_overview.md
+│   ├── Invest_Research/
+│   ├── Technical_Analysis/
+│   ├── Skills/
+│   └── Improvement_agents/            # Solo referencias a /Users/ssole/Documents/Agents
+├── Analisis/
+│   └── {nombre}/
+│       ├── News/news.md
+│       ├── Events/events.md
+│       └── Technical_analysis/
+└── basic/
+    ├── tesis_inversion.md
+    └── principios/
 ```
+
+## Meta-agentes
+
+Los agentes que crean, auditan o modifican otros agentes viven fuera de este proyecto.
+
+| Necesidad | Agente canónico |
+|---|---|
+| Crear specs de agentes | `/Users/ssole/Documents/Agents/agent_spec_generator/agent_spec_generator.md` |
+| Crear specs de skills | `/Users/ssole/Documents/Agents/skill_spec_generator/skill_spec_generator.md` |
+| Auditar specs | `/Users/ssole/Documents/Agents/spec_compliance_auditor/spec_compliance_auditor.md` |
+| Planificar cambios de workflow | `/Users/ssole/Documents/Agents/Agent_ai_planner/Agent_ai_planner.md` |
+| Implementar un plan aprobado | `/Users/ssole/Documents/Agents/agent_ai_implementer/agent_ai_implementer.md` |
 
 ## Output Obligatorio
 

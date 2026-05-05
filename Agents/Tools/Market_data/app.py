@@ -24,6 +24,9 @@ RES_LINE   = "#ff5252"
 RES_VLINE  = "rgba(255, 82, 82, 0.6)"
 RES_FONT   = "#ff5252"
 
+MA10_LINE = "#ffd54f"
+MA30_LINE = "#42a5f5"
+
 
 def list_symbols() -> list[str]:
     return [
@@ -47,6 +50,22 @@ def load_poc(symbol: str) -> dict:
         return json.load(f)
 
 
+def filter_period(df: pd.DataFrame, period: str) -> pd.DataFrame:
+    if period == "All":
+        return df
+
+    end = df.index.max()
+    offsets = {
+        "1W": pd.Timedelta(days=7),
+        "1M": pd.DateOffset(months=1),
+        "3M": pd.DateOffset(months=3),
+        "6M": pd.DateOffset(months=6),
+        "1Y": pd.DateOffset(years=1),
+    }
+    start = end - offsets[period]
+    return df[df.index >= start]
+
+
 # ── Layout ──────────────────────────────────────────────────────────────────
 
 st.set_page_config(page_title="Market POC Viewer", layout="wide")
@@ -64,6 +83,8 @@ st.sidebar.subheader("Visibility")
 show_candles    = st.sidebar.toggle("Candlestick", value=True)
 show_supports   = st.sidebar.toggle("Supports",    value=True)
 show_resistances = st.sidebar.toggle("Resistances", value=True)
+show_ma10       = st.sidebar.toggle("MA(10)",       value=True)
+show_ma30       = st.sidebar.toggle("MA(30)",       value=True)
 
 candles_path = os.path.join(BASE_DIR, symbol, "historical_data.json")
 poc_path     = os.path.join(BASE_DIR, symbol, "POC", "poc.json")
@@ -77,10 +98,28 @@ if not os.path.exists(poc_path):
     st.stop()
 
 df             = load_candles(symbol)
+df["MA10"]     = df["close"].rolling(window=10).mean()
+df["MA30"]     = df["close"].rolling(window=30).mean()
+period         = st.sidebar.selectbox(
+    "Period",
+    ["1W", "1M", "3M", "6M", "1Y", "All"],
+    index=2,
+)
+period_df      = filter_period(df, period)
+max_visible_candles = max(1, min(len(period_df), 300))
+visible_candles = st.sidebar.slider(
+    "Visible candles",
+    min_value=1,
+    max_value=max_visible_candles,
+    value=min(max_visible_candles, 90),
+    step=1,
+)
+chart_df       = period_df.tail(visible_candles)
 poc            = load_poc(symbol)
 candle_objects = load_candle_objects(symbol)
 rsi_values     = calculate_rsi(candle_objects)
 rsi_series     = pd.Series(rsi_values, index=df.index)
+chart_rsi      = rsi_series.loc[chart_df.index]
 
 summary     = poc["summary"]
 supports    = poc["supports"]
@@ -107,14 +146,34 @@ fig = make_subplots(
 
 if show_candles:
     fig.add_trace(go.Candlestick(
-        x=df.index,
-        open=df["open"],
-        high=df["high"],
-        low=df["low"],
-        close=df["close"],
+        x=chart_df.index,
+        open=chart_df["open"],
+        high=chart_df["high"],
+        low=chart_df["low"],
+        close=chart_df["close"],
         name=symbol,
         increasing_line_color="#26a69a",
         decreasing_line_color="#ef5350",
+    ), row=1, col=1)
+
+if show_ma10:
+    fig.add_trace(go.Scatter(
+        x=chart_df.index,
+        y=chart_df["MA10"],
+        mode="lines",
+        line=dict(color=MA10_LINE, width=1.8),
+        name="MA(10)",
+        hovertemplate="MA(10): %{y:.2f}<extra></extra>",
+    ), row=1, col=1)
+
+if show_ma30:
+    fig.add_trace(go.Scatter(
+        x=chart_df.index,
+        y=chart_df["MA30"],
+        mode="lines",
+        line=dict(color=MA30_LINE, width=1.8),
+        name="MA(30)",
+        hovertemplate="MA(30): %{y:.2f}<extra></extra>",
     ), row=1, col=1)
 
 if show_supports:
@@ -166,8 +225,8 @@ if show_resistances:
         )
 
 fig.add_trace(go.Scatter(
-    x=rsi_series.index,
-    y=rsi_series.values,
+    x=chart_rsi.index,
+    y=chart_rsi.values,
     line=dict(color="#b39ddb", width=1.5),
     name="RSI(14)",
 ), row=2, col=1)
@@ -178,9 +237,16 @@ fig.add_hline(y=30, line=dict(color="rgba(0, 230, 118, 0.6)", width=1, dash="das
 fig.update_layout(
     title=f"{symbol} — Supports & Resistances",
     xaxis_rangeslider_visible=False,
-    height=750,
+    height=850,
     template="plotly_dark",
-    showlegend=False,
+    showlegend=True,
+    legend=dict(
+        orientation="h",
+        yanchor="bottom",
+        y=1.02,
+        xanchor="right",
+        x=1,
+    ),
 )
 fig.update_yaxes(title_text="Price (USD)", row=1, col=1)
 fig.update_yaxes(title_text="RSI", range=[0, 100], row=2, col=1)

@@ -16,4 +16,4 @@ Cada indicador tiene un nivel de fiabilidad del 1 al 3:
 | Noticias de medios | ⭐ (1) | Ruido, narrativa, posible manipulación |
 | Pre-market | ⭐ (1) | Bajo volumen, fácilmente manipulable |
 
-**Fuentes de noticias por fiabilidad:** ver `Agents/Investing_agents/News/news_researcher.md` (rol de Nora en el flujo de chat).
+**Fuentes de noticias por fiabilidad:** ver `Agents/Invest_Analysis/News/news_researcher.md` (rol de analista de noticias en el flujo de análisis).

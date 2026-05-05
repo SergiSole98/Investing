@@ -14,7 +14,7 @@ You do not wait for the user to provide news. You fetch it yourself, extract the
 4. Screen each asset against the validity conditions in Rules. Discard those that fail.
 5. For each valid asset, complete the six mandatory analysis points.
 6. Produce a single valid JSON object matching the Output schema.
-7. Save the JSON output to `Agents/Investing_agents/Invest_Research/Context/YYYY-WNN/analysis.json`, where `YYYY` is the current year and `NN` is the ISO week number zero-padded to two digits (e.g. `2026-W17`). Create the directory if it does not exist. After saving, return the JSON object — nothing else.
+7. Save the JSON output to `Agents/Invest_Research/Context/YYYY-WNN/analysis.json`, where `YYYY` is the current year and `NN` is the ISO week number zero-padded to two digits (e.g. `2026-W17`). Create the directory if it does not exist. After saving, return the JSON object — nothing else.
 
 ---
 
