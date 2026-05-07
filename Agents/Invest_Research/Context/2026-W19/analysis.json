@@ -1,119 +1,151 @@
 {
-  "as_of": "2026-05-05",
+  "as_of": "2026-05-07",
   "time_horizon": "4h-7d",
   "dominant_narratives": [
-    "Brent crude and energy-linked risk assets remain dominated by the fragile U.S.-Iran ceasefire and Strait of Hormuz transit uncertainty after AP reported renewed UAE and shipping attacks while AP/Reuters-republished market reports showed oil retracing part of Monday's spike: https://apnews.com/article/b8a77d16945085e5a5039032a55b3a90 and https://apnews.com/article/e1c194b5266c4eb58dc993cc4a9f9b50",
-    "U.S. equities are balancing record-high index levels and strong earnings against oil-driven inflation risk and a divided Fed, with Reuters noting markets have largely priced out 2026 cuts and are waiting for labor data: https://www.investing.com/news/economy-news/all-eyes-on-job-market-as-feds-ratecut-window-narrows-4659570",
-    "AI semiconductor expectations are concentrated around AMD's May 5 after-close earnings, with investor focus on data-center guidance, AI GPU demand, China export restrictions and hyperscaler capex: https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks",
-    "Intel foundry optionality moved back into focus after Reuters reported Bloomberg's story that Apple held exploratory discussions with Intel and Samsung about producing device processors in the U.S.: https://www.investing.com/news/stock-market-news/apple-explores-using-intel-samsung-to-build-main-device-chips-in-the-us-bloomberg-news-reports-4657766"
+    "US-Iran negotiation signals potential Strait of Hormuz reopening, disparando un crash de petroleo del 9%+ con outcome binario sin confirmar",
+    "De-escalacion arancelaria US-China (aranceles US a 30%, China a 10%) disparo el mayor rally diario del mercado en mas de un mes, con sostenibilidad en disputa",
+    "La rotacion tech-to-value del Q1 muestra signos de reversion en mayo, con industriales y energia cediendo liderazgo a tech",
+    "Fed en pausa con datos laborales mixtos (ADP 109K vs 120K estimado) antes del NFP del viernes — trayectoria de tipos genuinamente incierta",
+    "Salida de UAE de la OPEC + aumento de produccion OPEP+ de 188K bpd reestructurando la arquitectura de oferta energetica global"
   ],
   "opportunities": [
     {
-      "asset": "Brent crude oil",
+      "asset": "WTI Crude Oil (CL)",
       "asset_type": "commodity",
-      "market": "ICE Brent futures",
-      "thesis": "Brent remains exposed to a rapid two-sided repricing because the market is still deciding whether the latest Hormuz escalation is a supply-disruption regime or a temporary security shock that fades as escorted shipping resumes.",
+      "market": "NYMEX",
+      "thesis": "WTI colapso mas del 9% en una sola sesion por noticias de negociaciones US-Iran, pero el resultado del acuerdo sigue siendo altamente incierto. Tehran esta 'revisando' la propuesta sin confirmacion. Si el Estrecho de Hormuz se reabre, mayor caida. Si las negociaciones colapsan, rebote violento hacia arriba. El mercado ha descontado una probabilidad parcial de acuerdo sin outcome confirmado — la ventana de reprecio activo esta abierta.",
       "why_uncertainty_exists": [
-        "AP reported U.S. officials saying the ceasefire is still in effect even after new attacks in the Strait of Hormuz and against the UAE.",
-        "AP also reported Brent fell roughly 4% on May 5 after jumping Monday, showing the market has not settled on a durable direction.",
-        "Reuters-republished oil coverage said traders are weighing Iranian attacks against news that a U.S.-flagged ship transited the strait with U.S. military support."
+        "Las negociaciones Iran-US estan en fase de propuesta — Tehran 'revisando', sin confirmacion de aceptacion",
+        "Trump advirtio de 'ataques mas intensos' si Iran no cumple — el riesgo de colapso de las negociaciones es real",
+        "El cierre del Estrecho de Hormuz sigue parcialmente vigente — timing de resolucion desconocido",
+        "La salida de UAE de la OPEC elimina el buffer de capacidad de reserva, amplificando los swings de precio en ambas direcciones",
+        "El aumento de produccion OPEP+ de 188K bpd es insuficiente para compensar el aumento de oferta de una reapertura total del Hormuz"
       ],
       "potential_triggers": [
-        "Confirmed additional attacks on vessels, UAE energy infrastructure, or U.S. escorts.",
-        "Verified increase or failure of commercial tanker transits through Hormuz.",
-        "May 6 EIA crude inventories and refined product data if they amplify or offset supply-risk pricing.",
-        "Official U.S., Iranian, UAE, or shipping-company statements about the ceasefire and transit safety."
+        "Iran acepta o rechaza la propuesta respaldada por US — respuesta esperada en dias",
+        "Anuncio de escalada militar US si las negociaciones se rompen",
+        "Datos semanales de inventarios EIA (esperados a mitad de semana)",
+        "Cualquier declaracion de emergencia de la OPEP+ ante el crash de precios"
       ],
       "why_not_fully_priced_in": [
-        "The price action already reversed part of Monday's spike, implying traders are discounting some de-escalation while geopolitical facts remain unresolved.",
-        "The market is pricing both a security premium and a possible reopening discount, so either confirmation can force a second move.",
-        "The relevant news flow can change intraday and directly affects physical supply risk, insurance costs, and shipping availability."
+        "Una caida del 9%+ en una sesion sugiere panico mas que una ponderacion calibrada de probabilidades",
+        "El mercado esta descontando probabilidad parcial de acuerdo — el outcome real es binario y forzara un reprecio total",
+        "La respuesta estructural de la OPEP+ al crash de precios no se ha anunciado aun",
+        "La prevision de la EIA de Brent en pico Q2 a 115$/barril crea una dislocacion mayor vs el nivel actual ~101$ si el acuerdo falla"
       ],
       "expected_setup": "volatility_spike",
       "expected_direction": "two_sided",
       "time_window": "1-3d",
-      "confidence": 84,
-      "track": true
-    },
-    {
-      "asset": "AMD",
-      "asset_type": "stock",
-      "market": "NASDAQ",
-      "thesis": "AMD is a near-term event risk because its May 5 after-close earnings will test whether AI data-center expectations and valuation momentum are supported by guidance, especially around Instinct demand, gross margin, China exposure, and hyperscaler capex.",
-      "why_uncertainty_exists": [
-        "AMD reports after the U.S. close on May 5, inside the 4h-7d window.",
-        "Kiplinger reported consensus expectations around $9.89 billion revenue and $1.29 EPS, while the stock had risen strongly year to date into the event.",
-        "The market focus is not only the reported quarter but whether management confirms enough AI and data-center acceleration to justify elevated expectations."
-      ],
-      "potential_triggers": [
-        "Q1 EPS and revenue versus consensus after market close on May 5.",
-        "Q2 revenue, gross-margin and data-center guidance.",
-        "Management commentary on Instinct GPU demand, MI roadmap timing, China export restrictions, and hyperscaler AI capex.",
-        "Post-earnings analyst estimate revisions within the next 1-3 trading sessions."
-      ],
-      "why_not_fully_priced_in": [
-        "The setup has a known catalyst but the actual guidance mix is unknowable before the print.",
-        "Strong pre-event performance raises the hurdle for a positive surprise and creates downside risk if guidance is merely in line.",
-        "AI demand, export limits, and margin trajectory can each shift forward estimates quickly."
-      ],
-      "expected_setup": "breakout_risk",
-      "expected_direction": "two_sided",
-      "time_window": "4h",
       "confidence": 78,
       "track": true
     },
     {
-      "asset": "INTC",
-      "asset_type": "stock",
-      "market": "NASDAQ",
-      "thesis": "Intel has short-horizon repricing risk because the Apple foundry report creates a validation narrative for Intel Foundry, but the talks are described as exploratory and could reverse if investors conclude there is no near-term order, qualification milestone, or economics.",
+      "asset": "S&P 500 (SPX)",
+      "asset_type": "index",
+      "market": "NYSE/NASDAQ",
+      "thesis": "La de-escalacion arancelaria US-China disparo el mayor rally diario en mas de un mes, pero la durabilidad esta cuestionada. El NFP del viernes es el proximo catalizador binario — ADP en 109K (por debajo de 120K estimado) senala debilitamiento laboral. La solida temporada de resultados (15.1% crecimiento interanual BPA) da soporte alcista, pero el rally vino de un alivio arancelario parcial y reversible.",
       "why_uncertainty_exists": [
-        "Reuters reported Bloomberg's story that Apple held exploratory discussions with Intel and Samsung about producing processors for its devices.",
-        "The report creates a potentially material narrative shift for Intel Foundry but does not confirm orders, timelines, volumes, or commercial terms.",
-        "The stock reaction can remain unstable as investors separate strategic optionality from current revenue impact."
+        "La de-escalacion arancelaria es parcial (30%/10%), no una resolucion total — la guerra comercial puede reignitarse",
+        "ADP por debajo de estimados genera interrogantes sobre el NFP del viernes (consenso ~60K)",
+        "Dinamicas de rotacion poco claras: reversion rotacion-a-tech en mayo crea ruido sectorial",
+        "Fed en pausa crea presion si los datos laborales se debilitan mas — expectativas de bajada de tipos siguen suprimidas"
       ],
       "potential_triggers": [
-        "Follow-up reporting from Bloomberg, Reuters, Apple, Intel, Samsung, or supply-chain sources.",
-        "Analyst notes estimating potential revenue, timing, qualification hurdles, or probability of Apple using Intel Foundry.",
-        "Company comments at conferences, regulatory filings, or media responses.",
-        "Relative moves in TSMC and Samsung that reveal whether the market treats this as real share-shift risk."
+        "Informe NFP viernes 8 mayo — consenso ~60K, cualquier desviacion significativa reprecio la trayectoria Fed",
+        "Cualquier comentario de escalada comercial de cualquiera de las partes que niegue el rally de de-escalacion",
+        "Resultados Q1 adicionales del S&P 500 esta semana"
       ],
       "why_not_fully_priced_in": [
-        "The initial report is specific enough to move expectations but incomplete enough to leave probability and magnitude disputed.",
-        "Exploratory talks can be overbought if investors extrapolate to production commitments too quickly.",
-        "Any confirmation or denial would directly alter the perceived value of Intel's foundry turnaround."
+        "El rally fue de una sesion — continuacion o fade aun no determinado",
+        "NFP del viernes no resuelto — la direccion del mercado laboral es genuinamente incierta post-miss ADP",
+        "El alivio arancelario esta 'anunciado' pero implementacion y sostenibilidad no confirmadas"
       ],
       "expected_setup": "continuation",
       "expected_direction": "two_sided",
       "time_window": "1-3d",
-      "confidence": 72,
+      "confidence": 62,
       "track": true
     },
     {
-      "asset": "U.S. 2-year Treasury yield",
-      "asset_type": "other",
-      "market": "U.S. rates",
-      "thesis": "The front end of the U.S. curve is exposed to repricing because markets have largely removed 2026 Fed cuts, but ADP, jobless claims, NFP and Fed commentary can still revive easing risk or reinforce a higher-for-longer outcome under oil-driven inflation pressure.",
+      "asset": "Gold (XAU/USD)",
+      "asset_type": "commodity",
+      "market": "COMEX",
+      "thesis": "El oro esta recibiendo flujos de refugio de inversores que huyen de los Treasuries US, impulsados por la depreciacion del dolar y la subida de yields — una ruptura de correlacion inusual que senala estres en la rotacion tradicional de activos refugio. El conflicto con Iran, la incertidumbre arancelaria y la debilidad del dolar crean una demanda tactica a corto plazo no agotada.",
       "why_uncertainty_exists": [
-        "Reuters reported the May 5 labor report later this week will test whether the economy is resilient enough to keep the Fed on hold or soft enough to revive rate-cut expectations.",
-        "Reuters noted 10-year yields had risen to 4.43% from 3.94% before the war began, while 2-year yields had risen to 3.94% from 3.38%.",
-        "The April Fed decision was unusually divided, leaving investors uncertain how incoming data and oil inflation will shape the next policy bias."
+        "Depreciacion del dolar y subida de yields de Treasuries ocurriendo simultaneamente — senal de estres de mercado inusual",
+        "Resolucion del conflicto Iran incierta — la demanda de refugio puede colapsar o dispararse segun el outcome",
+        "El alivio arancelario US-China reduce parte de la prima de riesgo geopolitico, creando un potencial headwind",
+        "Fed en pausa implica que no hay catalizador de bajada de tipos para impulsar el oro via mecanismo tradicional"
       ],
       "potential_triggers": [
-        "May 6 ADP employment change.",
-        "May 7 initial jobless claims.",
-        "May 8 official U.S. employment report.",
-        "Fed speaker comments on inflation, labor cooling, and whether the easing bias remains credible."
+        "Colapso del acuerdo con Iran — rebote de oro por reactivacion del riesgo geopolitico",
+        "NFP del viernes debil — dolar cae mas, bid en oro",
+        "Cualquier escalada en tensiones comerciales o nuevos anuncios arancelarios",
+        "Spike de yields del Tesoro por preocupaciones de deuda soberana"
       ],
       "why_not_fully_priced_in": [
-        "A no-cut baseline leaves asymmetric sensitivity to weak labor data, while strong data can validate the recent selloff in front-end rates.",
-        "Oil inflation and labor softness point in opposite policy directions, so the reaction function is not cleanly anchored.",
-        "The market is still digesting a divided Fed and the upcoming chair transition."
+        "La rotacion de Treasuries a oro es early-stage — la reasignacion institucional tarda dias a semanas",
+        "La incertidumbre de resolucion con Iran mantiene una prima de riesgo geopolitico elevada en el corto plazo",
+        "La trayectoria del dolar post-NFP aun no determinada"
       ],
-      "expected_setup": "volatility_spike",
-      "expected_direction": "two_sided",
+      "expected_setup": "continuation",
+      "expected_direction": "up",
       "time_window": "3-7d",
-      "confidence": 76,
+      "confidence": 58,
+      "track": true
+    },
+    {
+      "asset": "Energy Sector ETF (XLE)",
+      "asset_type": "etf",
+      "market": "NYSE",
+      "thesis": "XLE enfrenta un doble shock estructural: el petroleo colapso mas del 9% por las esperanzas del acuerdo con Iran mientras la OPEP+ aumento produccion 188K bpd y UAE (tercer mayor productor OPEP) abandono el cartel. Las acciones energeticas no han absorbido completamente las implicaciones de un posible regimen sostenido de petroleo mas bajo, lo que reverteria la rotacion YTD hacia energia.",
+      "why_uncertainty_exists": [
+        "El crash del petroleo crea presion directa en los beneficios de los productores energeticos no reflejada aun en precio de acciones",
+        "La salida de UAE de la OPEP debilita la disciplina de produccion del cartel a largo plazo",
+        "El sector energetico lidero la rotacion YTD — una reversion amplificaria las perdidas con stop-losses institucionales",
+        "Si el acuerdo con Iran falla, el petroleo rebota y XLE se recupera rapidamente"
+      ],
+      "potential_triggers": [
+        "Outcome del acuerdo con Iran — acuerdo confirmado = mayor caida XLE; colapso = rebote violento",
+        "Reunion de emergencia OPEP+ o anuncio de recorte de produccion en respuesta al crash de precios",
+        "Revision de guidance o profit warning de grandes companias energeticas por el movimiento del petroleo"
+      ],
+      "why_not_fully_priced_in": [
+        "Los mercados de renta variable tienden a rezagarse respecto a movimientos de commodities 1-3 sesiones",
+        "Las dinamicas de rotacion sectorial implican que fondos que compraron energia YTD pueden triggear stop-losses",
+        "La respuesta estructural de la OPEP+ al crash de precios aun no descontada"
+      ],
+      "expected_setup": "breakout_risk",
+      "expected_direction": "two_sided",
+      "time_window": "1-3d",
+      "confidence": 65,
+      "track": true
+    },
+    {
+      "asset": "US Dollar Index (DXY)",
+      "asset_type": "fx",
+      "market": "FOREX",
+      "thesis": "El dolar se debilita por la huida de Treasuries, la incertidumbre arancelaria y un cambio en la arquitectura comercial global. La de-escalacion US-China proporciona un alivio temporal pero la tendencia estructural de depreciacion del dolar sigue intacta. El NFP del viernes y las senales de la Fed son el catalizador binario mas proximo.",
+      "why_uncertainty_exists": [
+        "Inversores huyendo de Treasuries US hacia oro — senal de perdida de confianza en el estatus de refugio del dolar",
+        "El alivio arancelario US-China reduce la presion inmediata pero no resuelve las preocupaciones estructurales comerciales",
+        "Warsh (futuro presidente Fed) favorece tipos mas bajos a largo plazo — mercado incierto sobre la futura direccion de politica monetaria",
+        "Depreciacion del dolar corriendo contraria a la subida de yields — dislocacion estructural sin resolver"
+      ],
+      "potential_triggers": [
+        "NFP viernes — print debil acelera la depreciacion del dolar; print fuerte estabiliza",
+        "Comunicacion Fed esta semana — cualquier comentario de miembro del FOMC sobre trayectoria de tipos",
+        "Nuevos desarrollos de politica comercial en la relacion US-China"
+      ],
+      "why_not_fully_priced_in": [
+        "La huida de Treasuries a oro es early-stage — la reasignacion completa lleva tiempo e implica presion sostenida sobre el dolar",
+        "El outcome del NFP del viernes genuinamente desconocido dado el miss del ADP",
+        "Las preferencias de politica del entrante presidente Fed Warsh aun no reflejadas en tipos forward"
+      ],
+      "expected_setup": "continuation",
+      "expected_direction": "down",
+      "time_window": "3-7d",
+      "confidence": 55,
       "track": true
     }
   ]
