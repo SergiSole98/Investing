@@ -259,18 +259,24 @@ col_sup, col_res = st.columns(2)
 
 with col_sup:
     st.subheader("Supports")
-    df_sup = pd.DataFrame(supports)[["price_center", "price_range", "touches", "last_touch"]]
-    df_sup["price_range"] = df_sup["price_range"].apply(
-        lambda x: f"{x['min']:.2f} – {x['max']:.2f}"
-    )
-    df_sup.columns = ["Price", "Range", "Touches", "Last Touch"]
-    st.dataframe(df_sup, use_container_width=True, hide_index=True)
+    if supports:
+        df_sup = pd.DataFrame(supports)[["price_center", "price_range", "touches", "last_touch"]]
+        df_sup["price_range"] = df_sup["price_range"].apply(
+            lambda x: f"{x['min']:.2f} – {x['max']:.2f}"
+        )
+        df_sup.columns = ["Price", "Range", "Touches", "Last Touch"]
+        st.dataframe(df_sup, use_container_width=True, hide_index=True)
+    else:
+        st.info("No supports found.")
 
 with col_res:
     st.subheader("Resistances")
-    df_res = pd.DataFrame(resistances)[["price_center", "price_range", "touches", "last_touch"]]
-    df_res["price_range"] = df_res["price_range"].apply(
-        lambda x: f"{x['min']:.2f} – {x['max']:.2f}"
-    )
-    df_res.columns = ["Price", "Range", "Touches", "Last Touch"]
-    st.dataframe(df_res, use_container_width=True, hide_index=True)
+    if resistances:
+        df_res = pd.DataFrame(resistances)[["price_center", "price_range", "touches", "last_touch"]]
+        df_res["price_range"] = df_res["price_range"].apply(
+            lambda x: f"{x['min']:.2f} – {x['max']:.2f}"
+        )
+        df_res.columns = ["Price", "Range", "Touches", "Last Touch"]
+        st.dataframe(df_res, use_container_width=True, hide_index=True)
+    else:
+        st.info("No resistances found.")
