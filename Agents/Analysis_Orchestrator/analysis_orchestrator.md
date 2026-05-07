@@ -46,7 +46,7 @@ against the active investment principles to produce a recommendation.
 
 - `Agents/Invest_Analysis/agent_investm_analysis.md` — generates News and Events.
 - `Agents/Technical_Analysis/technical_analyst.md` — generates Technical_analysis.
-- `Agents/Skills/investment_principles.md` — evaluates data against active principles.
+- `Agents/Analysis_Orchestrator/investment_principles.md` — evaluates data against active principles.
 
 ## Output
 
