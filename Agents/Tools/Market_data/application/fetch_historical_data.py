@@ -10,18 +10,18 @@ from infrastructure.json_repository import save_candles, load_candles
 
 INTERVAL = "4h"
 OUTPUTSIZE = 800
-ONE_YEAR_AGO = datetime.now() - timedelta(days=365)
 
 
-def get_data(symbol: str = "TSLA") -> list[Candle]:
+def get_data(symbol: str = "TSLA", years: int = 1) -> list[Candle]:
+    start_date = datetime.now() - timedelta(days=365 * years)
     cached = load_candles(symbol)
 
     if cached:
-        cached = [c for c in cached if c.datetime >= ONE_YEAR_AGO]
+        cached = [c for c in cached if c.datetime >= start_date]
         oldest = cached[0].datetime
         newest = cached[-1].datetime
 
-        missing_past = oldest > ONE_YEAR_AGO + timedelta(hours=4)
+        missing_past = oldest > start_date + timedelta(hours=4)
         missing_recent = newest < datetime.now() - timedelta(hours=4)
 
         if not missing_past and not missing_recent:
@@ -29,8 +29,8 @@ def get_data(symbol: str = "TSLA") -> list[Candle]:
             return cached
 
         if missing_past:
-            print(f"Fetching missing history from {ONE_YEAR_AGO} to {oldest}...")
-            old_candles = _fetch_range_backwards(symbol, end_date=oldest)
+            print(f"Fetching missing history from {start_date} to {oldest}...")
+            old_candles = _fetch_range_backwards(symbol, start_date, end_date=oldest)
             old_candles = [c for c in old_candles if c.datetime < oldest]
             cached = sorted(old_candles + cached, key=lambda c: c.datetime)
 
@@ -43,13 +43,13 @@ def get_data(symbol: str = "TSLA") -> list[Candle]:
         save_candles(symbol, cached)
         return cached
 
-    print("No cache found. Fetching full year from API...")
-    all_candles = _fetch_range_backwards(symbol)
+    print(f"No cache found. Fetching {years} year(s) of data from API...")
+    all_candles = _fetch_range_backwards(symbol, start_date)
     save_candles(symbol, all_candles)
     return all_candles
 
 
-def _fetch_range_backwards(symbol: str, end_date: datetime = None) -> list[Candle]:
+def _fetch_range_backwards(symbol: str, start_date: datetime, end_date: datetime = None) -> list[Candle]:
     all_candles: list[Candle] = []
     end_date_str = end_date.strftime("%Y-%m-%d %H:%M:%S") if end_date else None
 
@@ -64,17 +64,17 @@ def _fetch_range_backwards(symbol: str, end_date: datetime = None) -> list[Candl
             batch = [c for c in batch if c.datetime < all_candles[0].datetime]
 
         all_candles = sorted(batch + all_candles, key=lambda c: c.datetime)
-        partial = [c for c in all_candles if c.datetime >= ONE_YEAR_AGO]
+        partial = [c for c in all_candles if c.datetime >= start_date]
         save_candles(symbol, partial)
         print(f"Saved {len(partial)} candles so far (oldest: {partial[0].datetime})")
 
         oldest = all_candles[0].datetime
-        if oldest <= ONE_YEAR_AGO:
+        if oldest <= start_date:
             break
 
         end_date_str = oldest.strftime("%Y-%m-%d %H:%M:%S")
 
-    return [c for c in all_candles if c.datetime >= ONE_YEAR_AGO]
+    return [c for c in all_candles if c.datetime >= start_date]
 
 
 def parse_data(raw: dict) -> list[Candle]:

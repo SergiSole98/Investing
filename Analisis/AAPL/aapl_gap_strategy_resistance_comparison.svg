@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850">
+  <rect width="1400" height="850" fill="#ffffff"/>
+
+  <text x="70" y="70" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111827">
+    AAPL: salir en resistencia reduce la rentabilidad
+  </text>
+  <text x="70" y="105" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#4b5563">
+    Backtest local ultimos 3 anos | Entrada: gap &gt;0.5% | Stop -3% | Capital inicial: 100 EUR
+  </text>
+
+  <line x1="90" y1="660" x2="850" y2="660" stroke="#111827" stroke-width="1"/>
+  <line x1="90" y1="190" x2="90" y2="660" stroke="#111827" stroke-width="1"/>
+
+  <text x="90" y="160" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#111827">
+    Rentabilidad compuesta
+  </text>
+  <text x="90" y="720" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#6b7280">
+    Estrategia base frente a salidas anticipadas al tocar resistencia previa.
+  </text>
+
+  <line x1="90" y1="542.5" x2="850" y2="542.5" stroke="#e5e7eb"/>
+  <line x1="90" y1="425" x2="850" y2="425" stroke="#e5e7eb"/>
+  <line x1="90" y1="307.5" x2="850" y2="307.5" stroke="#e5e7eb"/>
+  <line x1="90" y1="190" x2="850" y2="190" stroke="#e5e7eb"/>
+  <text x="45" y="665" font-family="Arial" font-size="13" fill="#6b7280">0%</text>
+  <text x="40" y="548" font-family="Arial" font-size="13" fill="#6b7280">50%</text>
+  <text x="33" y="430" font-family="Arial" font-size="13" fill="#6b7280">100%</text>
+  <text x="33" y="313" font-family="Arial" font-size="13" fill="#6b7280">150%</text>
+  <text x="33" y="195" font-family="Arial" font-size="13" fill="#6b7280">200%</text>
+
+  <!-- Bars scaled to 200% = 470px -->
+  <rect x="135" y="234.3" width="95" height="425.7" rx="5" fill="#16a34a"/>
+  <rect x="275" y="382.9" width="95" height="277.1" rx="5" fill="#d97706"/>
+  <rect x="415" y="323.5" width="95" height="336.5" rx="5" fill="#d97706"/>
+  <rect x="555" y="296.4" width="95" height="363.6" rx="5" fill="#d97706"/>
+  <rect x="695" y="312.0" width="95" height="348.0" rx="5" fill="#d97706"/>
+
+  <text x="182.5" y="218" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#166534">+181.1%</text>
+  <text x="182.5" y="239" text-anchor="middle" font-family="Arial" font-size="14" fill="#166534">281 EUR</text>
+  <text x="322.5" y="367" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#92400e">+117.9%</text>
+  <text x="322.5" y="388" text-anchor="middle" font-family="Arial" font-size="14" fill="#92400e">218 EUR</text>
+  <text x="462.5" y="307" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#92400e">+143.2%</text>
+  <text x="462.5" y="328" text-anchor="middle" font-family="Arial" font-size="14" fill="#92400e">243 EUR</text>
+  <text x="602.5" y="280" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#92400e">+154.7%</text>
+  <text x="602.5" y="301" text-anchor="middle" font-family="Arial" font-size="14" fill="#92400e">255 EUR</text>
+  <text x="742.5" y="296" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#92400e">+148.1%</text>
+  <text x="742.5" y="317" text-anchor="middle" font-family="Arial" font-size="14" fill="#92400e">248 EUR</text>
+
+  <text x="182.5" y="690" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#111827">Base</text>
+  <text x="182.5" y="710" text-anchor="middle" font-family="Arial" font-size="13" fill="#4b5563">5 sesiones</text>
+  <text x="322.5" y="690" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#111827">Res. 10</text>
+  <text x="322.5" y="710" text-anchor="middle" font-family="Arial" font-size="13" fill="#4b5563">33 salidas</text>
+  <text x="462.5" y="690" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#111827">Res. 20</text>
+  <text x="462.5" y="710" text-anchor="middle" font-family="Arial" font-size="13" fill="#4b5563">28 salidas</text>
+  <text x="602.5" y="690" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#111827">Res. 50</text>
+  <text x="602.5" y="710" text-anchor="middle" font-family="Arial" font-size="13" fill="#4b5563">19 salidas</text>
+  <text x="742.5" y="690" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#111827">Res. 100</text>
+  <text x="742.5" y="710" text-anchor="middle" font-family="Arial" font-size="13" fill="#4b5563">14 salidas</text>
+
+  <rect x="930" y="165" width="390" height="250" rx="8" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="960" y="205" font-family="Arial" font-size="22" font-weight="700" fill="#111827">Decision</text>
+  <text x="960" y="240" font-family="Arial" font-size="18" font-weight="700" fill="#16a34a">Mantener la salida base</text>
+  <text x="960" y="276" font-family="Arial" font-size="16" fill="#374151">Gap &gt;0.5%, entrada apertura,</text>
+  <text x="960" y="300" font-family="Arial" font-size="16" fill="#374151">stop -3%, salida en 5a sesion.</text>
+  <text x="960" y="344" font-family="Arial" font-size="16" fill="#374151">Vender en resistencia aumenta poco</text>
+  <text x="960" y="368" font-family="Arial" font-size="16" fill="#374151">el acierto, pero corta ganadoras.</text>
+
+  <rect x="930" y="455" width="390" height="215" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="960" y="495" font-family="Arial" font-size="22" font-weight="700" fill="#111827">Lectura rapida</text>
+  <text x="960" y="532" font-family="Arial" font-size="16" fill="#374151">La resistencia funciona mejor como alerta,</text>
+  <text x="960" y="556" font-family="Arial" font-size="16" fill="#374151">no como salida automatica.</text>
+  <text x="960" y="604" font-family="Arial" font-size="16" font-weight="700" fill="#92400e">Resultado:</text>
+  <text x="1045" y="604" font-family="Arial" font-size="16" fill="#374151">menor capital final en todos</text>
+  <text x="960" y="628" font-family="Arial" font-size="16" fill="#374151">los escenarios con salida por resistencia.</text>
+
+  <text x="70" y="810" font-family="Arial" font-size="13" fill="#6b7280">
+    Nota: resistencia aproximada como maximo previo de 10/20/50/100 sesiones. Backtest sin comisiones ni deslizamiento.
+  </text>
+</svg>
