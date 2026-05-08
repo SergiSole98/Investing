@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from application.calculate_rsi import calculate_rsi
 from infrastructure.json_repository import load_candles as load_candle_objects
 
-BASE_DIR = os.path.dirname(__file__)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 EXCLUDED = {"application", "domain", "infrastructure", "__pycache__"}
 
 SUP_FILL   = "rgba(0, 230, 118, 0.18)"
@@ -29,10 +29,20 @@ MA30_LINE = "#42a5f5"
 
 
 def list_symbols() -> list[str]:
-    return [
-        d for d in os.listdir(BASE_DIR)
-        if os.path.isdir(os.path.join(BASE_DIR, d)) and d not in EXCLUDED
-    ]
+    symbols = []
+    for d in os.listdir(BASE_DIR):
+        if d in EXCLUDED or not os.path.isdir(os.path.join(BASE_DIR, d)):
+            continue
+        top = os.path.join(BASE_DIR, d)
+        if os.path.exists(os.path.join(top, "historical_data.json")):
+            symbols.append(d)
+        else:
+            for sub in os.listdir(top):
+                if os.path.isdir(os.path.join(top, sub)) and os.path.exists(
+                    os.path.join(top, sub, "historical_data.json")
+                ):
+                    symbols.append(f"{d}/{sub}")
+    return sorted(symbols)
 
 
 def load_candles(symbol: str) -> pd.DataFrame:
@@ -103,18 +113,10 @@ df["MA30"]     = df["close"].rolling(window=30).mean()
 period         = st.sidebar.selectbox(
     "Period",
     ["1W", "1M", "3M", "6M", "1Y", "All"],
-    index=2,
+    index=4,
 )
 period_df      = filter_period(df, period)
-max_visible_candles = max(1, min(len(period_df), 300))
-visible_candles = st.sidebar.slider(
-    "Visible candles",
-    min_value=1,
-    max_value=max_visible_candles,
-    value=min(max_visible_candles, 90),
-    step=1,
-)
-chart_df       = period_df.tail(visible_candles)
+chart_df       = period_df
 poc            = load_poc(symbol)
 candle_objects = load_candle_objects(symbol)
 rsi_values     = calculate_rsi(candle_objects)
