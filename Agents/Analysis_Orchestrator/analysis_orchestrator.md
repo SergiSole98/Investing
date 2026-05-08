@@ -16,7 +16,7 @@ against the active investment principles to produce a recommendation.
 5. Wait for all launched agents to confirm before proceeding.
 6. Read `Analisis/<asset>/News/news.md`, `Analisis/<asset>/Events/events.md`, and
    the latest `Analisis/<asset>/Technical_analysis/analysis_*.md`.
-7. Apply `Agents/Skills/investment_principles.md` to evaluate the data and produce
+7. Apply `Agents/Analysis_Orchestrator/investment_principles.md` to evaluate the data and produce
    a recommendation.
 8. Return the recommendation to the user.
 
@@ -36,7 +36,7 @@ against the active investment principles to produce a recommendation.
 3. Launch `agent_investm_analysis` only when `News/` or `Events/` is missing or empty.
 4. Launch `technical_analyst` only when `Technical_analysis/` is missing or empty.
 5. Do NOT proceed to evaluation until all three data sources are confirmed present.
-6. Do NOT issue a recommendation without applying `Agents/Skills/investment_principles.md`.
+6. Do NOT issue a recommendation without applying `Agents/Analysis_Orchestrator/investment_principles.md`.
 7. If any agent reports an error, stop and report the failure and the step where it
    occurred; do not proceed.
 8. Do NOT expose intermediate agent confirmations to the user; show only the final
