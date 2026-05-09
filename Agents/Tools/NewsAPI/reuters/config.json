@@ -1,0 +1,8 @@
+{
+  "name": "Reuters",
+  "robots_url": "https://www.reuters.com/robots.txt",
+  "sitemap_index_url": null,
+  "sitemap_url_contains": "news-sitemap-index",
+  "user_agent": "Mozilla/5.0 (compatible; investing-sitemap-probe/1.0)",
+  "stop_when_page_older_than_window": true
+}
