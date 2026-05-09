@@ -3,6 +3,7 @@ import argparse
 import csv
 import json
 from dataclasses import dataclass
+from datetime import date
 from pathlib import Path
 from statistics import median
 
@@ -77,6 +78,7 @@ def run_backtest(
     hold_sessions: int,
     stop_pct: float | None,
     no_overlap: bool,
+    entry_mode: str,
 ) -> list[Trade]:
     trades: list[Trade] = []
     i = 1
@@ -91,6 +93,10 @@ def run_backtest(
         prev_day = by_date[dates[i - 1]]
         day = by_date[dates[i]]
         opening = first_candle(day)
+        if len(day) > 1:
+            second = next((c for c in day if c["datetime"].endswith("13:30:00")), day[1])
+        else:
+            second = None
         previous_close = prev_day[-1]["close"]
         gap = (opening["open"] - previous_close) / previous_close * 100
 
@@ -98,7 +104,18 @@ def run_backtest(
             i += 1
             continue
 
-        entry = opening["open"]
+        if entry_mode == "open":
+            entry = opening["open"]
+            entry_datetime = opening["datetime"]
+        elif entry_mode == "second_candle_confirmed":
+            if second is None or opening["close"] <= opening["open"]:
+                i += 1
+                continue
+            entry = second["open"]
+            entry_datetime = second["datetime"]
+        else:
+            raise ValueError(f"Unsupported entry mode: {entry_mode}")
+
         exit_price = None
         exit_index = None
         reason = "fixed"
@@ -106,7 +123,10 @@ def run_backtest(
         if stop_pct is not None:
             stop_price = entry * (1 - stop_pct / 100)
             for j in range(i, i + hold_sessions + 1):
-                for candle in by_date[dates[j]]:
+                candles = by_date[dates[j]]
+                if j == i:
+                    candles = [c for c in candles if c["datetime"] >= entry_datetime]
+                for candle in candles:
                     if candle["low"] <= stop_price:
                         exit_price = stop_price
                         exit_index = j
@@ -209,10 +229,19 @@ def parse_float_list(value: str) -> list[float]:
     return [float(item.strip()) for item in value.split(",") if item.strip()]
 
 
+def years_before(date_text: str, years: int) -> str:
+    current = date.fromisoformat(date_text)
+    try:
+        return current.replace(year=current.year - years).isoformat()
+    except ValueError:
+        return current.replace(year=current.year - years, day=28).isoformat()
+
+
 def print_grid(rows: list[dict], limit: int) -> None:
     headers = [
         "Rank",
         "Gap",
+        "Entrada",
         "Stop",
         "Sesiones",
         "Casos",
@@ -232,6 +261,7 @@ def print_grid(rows: list[dict], limit: int) -> None:
                 [
                     str(rank),
                     f"{row['gap']:.2f}%",
+                    row["entry_mode"],
                     "sin stop" if row["stop"] is None else f"{row['stop']:.2f}%",
                     str(row["sessions"]),
                     str(row["trades"]),
@@ -269,6 +299,7 @@ def write_markdown(path: Path, title: str, rows: list[dict], grid: bool) -> None
                 "## Mejor estrategia",
                 "",
                 f"- Gap minimo: **>{best['gap']:.2f}%**",
+                f"- Entrada: **{best['entry_mode']}**",
                 f"- Stop: **{stop}**",
                 f"- Sesiones: **{best['sessions']}**",
                 f"- Capital final: **{best['capital_final']:.2f}**",
@@ -279,7 +310,7 @@ def write_markdown(path: Path, title: str, rows: list[dict], grid: bool) -> None
         )
 
     headers = (
-        ["Gap", "Stop", "Sesiones", "Casos", "Capital final", "Rentabilidad", "Sube", "Mediana", "Max DD", "Stops"]
+        ["Gap", "Entrada", "Stop", "Sesiones", "Casos", "Capital final", "Rentabilidad", "Sube", "Mediana", "Max DD", "Stops"]
         if grid
         else ["Sesiones", "Casos", "Capital final", "Rentabilidad", "Sube", "Media", "Mediana", "Max DD", "Stops"]
     )
@@ -288,6 +319,7 @@ def write_markdown(path: Path, title: str, rows: list[dict], grid: bool) -> None
         if grid:
             values = [
                 f"{row['gap']:.2f}%",
+                row["entry_mode"],
                 "sin stop" if row["stop"] is None else f"{row['stop']:.2f}%",
                 str(row["sessions"]),
                 str(row["trades"]),
@@ -318,20 +350,29 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Backtest gap-up strategy on local 4h market data.")
     parser.add_argument("asset", nargs="?", help="Asset folder name, e.g. AAPL or TSLA")
     parser.add_argument("--list-assets", action="store_true", help="List available assets and exit")
-    parser.add_argument("--start", default="2023-05-08")
+    parser.add_argument("--start", help="Start date YYYY-MM-DD. Defaults to last dataset date minus --years")
+    parser.add_argument("--years", type=int, default=1, help="Lookback years when --start is not provided")
     parser.add_argument("--gap", type=float, default=0.5, help="Minimum opening gap percentage")
     parser.add_argument("--stop", type=float, default=3.0, help="Stop loss percentage. Use 0 to disable.")
     parser.add_argument("--min-hold", type=int, default=1)
     parser.add_argument("--max-hold", type=int, default=7)
     parser.add_argument("--capital", type=float, default=100.0)
     parser.add_argument("--allow-overlap", action="store_true", help="Allow overlapping trades")
+    parser.add_argument(
+        "--entry-mode",
+        choices=["open", "second_candle_confirmed", "all"],
+        default="all",
+        help="Entry mode. In grid search, 'all' tests all modes.",
+    )
     parser.add_argument("--grid-search", action="store_true", help="Try combinations of gap, stop, and hold")
+    parser.add_argument("--single-run", action="store_true", help="Run only one configured gap/stop/hold table")
     parser.add_argument("--gaps", default="0,0.25,0.5,0.75,1,1.25,1.5,2")
     parser.add_argument("--stops", default="0,2,2.5,3,4,5,6")
     parser.add_argument("--sort-by", choices=["return", "drawdown", "return_drawdown"], default="return")
     parser.add_argument("--limit", type=int, default=20)
     parser.add_argument("--min-trades", type=int, default=20)
     parser.add_argument("--output", help="Optional output file. Supports .csv or .md")
+    parser.add_argument("--show-table", action="store_true", help="Show full ranking table in grid-search mode")
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parents[3]
@@ -342,34 +383,41 @@ def main() -> None:
 
     asset = args.asset.upper() if args.asset else choose_asset(root)
     dates, by_date = load_daily_candles(root, asset)
+    start = args.start or years_before(dates[-1], args.years)
     stop = args.stop if args.stop > 0 else None
 
-    if args.grid_search:
+    do_grid_search = args.grid_search or not args.single_run
+
+    if do_grid_search:
         rows = []
+        entry_modes = ["open", "second_candle_confirmed"] if args.entry_mode == "all" else [args.entry_mode]
         for gap in parse_float_list(args.gaps):
             for stop_value in parse_float_list(args.stops):
                 grid_stop = stop_value if stop_value > 0 else None
                 for sessions in range(args.min_hold, args.max_hold + 1):
-                    trades = run_backtest(
-                        dates=dates,
-                        by_date=by_date,
-                        start=args.start,
-                        gap_pct=gap,
-                        hold_sessions=sessions,
-                        stop_pct=grid_stop,
-                        no_overlap=not args.allow_overlap,
-                    )
-                    if len(trades) < args.min_trades:
-                        continue
-                    summary = summarize(trades, args.capital)
-                    rows.append(
-                        {
-                            "gap": gap,
-                            "stop": grid_stop,
-                            "sessions": sessions,
-                            **summary,
-                        }
-                    )
+                    for entry_mode in entry_modes:
+                        trades = run_backtest(
+                            dates=dates,
+                            by_date=by_date,
+                            start=start,
+                            gap_pct=gap,
+                            hold_sessions=sessions,
+                            stop_pct=grid_stop,
+                            no_overlap=not args.allow_overlap,
+                            entry_mode=entry_mode,
+                        )
+                        if len(trades) < args.min_trades:
+                            continue
+                        summary = summarize(trades, args.capital)
+                        rows.append(
+                            {
+                                "gap": gap,
+                                "entry_mode": entry_mode,
+                                "stop": grid_stop,
+                                "sessions": sessions,
+                                **summary,
+                            }
+                        )
 
         if args.sort_by == "return":
             rows.sort(key=lambda row: row["rentabilidad_pct"], reverse=True)
@@ -384,21 +432,19 @@ def main() -> None:
             )
 
         print(
-            f"Grid search: {asset} | Solape: {'si' if args.allow_overlap else 'no'} | "
-            f"Orden: {args.sort_by}"
+            f"Activo: {asset} | Periodo: {start} a {dates[-1]}"
         )
         if rows:
             best = rows[0]
             stop = "sin stop" if best["stop"] is None else f"{best['stop']:.2f}%"
-            print(
-                "MEJOR ESTRATEGIA: "
-                f"gap > {best['gap']:.2f}% | stop: {stop} | "
-                f"sesiones: {best['sessions']} | "
-                f"rentabilidad: {best['rentabilidad_pct']:+.1f}% | "
-                f"capital final: {best['capital_final']:.2f} | "
-                f"max DD: {best['max_drawdown']:+.1f}%"
-            )
-        print_grid(rows, args.limit)
+            print("Mejor estrategia:")
+            print(f"- Gap minimo: >{best['gap']:.2f}%")
+            print(f"- Entrada: {best['entry_mode']}")
+            print(f"- Stop: {stop}")
+            print(f"- Sesiones: {best['sessions']}")
+            print(f"- Rentabilidad total ultimo ano: {best['rentabilidad_pct']:+.1f}%")
+        if args.show_table:
+            print_grid(rows, args.limit)
         if args.output:
             output = Path(args.output)
             selected = rows[: args.limit]
@@ -416,17 +462,18 @@ def main() -> None:
         trades = run_backtest(
             dates=dates,
             by_date=by_date,
-            start=args.start,
+            start=start,
             gap_pct=args.gap,
             hold_sessions=sessions,
             stop_pct=stop,
             no_overlap=not args.allow_overlap,
+            entry_mode="open" if args.entry_mode == "all" else args.entry_mode,
         )
         summary = summarize(trades, args.capital)
         rows.append({"sessions": sessions, **summary})
 
     print(
-        f"Activo: {asset} | Gap > {args.gap}% | "
+        f"Activo: {asset} | Inicio: {start} | Gap > {args.gap}% | "
         f"Stop: {'sin stop' if stop is None else f'{stop}%'} | "
         f"Solape: {'si' if args.allow_overlap else 'no'}"
     )

@@ -1,0 +1,120 @@
+{
+  "summary": {
+    "total_supports": 5,
+    "total_resistances": 5,
+    "period_start": "2024-05-09",
+    "period_end": "2026-05-08",
+    "current_price": 414.78,
+    "params": {
+      "lookback_pivot": 2,
+      "atr_period": 14,
+      "zone_tolerance": "max(0.5%, 0.5 * ATR%)",
+      "min_valid_touches": 2,
+      "max_zones_per_side": 5
+    }
+  },
+  "supports": [
+    {
+      "price_center": 380.19,
+      "price_range": {
+        "min": 377.03,
+        "max": 382.85
+      },
+      "touches": 7,
+      "tolerance_pct": 0.0104,
+      "last_touch": "2026-03-20 13:30:00"
+    },
+    {
+      "price_center": 388.0691,
+      "price_range": {
+        "min": 384.44,
+        "max": 392.33
+      },
+      "touches": 5,
+      "tolerance_pct": 0.0152,
+      "last_touch": "2026-02-27 09:30:00"
+    },
+    {
+      "price_center": 396.085,
+      "price_range": {
+        "min": 394.245,
+        "max": 398.01
+      },
+      "touches": 6,
+      "tolerance_pct": 0.0113,
+      "last_touch": "2026-04-30 09:30:00"
+    },
+    {
+      "price_center": 401.195,
+      "price_range": {
+        "min": 400.8,
+        "max": 401.59
+      },
+      "touches": 2,
+      "tolerance_pct": 0.0076,
+      "last_touch": "2026-03-11 09:30:00"
+    },
+    {
+      "price_center": 409.2614,
+      "price_range": {
+        "min": 404.3673,
+        "max": 414.3
+      },
+      "touches": 24,
+      "tolerance_pct": 0.0136,
+      "last_touch": "2026-05-06 09:30:00"
+    }
+  ],
+  "resistances": [
+    {
+      "price_center": 420.7804,
+      "price_range": {
+        "min": 417.94,
+        "max": 425.42
+      },
+      "touches": 16,
+      "tolerance_pct": 0.0132,
+      "last_touch": "2026-05-04 09:30:00"
+    },
+    {
+      "price_center": 430.9339,
+      "price_range": {
+        "min": 426.78,
+        "max": 434.39
+      },
+      "touches": 21,
+      "tolerance_pct": 0.01,
+      "last_touch": "2026-05-07 09:30:00"
+    },
+    {
+      "price_center": 441.6013,
+      "price_range": {
+        "min": 438.5,
+        "max": 443.7203
+      },
+      "touches": 8,
+      "tolerance_pct": 0.0104,
+      "last_touch": "2025-05-08 09:30:00"
+    },
+    {
+      "price_center": 448.7358,
+      "price_range": {
+        "min": 447.27,
+        "max": 450.928
+      },
+      "touches": 4,
+      "tolerance_pct": 0.0082,
+      "last_touch": "2025-01-28 13:30:00"
+    },
+    {
+      "price_center": 456.211,
+      "price_range": {
+        "min": 455.28,
+        "max": 457.26
+      },
+      "touches": 5,
+      "tolerance_pct": 0.0057,
+      "last_touch": "2025-05-15 09:30:00"
+    }
+  ]
+}
