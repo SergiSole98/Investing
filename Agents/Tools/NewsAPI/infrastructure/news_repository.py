@@ -13,26 +13,37 @@ class NewsRepository:
         self.base_dir = base_dir
 
     def upsert_many(self, source_slug: str, items: list[SitemapItem]) -> tuple[Path, int, int]:
-        repo_dir = self.base_dir / "domain" / "newsRepo" / source_slug
+        repo_dir = self.base_dir / "data" / source_slug
         repo_dir.mkdir(parents=True, exist_ok=True)
-        repo_path = repo_dir / "news.json"
+        repo_path = repo_dir / f"{source_slug}-news.json"
 
         existing = self._read(repo_path)
-        by_url = {
+        existing_by_url = {
             item["url"]: item
             for item in existing.get("items", [])
             if item.get("url")
         }
 
+        today_prefix = datetime.now(timezone.utc).strftime("%d%m%Y")
+        next_seq = self._next_seq_for_prefix(existing_by_url.values(), today_prefix)
+
+        by_url = {}
         created = 0
         for item in items:
-            data = asdict(item)
+            existing_item = existing_by_url.get(item.url)
+            data = {**existing_item, **asdict(item)} if existing_item else asdict(item)
             data["stored_at_utc"] = datetime.now(timezone.utc).isoformat().replace(
                 "+00:00",
                 "Z",
             )
-            if data["url"] not in by_url:
+            if data["url"] not in existing_by_url:
                 created += 1
+                data = {"id": f"{today_prefix}-{next_seq}", **data}
+                next_seq += 1
+            else:
+                existing_id = existing_by_url[data["url"]].get("id")
+                if existing_id:
+                    data = {"id": existing_id, **data}
             by_url[data["url"]] = data
 
         merged_items = sorted(
@@ -56,3 +67,18 @@ class NewsRepository:
         if not repo_path.exists():
             return {"items": []}
         return json.loads(repo_path.read_text(encoding="utf-8"))
+
+    @staticmethod
+    def _next_seq_for_prefix(items, prefix: str) -> int:
+        max_seq = 0
+        for item in items:
+            existing_id = item.get("id")
+            if not isinstance(existing_id, str) or not existing_id.startswith(f"{prefix}-"):
+                continue
+            try:
+                seq = int(existing_id.split("-", 1)[1])
+            except ValueError:
+                continue
+            if seq > max_seq:
+                max_seq = seq
+        return max_seq + 1

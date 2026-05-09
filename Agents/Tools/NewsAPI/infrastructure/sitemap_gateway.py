@@ -12,7 +12,6 @@ from infrastructure.http_client import HttpClient
 XML_NS = {
     "sm": "http://www.sitemaps.org/schemas/sitemap/0.9",
     "news": "http://www.google.com/schemas/sitemap-news/0.9",
-    "image": "http://www.google.com/schemas/sitemap-image/1.1",
 }
 
 
@@ -20,22 +19,22 @@ class SitemapGateway:
     def __init__(self, http_client: HttpClient) -> None:
         self.http_client = http_client
 
-    def entry_sitemap_url(self, config: SourceConfig) -> str:
+    def entry_sitemap_urls(self, config: SourceConfig) -> list[str]:
         if config.sitemap_index_url:
-            return config.sitemap_index_url
+            return [config.sitemap_index_url]
 
         sitemap_urls = self._robots_sitemaps(config)
         if config.sitemap_url_contains:
-            for url in sitemap_urls:
-                if config.sitemap_url_contains in url:
-                    return url
+            sitemap_urls = [
+                url for url in sitemap_urls if config.sitemap_url_contains in url
+            ]
 
         if sitemap_urls:
-            return sitemap_urls[0]
+            return sitemap_urls
 
         if config.robots_url:
             parsed = urlparse(config.robots_url)
-            return urljoin(f"{parsed.scheme}://{parsed.netloc}", "/sitemap.xml")
+            return [urljoin(f"{parsed.scheme}://{parsed.netloc}", "/sitemap.xml")]
 
         raise ValueError("Source config must define sitemap_index_url or robots_url")
 
@@ -121,11 +120,8 @@ class SitemapGateway:
             title=self._first_text(url_el, ["news:news/news:title"]),
             url=url,
             publisher=self._first_text(url_el, ["news:news/news:publication/news:name"]),
-            language=self._first_text(url_el, ["news:news/news:publication/news:language"]),
             keywords=self._first_text(url_el, ["news:news/news:keywords"]),
             stock_tickers=self._first_text(url_el, ["news:news/news:stock_tickers"]),
-            image_url=self._first_text(url_el, ["image:image/image:loc"]),
-            image_caption=self._first_text(url_el, ["image:image/image:caption"]),
         )
 
     def _first_text(self, url_el: ET.Element, paths: list[str]) -> str | None:

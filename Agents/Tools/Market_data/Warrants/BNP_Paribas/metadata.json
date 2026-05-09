@@ -1,0 +1,13 @@
+{
+  "source": "BNP Paribas Productos Cotizados",
+  "url": "https://productoscotizados.com/warrants/",
+  "saved_at": "2026-05-09T22:05:30+02:00",
+  "count": 7970,
+  "raw_path": "/Users/ssole/Documents/Investing/Agents/Tools/Market_data/Warrants/BNP_Paribas/raw_warrants.json",
+  "normalized_path": "/Users/ssole/Documents/Investing/Agents/Tools/Market_data/Warrants/BNP_Paribas/warrants.json",
+  "csv_path": "/Users/ssole/Documents/Investing/Agents/Tools/Market_data/Warrants/BNP_Paribas/warrants.csv",
+  "type_counts": {
+    "Call": 4167,
+    "Put": 3803
+  }
+}

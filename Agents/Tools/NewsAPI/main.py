@@ -17,7 +17,7 @@ from infrastructure import (
 )
 
 
-DEFAULT_EXCLUDED_SECTIONS = ("sports", "lifestyle")
+DEFAULT_EXCLUDED_SECTIONS = ("sports", "lifestyle", "podcasts", "video")
 
 
 def parse_args() -> argparse.Namespace:
@@ -72,7 +72,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--query",
-        help="Case-insensitive text filter over title, URL, tickers, publisher and language.",
+        help="Case-insensitive text filter over title, URL, tickers and publisher.",
     )
     parser.add_argument(
         "--only-with-tickers",
@@ -87,7 +87,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--no-save",
         action="store_true",
-        help="Do not upsert fetched items into domain/newsRepo/<source>/news.json.",
+        help="Do not upsert fetched items into data/<source>/<source>-news.json.",
     )
     return parser.parse_args()
 
